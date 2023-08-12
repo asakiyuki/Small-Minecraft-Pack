@@ -1,0 +1,86 @@
+{
+    "namespace": "shiki_toggle",
+    "toggle_template@_.t": {
+        "radio_toggle_group": "$t_radio",
+        "toggle_name": "$t_name",
+        "toggle_group_default_selected": "$t_selected",
+        "toggle_default_state": "$t_default",
+        "toggle_group_forced_index": "$t_index",
+        "reset_on_focus_lost": "$reset_on_focus_lost",
+        //Variable Value Default
+        "$t_radio|default": false,
+        "$t_index|default": 0,
+        "$t_default|default": false,
+        "$t_selected|default": -1,
+        "$t_name|default": "shiki_toggle",
+        "$reset_on_focus_lost|default": false,
+        "$click_sound|default": "random.click",
+        "$click_volume|default": 1,
+        "$mouse_click_type|default": "pressed",
+        "$mapping_type|default": "pressed",
+        "$mapping_click|default": "button.menu_select",
+        "$click_event|default": "button.menu_select",
+        //Toggle State Texture
+        "unchecked_control": "unchecked_control",
+        "unchecked_hover_control": "unchecked_hover_control",
+        "checked_control": "checked_control",
+        "checked_hover_control": "checked_hover_control",
+        "unchecked_locked_control": "unchecked_locked_control",
+        "unchecked_locked_hover_control": "unchecked_locked_hover_control",
+        "checked_locked_control": "checked_locked_control",
+        "checked_locked_hover_control": "checked_locked_hover_control",
+        //Other Option
+        "property_bag": {
+            "#toggle_state": false
+        },
+        "button_mappings": [
+            {
+                "mapping_type": "$mapping_type",
+                "from_button_id": "$mapping_click",
+                "to_button_id": "$click_event"
+            },
+            {
+                "mapping_type": "$mouse_click_type",
+                "from_button_id": "button.menu_select",
+                "to_button_id": "button.menu_select"
+            }
+        ],
+        "sound_name": "$click_sound",
+        "sound_volume": "$click_volume",
+        //Toggle Texture Default
+        "$off|default": "shiki_texture_template.toggle_with_label_off",
+        "$off_hover|default": "shiki_texture_template.toggle_with_label_off_hover",
+        "$on|default": "shiki_texture_template.toggle_with_label_off",
+        "$on_hover|default": "shiki_texture_template.toggle_with_label_off_hover",
+        "$off_lock|default": "_.p",
+        "$off_hover_lock|default": "_.p",
+        "$on_lock|default": "_.p",
+        "$on_hover_lock|default": "_.p",
+        "controls": [
+            {
+                "unchecked_control@$off": {}
+            },
+            {
+                "unchecked_hover_control@$off_hover": {}
+            },
+            {
+                "checked_control@$on": {}
+            },
+            {
+                "checked_hover_control@$on_hover": {}
+            },
+            {
+                "unchecked_locked_control@$off_lock": {}
+            },
+            {
+                "unchecked_locked_hover_control@$off_hover_lock": {}
+            },
+            {
+                "checked_locked_control@$on_lock": {}
+            },
+            {
+                "checked_locked_hover_control@$on_hover_lock": {}
+            }
+        ]
+    }
+}

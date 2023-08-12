@@ -1,0 +1,393 @@
+{
+    "buttonTexture@_.i": {
+        "texture": "textures/ui/list_item_divider_line_light"
+    },
+    "menu_add_and_minus@_.p": {
+        "size": [
+            "100%",
+            13
+        ],
+        "$default_value|default": 0,
+        "$min_value|default": 0,
+        "$max_value|default": 50,
+        "$mod_layer|default": 0,
+        "$next_value|default": false,
+        "$control_name|default": "null",
+        "$real_output_name|default": "('asakizuki_data:' + $control_name)",
+        "$output_data_single_name|default": "('asakizuki_temp_data:' + $control_name)",
+        "controls": [
+            {
+                "content@_.sp": {
+                    "size": [
+                        "100%",
+                        "100%"
+                    ],
+                    "orientation": "horizontal",
+                    "controls": [
+                        {
+                            "content@_.p": {
+                                "size": [
+                                    "fill",
+                                    "100%"
+                                ],
+                                "controls": [
+                                    {
+                                        "bg@asa_menu_toggle.buttonTexture": {
+                                            "color": [
+                                                0.2,
+                                                0.2,
+                                                0.2
+                                            ],
+                                            "layer": "($mod_layer + 101)",
+                                            "controls": [
+                                                {
+                                                    "rendererIndex@_.l": {
+                                                        "text": "#text",
+                                                        "layer": "($mod_layer + 102)",
+                                                        "font_type": "smooth",
+                                                        "font_scale_factor": 0.9,
+                                                        "anchor_from": "left_middle",
+                                                        "anchor_to": "left_middle",
+                                                        "offset": [
+                                                            2,
+                                                            0
+                                                        ],
+                                                        "max_size": [
+                                                            "100% - 4",
+                                                            10
+                                                        ],
+                                                        "bindings": [
+                                                            {
+                                                                "binding_type": "view",
+                                                                "source_control_name": "$real_output_name",
+                                                                "source_property_name": "('§z' + #index_value)",
+                                                                "target_property_name": "#text"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "$real_output_name@_.p": {
+                                "size": [
+                                    0,
+                                    0
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "$output_data_single_name",
+                                        "resolve_sibling_scope": true,
+                                        "source_property_name": "(#output_index / 4)",
+                                        "target_property_name": "#index_value"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "$output_data_single_name@_.p": {
+                                "size": [
+                                    0,
+                                    0
+                                ],
+                                "bindings": [
+                                    {
+                                        "ignored": "$next_value",
+                                        "binding_type": "view",
+                                        "source_control_name": "asakizuki_data_temp",
+                                        "resolve_sibling_scope": true,
+                                        "source_property_name": "( #output_index + (not (#min_index < #output_index) * 4) - (not (#max_index > #output_index) * 4) )",
+                                        "target_property_name": "#output_index"
+                                    },
+                                    {
+                                        "ignored": "(not $next_value)",
+                                        "binding_type": "view",
+                                        "source_control_name": "asakizuki_data_temp",
+                                        "resolve_sibling_scope": true,
+                                        "source_property_name": "( #output_index - (not (#min_index < #output_index) * #min_index) - (not (#min_index < #output_index) * 4) + (not (#min_index < #output_index) * #max_index) + (not (#output_index < #max_index) * #min_index) + (not (#output_index < #max_index) * 4) - (not (#output_index < #max_index) * #max_index) )",
+                                        "target_property_name": "#output_index"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "asakizuki_data_temp@_.p": {
+                                "size": [
+                                    0,
+                                    0
+                                ],
+                                "property_bag": {
+                                    "#output_index": "($default_value * 4)",
+                                    "#min_index": "(($min_value - 1) * 4)",
+                                    "#max_index": "(($max_value + 1) * 4)"
+                                },
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "asakizukiCustom:mod_menu_add",
+                                        "resolve_sibling_scope": true,
+                                        "source_property_name": "#output_index",
+                                        "target_property_name": "#output_index"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "asakizukiCustom:mod_menu_minus",
+                                        "resolve_sibling_scope": true,
+                                        "source_property_name": "#output_index",
+                                        "target_property_name": "#output_index"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "asakizukiCustom:mod_menu_minus@_.t": {
+                                "size": [
+                                    "100%y",
+                                    "100%"
+                                ],
+                                "toggle_name": "mod_toggle",
+                                "unchecked_control": "off",
+                                "checked_control": "on",
+                                "unchecked_hover_control": "offHover",
+                                "checked_hover_control": "onHover",
+                                "unchecked_locked_control": "offLock",
+                                "checked_locked_control": "onLock",
+                                "layer": "($mod_layer + 101)",
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "((not not #toggle_state) * 1)",
+                                        "target_property_name": "#checkWhenAdd"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "$output_data_single_name",
+                                        "resolve_sibling_scope": true,
+                                        "source_property_name": "#output_index",
+                                        "target_property_name": "#old_data"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#old_data - #checkWhenAdd)",
+                                        "target_property_name": "#output_index"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#toggle_state = #toggle_state))",
+                                        "target_property_name": "#toggle_state"
+                                    }
+                                ],
+                                "button_mappings": [
+                                    {
+                                        "from_button_id": "button.menu_select",
+                                        "to_button_id": "none",
+                                        "mapping_type": "pressed"
+                                    },
+                                    {
+                                        "from_button_id": "button.menu_ok",
+                                        "to_button_id": "none",
+                                        "mapping_type": "pressed"
+                                    }
+                                ],
+                                "controls": [
+                                    {
+                                        "off@asa_menu_toggle.buttonTexture": {
+                                            "color": [
+                                                0.2,
+                                                0.2,
+                                                0.2
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "onHover@asa_menu_toggle.buttonTexture": {
+                                            "color": [
+                                                0.1,
+                                                0.1,
+                                                0.1
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "on@asa_menu_toggle.buttonTexture": {
+                                            "color": [
+                                                0.2,
+                                                0.2,
+                                                0.2
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "offHover@asa_menu_toggle.buttonTexture": {
+                                            "color": [
+                                                0.1,
+                                                0.1,
+                                                0.1
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "iconPanel@_.p": {
+                                            "size": [
+                                                7,
+                                                7
+                                            ],
+                                            "layer": "($mod_layer + 102)",
+                                            "controls": [
+                                                {
+                                                    "@asa_menu_toggle.buttonTexture": {
+                                                        "size": [
+                                                            "100%",
+                                                            1
+                                                        ],
+                                                        "color": [
+                                                            0.8,
+                                                            0.8,
+                                                            0.8
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "asakizukiCustom:mod_menu_add@_.t": {
+                                "size": [
+                                    "100%y",
+                                    "100%"
+                                ],
+                                "toggle_name": "mod_toggle",
+                                "unchecked_control": "off",
+                                "checked_control": "on",
+                                "unchecked_hover_control": "offHover",
+                                "checked_hover_control": "onHover",
+                                "unchecked_locked_control": "offLock",
+                                "checked_locked_control": "onLock",
+                                "layer": "($mod_layer + 101)",
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "((not not #toggle_state) * 1)",
+                                        "target_property_name": "#checkWhenAdd"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "$output_data_single_name",
+                                        "resolve_sibling_scope": true,
+                                        "source_property_name": "#output_index",
+                                        "target_property_name": "#old_data"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#checkWhenAdd + #old_data)",
+                                        "target_property_name": "#output_index"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(not (#toggle_state = #toggle_state))",
+                                        "target_property_name": "#toggle_state"
+                                    }
+                                ],
+                                "button_mappings": [
+                                    {
+                                        "from_button_id": "button.menu_select",
+                                        "to_button_id": "none",
+                                        "mapping_type": "pressed"
+                                    },
+                                    {
+                                        "from_button_id": "button.menu_ok",
+                                        "to_button_id": "none",
+                                        "mapping_type": "pressed"
+                                    }
+                                ],
+                                "controls": [
+                                    {
+                                        "off@asa_menu_toggle.buttonTexture": {
+                                            "color": [
+                                                0.2,
+                                                0.2,
+                                                0.2
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "onHover@asa_menu_toggle.buttonTexture": {
+                                            "color": [
+                                                0.1,
+                                                0.1,
+                                                0.5
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "on@asa_menu_toggle.buttonTexture": {
+                                            "color": [
+                                                0.2,
+                                                0.2,
+                                                0.5
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "offHover@asa_menu_toggle.buttonTexture": {
+                                            "color": [
+                                                0.1,
+                                                0.1,
+                                                0.1
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "iconPanel@_.p": {
+                                            "size": [
+                                                7,
+                                                7
+                                            ],
+                                            "layer": "($mod_layer + 102)",
+                                            "controls": [
+                                                {
+                                                    "@asa_menu_toggle.buttonTexture": {
+                                                        "size": [
+                                                            "100%",
+                                                            1
+                                                        ],
+                                                        "color": [
+                                                            0.8,
+                                                            0.8,
+                                                            0.8
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "@asa_menu_toggle.buttonTexture": {
+                                                        "size": [
+                                                            1,
+                                                            "100%"
+                                                        ],
+                                                        "color": [
+                                                            0.8,
+                                                            0.8,
+                                                            0.8
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

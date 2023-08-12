@@ -1,0 +1,529 @@
+{
+    "hud_toggle_texture": {
+        "type": "image",
+        "layer": 102,
+        "$text|default": "Disable",
+        "texture": "textures/ui/list_item_divider_line_light",
+        "controls": [
+            {
+                "label": {
+                    "type": "label",
+                    "layer": 103,
+                    "text": "$text",
+                    "offset": [
+                        0,
+                        -2
+                    ],
+                    "font_type": "MinecraftTen"
+                }
+            }
+        ]
+    },
+    "feature_toggle": {
+        "type": "stack_panel",
+        "size": [
+            "100%cm + 1px",
+            "100%cm"
+        ],
+        "$icon_size|default": [
+            35,
+            35
+        ],
+        "$hotbar_key|default": "button.slot1",
+        "$toggle_binding_name|default": "none",
+        "$feature_icon|default": "textures/ui/inventory_icon",
+        "$feature_name|default": "Inventory HUD",
+        "controls": [
+            {
+                "feature_outline": {
+                    "type": "image",
+                    "layer": 101,
+                    "texture": "textures/ui/focus_border_selected",
+                    "size": [
+                        "100%cm + 2px",
+                        "100%c + 2px"
+                    ],
+                    "controls": [
+                        {
+                            "feature_texture": {
+                                "offset": [
+                                    0,
+                                    1
+                                ],
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "type": "image",
+                                "size": [
+                                    80,
+                                    55
+                                ],
+                                "alpha": 0.7,
+                                "texture": "textures/ui/list_item_divider_line_light",
+                                "color": [
+                                    0.1,
+                                    0.1,
+                                    0.1
+                                ],
+                                "controls": [
+                                    {
+                                        "feature_icon": {
+                                            "type": "image",
+                                            "size": "$icon_size",
+                                            "offset": [
+                                                0,
+                                                -8
+                                            ],
+                                            "layer": 102,
+                                            "texture": "$feature_icon"
+                                        }
+                                    },
+                                    {
+                                        "feature_name": {
+                                            "type": "label",
+                                            "layer": 102,
+                                            "offset": [
+                                                0,
+                                                12
+                                            ],
+                                            "font_scale_factor": 0.9,
+                                            "text": "$feature_name"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "$toggle_binding_name": {
+                                "anchor_from": "bottom_middle",
+                                "anchor_to": "bottom_middle",
+                                "size": [
+                                    80,
+                                    15
+                                ],
+                                "offset": [
+                                    0,
+                                    -1
+                                ],
+                                "type": "toggle",
+                                "toggle_name": "none",
+                                "toggle_default_state": false,
+                                "button_mappings": [
+                                    {
+                                        "mapping_type": "global",
+                                        "from_button_id": "$hotbar_key",
+                                        "to_button_id": "this"
+                                    }
+                                ],
+                                "unchecked_control": "d",
+                                "unchecked_hover_control": "dh",
+                                "checked_control": "e",
+                                "checked_hover_control": "eh",
+                                "controls": [
+                                    {
+                                        "d@hud_toggle_texture": {
+                                            "color": [
+                                                0.8,
+                                                0,
+                                                0
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "dh@hud_toggle_texture": {
+                                            "color": [
+                                                0.8,
+                                                0,
+                                                0
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "e@hud_toggle_texture": {
+                                            "color": [
+                                                0,
+                                                0.8,
+                                                0
+                                            ],
+                                            "$text": "Enable"
+                                        }
+                                    },
+                                    {
+                                        "eh@hud_toggle_texture": {
+                                            "color": [
+                                                0,
+                                                0.8,
+                                                0
+                                            ],
+                                            "$text": "Enable"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "feature_stack": {
+        "type": "stack_panel",
+        "size": [
+            "100%c",
+            "100%cm"
+        ],
+        "orientation": "horizontal",
+        "controls": [
+            {
+                "inventory_overlay@feature_toggle": {
+                    "$hotbar_key": "button.slot1",
+                    "$toggle_binding_name": "asakizuki:inventory_overlay",
+                    "$feature_icon": "textures/ui/inventory_icon",
+                    "$feature_name": "Inventory HUD"
+                }
+            },
+            {
+                "hide_hotbar@feature_toggle": {
+                    "$hotbar_key": "button.slot2",
+                    "$toggle_binding_name": "asakizuki:hide_hotbar",
+                    "$feature_icon": "textures/items/diamond_sword",
+                    "$feature_name": "Hide Hotbar",
+                    "$icon_size": [
+                        20,
+                        20
+                    ]
+                }
+            }
+        ]
+    },
+    "hud_content": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "tabHoverMenu": {
+                            "type": "button",
+                            "default_control": "1",
+                            "hover_control": "2",
+                            "pressed_control": "tab_screen",
+                            "locked_control": "3",
+                            "button_mappings": [
+                                {
+                                    "from_button_id": "button.scoreboard",
+                                    "to_button_id": "this",
+                                    "mapping_type": "global"
+                                }
+                            ],
+                            "layer": 100,
+                            "size": [
+                                "100%",
+                                "100%"
+                            ],
+                            "controls": [
+                                {
+                                    "2": {
+                                        "type": "input_panel",
+                                        "size": [
+                                            0,
+                                            0
+                                        ],
+                                        "button_mappings": [
+                                            {
+                                                "from_button_id": "button.slot1",
+                                                "to_button_id": "button.slot_1",
+                                                "mapping_type": "global"
+                                            },
+                                            {
+                                                "from_button_id": "button.slot2",
+                                                "to_button_id": "button.slot_2",
+                                                "mapping_type": "global"
+                                            },
+                                            {
+                                                "from_button_id": "button.slot3",
+                                                "to_button_id": "button.slot_3",
+                                                "mapping_type": "global"
+                                            },
+                                            {
+                                                "from_button_id": "button.slot4",
+                                                "to_button_id": "button.slot_4",
+                                                "mapping_type": "global"
+                                            },
+                                            {
+                                                "from_button_id": "button.slot5",
+                                                "to_button_id": "button.slot_5",
+                                                "mapping_type": "global"
+                                            },
+                                            {
+                                                "from_button_id": "button.slot6",
+                                                "to_button_id": "button.slot_6",
+                                                "mapping_type": "global"
+                                            },
+                                            {
+                                                "from_button_id": "button.slot7",
+                                                "to_button_id": "button.slot_7",
+                                                "mapping_type": "global"
+                                            },
+                                            {
+                                                "from_button_id": "button.slot8",
+                                                "to_button_id": "button.slot_8",
+                                                "mapping_type": "global"
+                                            },
+                                            {
+                                                "from_button_id": "button.slot9",
+                                                "to_button_id": "button.slot_9",
+                                                "mapping_type": "global"
+                                            },
+                                            {
+                                                "from_button_id": "button.slot0",
+                                                "to_button_id": "button.slot_0",
+                                                "mapping_type": "global"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "tab_screen": {
+                                        "type": "image",
+                                        "alpha": 0.7,
+                                        "texture": "textures/ui/Black",
+                                        "controls": [
+                                            {
+                                                "menu_stack": {
+                                                    "type": "stack_panel",
+                                                    "use_child_anchors": true,
+                                                    "size": [
+                                                        "100%cm",
+                                                        "100%c"
+                                                    ],
+                                                    "controls": [
+                                                        {
+                                                            "title": {
+                                                                "type": "label",
+                                                                "text": "List of tab key combinations",
+                                                                "font_type": "MinecraftTen",
+                                                                "font_size": "large"
+                                                            }
+                                                        },
+                                                        {
+                                                            "empty1": {
+                                                                "type": "panel",
+                                                                "size": [
+                                                                    4,
+                                                                    4
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "lineSpace": {
+                                                                "type": "image",
+                                                                "size": [
+                                                                    300,
+                                                                    1
+                                                                ],
+                                                                "texture": "textures/ui/list_item_divider_line_light"
+                                                            }
+                                                        },
+                                                        {
+                                                            "empty2": {
+                                                                "type": "panel",
+                                                                "size": [
+                                                                    4,
+                                                                    4
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "features@feature_stack": {}
+                                                        },
+                                                        {
+                                                            "empty3": {
+                                                                "type": "panel",
+                                                                "size": [
+                                                                    4,
+                                                                    4
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "lineSpace": {
+                                                                "type": "image",
+                                                                "size": [
+                                                                    300,
+                                                                    1
+                                                                ],
+                                                                "texture": "textures/ui/list_item_divider_line_light"
+                                                            }
+                                                        },
+                                                        {
+                                                            "empty4": {
+                                                                "type": "panel",
+                                                                "size": [
+                                                                    4,
+                                                                    4
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "des": {
+                                                                "type": "label",
+                                                                "text": "Hold the Tab key and press the hotbar key in order!",
+                                                                "font_type": "smooth"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "inventory_overlay": {
+                            "type": "panel",
+                            "size": [
+                                189,
+                                63
+                            ],
+                            "offset": [
+                                0,
+                                -65
+                            ],
+                            "clips_children": true,
+                            "anchor_from": "bottom_middle",
+                            "anchor_to": "bottom_middle",
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "asakizuki:inventory_overlay",
+                                    "source_property_name": "#toggle_state",
+                                    "target_property_name": "#visible"
+                                }
+                            ],
+                            "controls": [
+                                {
+                                    "inventory@common.inventory_overlay": {
+                                        "anchor_from": "bottom_middle",
+                                        "anchor_to": "bottom_middle"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "hud_screen": {
+        "button_mappings": [
+            {
+                "from_button_id": "button.scoreboard",
+                "to_button_id": "button.scoreboard",
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.inventory_left",
+                "to_button_id": "button.hotbar_inventory_left",
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.inventory_right",
+                "to_button_id": "button.hotbar_inventory_right",
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.hide_gui",
+                "to_button_id": "button.hide_gui_all",
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.hide_tooltips",
+                "to_button_id": "button.hide_tooltips_hud",
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.hide_paperdoll",
+                "to_button_id": "button.hide_paperdoll_hud",
+                "mapping_type": "global"
+            }
+        ]
+    },
+    "centered_gui_elements_at_bottom_middle": {
+        "bindings": [
+            {
+                "binding_name": "#hud_visible_centered",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "asakizuki:hide_hotbar",
+                "target_property_name": "#content",
+                "source_property_name": "(not #toggle_state)"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#hud_visible_centered and #content)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "not_centered_gui_elements": {
+        "bindings": [
+            {
+                "binding_name": "#hud_visible_not_centered",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "asakizuki:hide_hotbar",
+                "target_property_name": "#content",
+                "source_property_name": "(not #toggle_state)"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#hud_visible_not_centered and #content)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "root_panel/exp_rend": {
+        "bindings": [
+            {
+                "binding_name": "#hotbar_visible_not_centered",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "asakizuki:hide_hotbar",
+                "target_property_name": "#content",
+                "source_property_name": "(not #toggle_state)"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#hotbar_visible_not_centered and #content)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "root_panel/exp_rend_resizable": {
+        "bindings": [
+            {
+                "binding_name": "#hotbar_visible_not_centered_resizable",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "asakizuki:hide_hotbar",
+                "target_property_name": "#content",
+                "source_property_name": "#toggle_state"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#hotbar_visible_not_centered_resizable and #content)",
+                "target_property_name": "#visible"
+            }
+        ]
+    }
+}

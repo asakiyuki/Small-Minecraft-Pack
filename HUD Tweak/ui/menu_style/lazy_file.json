@@ -1,0 +1,33 @@
+{
+    "namespace": "_",
+    "p": {
+        "type": "panel"
+    },
+    "sp": {
+        "type": "stack_panel"
+    },
+    "c": {
+        "type": "custom"
+    },
+    "s": {
+        "type": "screen"
+    },
+    "b": {
+        "type": "button"
+    },
+    "t": {
+        "type": "toggle"
+    },
+    "i": {
+        "type": "image"
+    },
+    "l": {
+        "type": "label"
+    },
+    "ip": {
+        "type": "input_panel"
+    },
+    "g": {
+        "type": "grid"
+    }
+}

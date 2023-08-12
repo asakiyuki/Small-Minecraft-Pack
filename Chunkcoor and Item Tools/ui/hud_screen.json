@@ -1,0 +1,276 @@
+{
+    "chat_grid_item/chat_background": {},
+    "chat_grid_item/chat_background/chat_text": {},
+    "player_position": {
+        "alpha": 0,
+        "size": [
+            "100%cm",
+            "100%cm"
+        ],
+        "bindings": [
+            {
+                "binding_name": "#player_position_visible",
+                "binding_name_override": "#visible",
+                "binding_condition": "always",
+                "binding_type": "global"
+            }
+        ],
+        "controls": [
+            {
+                "coorStack": {
+                    "type": "stack_panel",
+                    "size": [
+                        "100%cm",
+                        "100%c"
+                    ],
+                    "controls": [
+                        {
+                            "player_position": {
+                                "type": "image",
+                                "size": [
+                                    "100%c + 6px",
+                                    "100%c + 2px"
+                                ],
+                                "texture": "textures/ui/Black",
+                                "alpha": 0.5,
+                                "controls": [
+                                    {
+                                        "player_position_text": {
+                                            "type": "label",
+                                            "anchor_from": "bottom_middle",
+                                            "anchor_to": "bottom_middle",
+                                            "layer": 1,
+                                            "enable_profanity_filter": false,
+                                            "color": "$chat_text_color",
+                                            "text": "#text",
+                                            "shadow": true,
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "#player_position_text",
+                                                    "binding_condition": "always",
+                                                    "binding_type": "global"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(': ' + #player_position_text - ('%.1s' * #player_position_text + ': ') - ('%.2s' * #player_position_text + ': ') - ('%.3s' * #player_position_text + ': ') - ('%.4s' * #player_position_text + ': ') - ('%.5s' * #player_position_text + ': ') - ('%.6s' * #player_position_text + ': ') - ('%.7s' * #player_position_text + ': ') - ('%.8s' * #player_position_text + ': ') - ('%.9s' * #player_position_text + ': ') - ('%.10s' * #player_position_text + ': ') - ('%.11s' * #player_position_text + ': ') - ('%.12s' * #player_position_text + ': ') - ('%.13s' * #player_position_text + ': ') - ('%.14s' * #player_position_text + ': ') - ('%.15s' * #player_position_text + ': ') - ('%.16s' * #player_position_text + ': ') - ('%.17s' * #player_position_text + ': ') - ('%.18s' * #player_position_text + ': ') - ('%.19s' * #player_position_text + ': ') - ('%.20s' * #player_position_text + ': ') - ('%.21s' * #player_position_text + ': ') - ('%.22s' * #player_position_text + ': ') - ('%.23s' * #player_position_text + ': ') - ('%.24s' * #player_position_text + ': ') - ('%.25s' * #player_position_text + ': ') - ('%.26s' * #player_position_text + ': ') - ('%.27s' * #player_position_text + ': ') - ('%.28s' * #player_position_text + ': ') - ('%.29s' * #player_position_text + ': ') - ('%.30s' * #player_position_text + ': ') - ('%.31s' * #player_position_text + ': ') - ('%.32s' * #player_position_text + ': '))",
+                                                    "target_property_name": "#position_text"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(#position_text - ': ')",
+                                                    "target_property_name": "#coor_x"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(#position_text - (': ' + #coor_x + ', '))",
+                                                    "target_property_name": "#coor_y"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(#position_text - (': ' + #coor_x + ', ' + #coor_y + ', '))",
+                                                    "target_property_name": "#coor_z"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "#player_position_text",
+                                                    "target_property_name": "#text"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "player_chunk_position": {
+                                "type": "image",
+                                "size": [
+                                    "100%c + 6px",
+                                    "100%c + 2px"
+                                ],
+                                "texture": "textures/ui/Black",
+                                "alpha": 0.5,
+                                "controls": [
+                                    {
+                                        "player_chunk_position_text": {
+                                            "type": "label",
+                                            "anchor_from": "bottom_middle",
+                                            "anchor_to": "bottom_middle",
+                                            "layer": 1,
+                                            "enable_profanity_filter": false,
+                                            "color": "$chat_text_color",
+                                            "text": "#text",
+                                            "shadow": true,
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "player_position_text",
+                                                    "source_property_name": "#coor_x",
+                                                    "target_property_name": "#coor_x"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "player_position_text",
+                                                    "source_property_name": "#coor_y",
+                                                    "target_property_name": "#coor_y"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "player_position_text",
+                                                    "source_property_name": "#coor_z",
+                                                    "target_property_name": "#coor_z"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(#coor_x / 16 - (#coor_x < 0))",
+                                                    "target_property_name": "#chunk_coor_x"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(#coor_y / 16 - (#coor_y < 0))",
+                                                    "target_property_name": "#chunk_coor_y"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(#coor_z / 16 - (#coor_z < 0))",
+                                                    "target_property_name": "#chunk_coor_z"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(#coor_x - #chunk_coor_x * 16)",
+                                                    "target_property_name": "#in_chunk_coor_x"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(#coor_y - #chunk_coor_y * 16)",
+                                                    "target_property_name": "#in_chunk_coor_y"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(#coor_z - #chunk_coor_z * 16)",
+                                                    "target_property_name": "#in_chunk_coor_z"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "('Chunk: ' + (#in_chunk_coor_x < 16) * #in_chunk_coor_x + ', ' + (#in_chunk_coor_y < 16) * #in_chunk_coor_y + ', ' + (#in_chunk_coor_z < 16) * #in_chunk_coor_z + ' in ' + #chunk_coor_x + ', ' + #chunk_coor_y + ', ' + #chunk_coor_z)",
+                                                    "target_property_name": "#text"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                        // {
+                        //     "player_dimension_coor": {
+                        //         "type": "image",
+                        //         "size": [
+                        //             "100%c + 6px",
+                        //             "100%c + 2px"
+                        //         ],
+                        //         "texture": "textures/ui/Black",
+                        //         "alpha": 0.5,
+                        //         "controls": [
+                        //             {
+                        //                 "player_dimension_position_text": {
+                        //                     "type": "label",
+                        //                     "anchor_from": "bottom_middle",
+                        //                     "anchor_to": "bottom_middle",
+                        //                     "layer": 1,
+                        //                     "enable_profanity_filter": false,
+                        //                     "color": "$chat_text_color",
+                        //                     "text": "#text",
+                        //                     "shadow": true,
+                        //                     "bindings": [
+                        //                         {
+                        //                             "binding_type": "view",
+                        //                             "source_control_name": "player_position_text",
+                        //                             "source_property_name": "#coor_x",
+                        //                             "target_property_name": "#coor_x"
+                        //                         },
+                        //                         {
+                        //                             "binding_type": "view",
+                        //                             "source_control_name": "player_position_text",
+                        //                             "source_property_name": "#coor_z",
+                        //                             "target_property_name": "#coor_z"
+                        //                         },
+                        //                         {
+                        //                             "binding_type": "view",
+                        //                             "source_property_name": "('Overworld: ' + #coor_x * 8 + ', ' + #coor_z * 8 + ' Nether: ' + #coor_x / 8 + ', ' + #coor_z / 8 )",
+                        //                             "target_property_name": "#text"
+                        //                         }
+                        //                     ]
+                        //                 }
+                        //             }
+                        //         ]
+                        //     }
+                        // }
+                    ]
+                }
+            }
+        ]
+    },
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "item_renderer": {
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_right",
+                            "size": [
+                                "100%c",
+                                "100%cm"
+                            ],
+                            "type": "stack_panel",
+                            "orientation": "horizontal",
+                            "controls": [
+                                {
+                                    "1@inventory_item_renderer": {
+                                        "$item_id": 395 // Clock
+                                    }
+                                },
+                                {
+                                    "2@inventory_item_renderer": {
+                                        "$item_id": 393 // Compass
+                                    }
+                                },
+                                {
+                                    "3@inventory_item_renderer": {
+                                        "$item_id": 653 // Recovery Compass
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "inventory_item_renderer": {
+        "type": "custom",
+        "property_bag": "$viewItemMode",
+        "renderer": "inventory_item_renderer",
+        "size": "$renderer_size",
+        "$viewItemMode|default": {
+            "#item_id_aux": "($item_id * 65536 + $item_data_value)"
+        },
+        "variables": [
+            {
+                "requires": "($item_id < 0)",
+                "$viewItemMode|default": {
+                    "#item_id_aux": "($item_id * 65536 - $item_data_value)"
+                }
+            }
+        ],
+        //Sử dụng 3 variable ở dưới để tùy chỉnh
+        "$renderer_size|default": [
+            16,
+            16
+        ],
+        "$item_id|default": 1, // Dành cho ITEM ID
+        "$item_data_value|default": 0 // Dành cho ITEM DATA VALUE
+    }
+}

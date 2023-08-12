@@ -1,0 +1,50 @@
+{
+    /*
+    "hud_screen": {
+        "is_showing_menu": false,
+        "absorbs_input": false,
+        "send_telemetry": false,
+        "always_accepts_input": true,
+        "cache_screen": true
+    },
+    "hud_content": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "asakizuki@common.cache_toggle_content": {
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "size": [
+                                25,
+                                25
+                            ],
+                            "$binding_toggle_name": "zuki_deptrai"
+                        }
+                    },
+                    {
+                        "testElement": {
+                            "type": "label",
+                            "text": "Never gonna give you up",
+                            "offset": [
+                                0,
+                                -25
+                            ],
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "zuki_deptrai",
+                                    "source_property_name": "#toggle_state",
+                                    "target_property_name": "#visible"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    */
+}

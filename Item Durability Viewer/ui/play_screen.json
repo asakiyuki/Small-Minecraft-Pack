@@ -1,0 +1,48 @@
+{
+    "third_party_server_info_panel/server_info_stack_panel/player_count": {
+        "$number_bindings": [
+            {
+                "binding_name": "$text_icon_number_number",
+                "binding_name_override": "#info_player_count"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(('r' + #info_player_count) - ('r' + '%.1s' * #info_player_count + '/') - ('r' + '%.2s' * #info_player_count + '/') - ('r' + '%.3s' * #info_player_count + '/') - ('r' + '%.4s' * #info_player_count + '/') - ('r' + '%.5s' * #info_player_count + '/') - ('r' + '%.6s' * #info_player_count + '/') - 'r')",
+                "target_property_name": "#max_server_count"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#info_player_count + 'r' - ('/' + #max_server_count + 'r'))",
+                "target_property_name": "#current_server_count"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(('§z' + #current_server_count + (('r' + #info_player_count) = ('r' +#current_server_count) or #max_server_count > 999) + '/' + #max_server_count) - ('true/' + #max_server_count) - 'false' - 'r/')",
+                "target_property_name": "$text_icon_number_number"
+            }
+        ]
+    },
+    "additional_server_info_panel/server_info_stack_panel/player_count": {
+        "$number_bindings": [
+            {
+                "binding_name": "$text_icon_number_number",
+                "binding_name_override": "#info_player_count"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(('r' + #info_player_count) - ('r' + '%.1s' * #info_player_count + '/') - ('r' + '%.2s' * #info_player_count + '/') - ('r' + '%.3s' * #info_player_count + '/') - ('r' + '%.4s' * #info_player_count + '/') - ('r' + '%.5s' * #info_player_count + '/') - ('r' + '%.6s' * #info_player_count + '/') - 'r')",
+                "target_property_name": "#max_server_count"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#info_player_count + 'r' - ('/' + #max_server_count + 'r'))",
+                "target_property_name": "#current_server_count"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(('§z' + #current_server_count + (('r' + #info_player_count) = ('r' +#current_server_count) or #max_server_count > 999) + '/' + #max_server_count) - ('true/' + #max_server_count) - 'false' - 'r/')",
+                "target_property_name": "$text_icon_number_number"
+            }
+        ]
+    }
+}

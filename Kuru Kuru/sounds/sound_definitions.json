@@ -1,0 +1,77 @@
+{
+    "format_version": "1.14.0",
+    "sound_definitions": {
+        "item.trident.riptide_1": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "sounds": [
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/item/trident/kurukuru",
+                    "pitch": 1,
+                    "volume": 1
+                },
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/item/trident/kururin_1",
+                    "pitch": 1,
+                    "volume": 1
+                },
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/item/trident/kururin_2",
+                    "pitch": 1,
+                    "volume": 1
+                }
+            ]
+        },
+        "item.trident.riptide_2": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "sounds": [
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/item/trident/kurukuru",
+                    "pitch": 1,
+                    "volume": 1
+                },
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/item/trident/kururin_1",
+                    "pitch": 1,
+                    "volume": 1
+                },
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/item/trident/kururin_2",
+                    "pitch": 1,
+                    "volume": 1
+                }
+            ]
+        },
+        "item.trident.riptide_3": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "sounds": [
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/item/trident/kurukuru",
+                    "pitch": 1,
+                    "volume": 1
+                },
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/item/trident/kururin_1",
+                    "pitch": 1,
+                    "volume": 1
+                },
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/item/trident/kururin_2",
+                    "pitch": 1,
+                    "volume": 1
+                }
+            ]
+        }
+    }
+}

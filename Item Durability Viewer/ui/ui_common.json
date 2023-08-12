@@ -1,0 +1,97 @@
+{
+    "highlight_slot_panel/highlight/bundle_tooltip": {
+        "bindings": "$hover_text_binding",
+        "$require_durability|default": true,
+        "variables": [
+            {
+                "requires": "$require_durability",
+                "$hover_text_binding": [
+                    {
+                        "binding_name": "$hover_text_binding_name",
+                        "binding_name_override": "#default_hover_text",
+                        "binding_type": "collection",
+                        "binding_collection_name": "$item_collection_name"
+                    },
+                    {
+                        "binding_name": "#hover_items_id",
+                        "binding_name_override": "#hover_items_id",
+                        "binding_type": "collection",
+                        "binding_collection_name": "$item_collection_name"
+                    },
+                    {
+                        "binding_name": "#item_durability_total_amount",
+                        "binding_type": "collection",
+                        "binding_collection_name": "$item_collection_name"
+                    },
+                    {
+                        "binding_name": "#item_durability_current_amount",
+                        "binding_type": "collection",
+                        "binding_collection_name": "$item_collection_name"
+                    },
+                    {
+                        "binding_type": "view",
+                        "source_property_name": "((#item_durability_current_amount > 999) * 1000 + (#item_durability_current_amount > 1999) * 1000 + (#item_durability_current_amount > 2999) * 1000 + (#item_durability_current_amount > 3999) * 1000 + (#item_durability_current_amount > 4999) * 1000 + (#item_durability_current_amount > 5999) * 1000 + (#item_durability_current_amount > 6999) * 1000 + (#item_durability_current_amount > 7999) * 1000 + (#item_durability_current_amount > 8999) * 1000)",
+                        "target_property_name": "#t"
+                    },
+                    {
+                        "binding_type": "view",
+                        "source_property_name": "(#t + ((#item_durability_current_amount - #t) > 99) * 100  + ((#item_durability_current_amount - #t) > 199) * 100 + ((#item_durability_current_amount - #t) > 299) * 100 + ((#item_durability_current_amount - #t) > 399) * 100 + ((#item_durability_current_amount - #t) > 499) * 100 + ((#item_durability_current_amount - #t) > 599) * 100 + ((#item_durability_current_amount - #t) > 699) * 100 + ((#item_durability_current_amount - #t) > 799) * 100 + ((#item_durability_current_amount - #t) > 899) * 100)",
+                        "target_property_name": "#h"
+                    },
+                    {
+                        "binding_type": "view",
+                        "source_property_name": "(#h + ((#item_durability_current_amount - #h) > 9) * 10  + ((#item_durability_current_amount - #h) > 19) * 10 + ((#item_durability_current_amount - #h) > 29) * 10 + ((#item_durability_current_amount - #h) > 39) * 10 + ((#item_durability_current_amount - #h) > 49) * 10 + ((#item_durability_current_amount - #h) > 59) * 10 + ((#item_durability_current_amount - #h) > 69) * 10 + ((#item_durability_current_amount - #h) > 79) * 10 + ((#item_durability_current_amount - #h) > 89) * 10)",
+                        "target_property_name": "#d"
+                    },
+                    {
+                        "binding_type": "view",
+                        "source_property_name": "(#d + ((#item_durability_current_amount - #d) = 1) + ((#item_durability_current_amount - #d) = 2) * 2 + ((#item_durability_current_amount - #d) = 3) * 3 + ((#item_durability_current_amount - #d) = 4) * 4 + ((#item_durability_current_amount - #d) = 5) * 5 + ((#item_durability_current_amount - #d) = 6) * 6 + ((#item_durability_current_amount - #d) = 7) * 7 + ((#item_durability_current_amount - #d) = 8) * 8 + ((#item_durability_current_amount - #d) = 9) * 9)",
+                        "target_property_name": "#current_durability"
+                    },
+                    {
+                        "binding_type": "view",
+                        "source_property_name": "((#item_durability_total_amount > 999) * 1000 + (#item_durability_total_amount > 1999) * 1000 + (#item_durability_total_amount > 2999) * 1000 + (#item_durability_total_amount > 3999) * 1000 + (#item_durability_total_amount > 4999) * 1000 + (#item_durability_total_amount > 5999) * 1000 + (#item_durability_total_amount > 6999) * 1000 + (#item_durability_total_amount > 7999) * 1000 + (#item_durability_total_amount > 8999) * 1000)",
+                        "target_property_name": "#t_total"
+                    },
+                    {
+                        "binding_type": "view",
+                        "source_property_name": "(#t_total + ((#item_durability_total_amount - #t_total) > 99) * 100  + ((#item_durability_total_amount - #t_total) > 199) * 100 + ((#item_durability_total_amount - #t_total) > 299) * 100 + ((#item_durability_total_amount - #t_total) > 399) * 100 + ((#item_durability_total_amount - #t_total) > 499) * 100 + ((#item_durability_total_amount - #t_total) > 599) * 100 + ((#item_durability_total_amount - #t_total) > 699) * 100 + ((#item_durability_total_amount - #t_total) > 799) * 100 + ((#item_durability_total_amount - #t_total) > 899) * 100)",
+                        "target_property_name": "#h_total"
+                    },
+                    {
+                        "binding_type": "view",
+                        "source_property_name": "(#h_total + ((#item_durability_total_amount - #h_total) > 9) * 10  + ((#item_durability_total_amount - #h_total) > 19) * 10 + ((#item_durability_total_amount - #h_total) > 29) * 10 + ((#item_durability_total_amount - #h_total) > 39) * 10 + ((#item_durability_total_amount - #h_total) > 49) * 10 + ((#item_durability_total_amount - #h_total) > 59) * 10 + ((#item_durability_total_amount - #h_total) > 69) * 10 + ((#item_durability_total_amount - #h_total) > 79) * 10 + ((#item_durability_total_amount - #h_total) > 89) * 10)",
+                        "target_property_name": "#d_total"
+                    },
+                    {
+                        "binding_type": "view",
+                        "source_property_name": "(#d_total + ((#item_durability_total_amount - #d_total) = 1) + ((#item_durability_total_amount - #d_total) = 2) * 2 + ((#item_durability_total_amount - #d_total) = 3) * 3 + ((#item_durability_total_amount - #d_total) = 4) * 4 + ((#item_durability_total_amount - #d_total) = 5) * 5 + ((#item_durability_total_amount - #d_total) = 6) * 6 + ((#item_durability_total_amount - #d_total) = 7) * 7 + ((#item_durability_total_amount - #d_total) = 8) * 8 + ((#item_durability_total_amount - #d_total) = 9) * 9)",
+                        "target_property_name": "#total_durability"
+                    },
+                    {
+                        "binding_type": "view",
+                        "source_property_name": "(#default_hover_text + '§o§2\nDurability: ' + (#item_durability_total_amount = 0) + #current_durability + '/' + #total_durability - 'false' - ('§o§2\nDurability: true' + #current_durability + '/' + #total_durability))",
+                        "target_property_name": "#hover_text"
+                    }
+                ]
+            },
+            {
+                "requires": "(not $require_durability)",
+                "$hover_text_binding": [
+                    {
+                        "binding_name": "$hover_text_binding_name",
+                        "binding_name_override": "#hover_text",
+                        "binding_type": "collection",
+                        "binding_collection_name": "$item_collection_name"
+                    },
+                    {
+                        "binding_name": "#hover_items_id",
+                        "binding_name_override": "#hover_items_id",
+                        "binding_type": "collection",
+                        "binding_collection_name": "$item_collection_name"
+                    }
+                ]
+            }
+        ]
+    }
+}

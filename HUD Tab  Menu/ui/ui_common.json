@@ -1,0 +1,74 @@
+{
+    "inventory_slot_overlay": {
+        "type": "panel",
+        "size": [
+            21,
+            21
+        ],
+        "layer": 10,
+        "$stack_count_required": true,
+        "$item_collection_name": "hotbar_items",
+        "$durability_bar_required": true,
+        "$storage_bar_required": true,
+        "controls": [
+            {
+                "inventory_slot": {
+                    "type": "image",
+                    "size": [
+                        20,
+                        20
+                    ],
+                    "texture": "textures/ui/Black",
+                    "alpha": 0.7,
+                    "controls": [
+                        {
+                            "itemRenderer": {
+                                "type": "panel",
+                                "size": [
+                                    18,
+                                    18
+                                ],
+                                "controls": [
+                                    {
+                                        "itemIcon@common.item_renderer": {}
+                                    },
+                                    {
+                                        "stack_count@common.stack_count_label": {}
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "durability_bar@common.durability_bar": {
+                                "layer": 8
+                            }
+                        },
+                        {
+                            "storage_bar@common.storage_bar": {
+                                "layer": 8
+                            }
+                        },
+                        {
+                            "item_lock_cell_image@common.item_lock_cell_image": {
+                                "layer": 2
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "inventory_overlay": {
+        "type": "grid",
+        "grid_dimensions": [
+            9,
+            4
+        ],
+        "size": [
+            189,
+            84
+        ],
+        "collection_name": "hotbar_items",
+        "grid_item_template": "common.inventory_slot_overlay"
+    }
+}

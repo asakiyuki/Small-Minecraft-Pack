@@ -1,0 +1,307 @@
+{
+    "hud_screen": {
+        "is_showing_menu": false,
+        "absorbs_input": false,
+        "send_telemetry": false,
+        "always_accepts_input": true,
+        "is_modal": true,
+        "button_mappings": []
+    },
+    "hud_content": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "mod_menu@menu_screen.menu_content": {}
+                    },
+                    {
+                        "hotbar_key": {
+                            "type": "input_panel",
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "asakizuki:hotbar_key",
+                                    "source_property_name": "(not #toggle_state)",
+                                    "target_property_name": "#visible"
+                                }
+                            ],
+                            "button_mappings": [
+                                {
+                                    "from_button_id": "button.slot1",
+                                    "to_button_id": "button.slot_1",
+                                    "mapping_type": "global"
+                                },
+                                {
+                                    "from_button_id": "button.slot2",
+                                    "to_button_id": "button.slot_2",
+                                    "mapping_type": "global"
+                                },
+                                {
+                                    "from_button_id": "button.slot3",
+                                    "to_button_id": "button.slot_3",
+                                    "mapping_type": "global"
+                                },
+                                {
+                                    "from_button_id": "button.slot4",
+                                    "to_button_id": "button.slot_4",
+                                    "mapping_type": "global"
+                                },
+                                {
+                                    "from_button_id": "button.slot5",
+                                    "to_button_id": "button.slot_5",
+                                    "mapping_type": "global"
+                                },
+                                {
+                                    "from_button_id": "button.slot6",
+                                    "to_button_id": "button.slot_6",
+                                    "mapping_type": "global"
+                                },
+                                {
+                                    "from_button_id": "button.slot7",
+                                    "to_button_id": "button.slot_7",
+                                    "mapping_type": "global"
+                                },
+                                {
+                                    "from_button_id": "button.slot8",
+                                    "to_button_id": "button.slot_8",
+                                    "mapping_type": "global"
+                                },
+                                {
+                                    "from_button_id": "button.slot9",
+                                    "to_button_id": "button.slot_9",
+                                    "mapping_type": "global"
+                                },
+                                {
+                                    "from_button_id": "button.slot0",
+                                    "to_button_id": "button.slot_0",
+                                    "mapping_type": "global"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "paper_doll_key": {
+                            "type": "input_panel",
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "asakizuki:paper_doll",
+                                    "source_property_name": "(not #toggle_state)",
+                                    "target_property_name": "#visible"
+                                }
+                            ],
+                            "button_mappings": [
+                                {
+                                    "from_button_id": "button.hide_paperdoll",
+                                    "to_button_id": "button.hide_paperdoll_hud",
+                                    "mapping_type": "global"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "hide_tooltips": {
+                            "type": "input_panel",
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "asakizuki:hide_tooltips",
+                                    "source_property_name": "(not #toggle_state)",
+                                    "target_property_name": "#visible"
+                                }
+                            ],
+                            "button_mappings": [
+                                {
+                                    "from_button_id": "button.hide_tooltips",
+                                    "to_button_id": "button.hide_tooltips_hud",
+                                    "mapping_type": "global"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "hide_gui": {
+                            "type": "input_panel",
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "asakizuki:hide_gui",
+                                    "source_property_name": "(not #toggle_state)",
+                                    "target_property_name": "#visible"
+                                }
+                            ],
+                            "button_mappings": [
+                                {
+                                    "from_button_id": "button.hide_gui",
+                                    "to_button_id": "button.hide_gui_all",
+                                    "mapping_type": "global"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "hotbar_switch": {
+                            "type": "input_panel",
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "asakizuki:hotbar_switch",
+                                    "source_property_name": "(not #toggle_state)",
+                                    "target_property_name": "#visible"
+                                }
+                            ],
+                            "button_mappings": [
+                                {
+                                    "from_button_id": "button.inventory_left",
+                                    "to_button_id": "button.hotbar_inventory_left",
+                                    "mapping_type": "global"
+                                },
+                                {
+                                    "from_button_id": "button.inventory_right",
+                                    "to_button_id": "button.hotbar_inventory_right",
+                                    "mapping_type": "global"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "scoreboard": {
+                            "type": "input_panel",
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "asakizuki:scoreboard",
+                                    "source_property_name": "(not #toggle_state)",
+                                    "target_property_name": "#visible"
+                                }
+                            ],
+                            "button_mappings": [
+                                {
+                                    "from_button_id": "button.scoreboard",
+                                    "to_button_id": "button.scoreboard",
+                                    "mapping_type": "global"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "centered_gui_elements_at_bottom_middle": {
+        "bindings": [
+            {
+                "binding_name": "#hud_visible_centered",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "asakizuki:hide_hotbar",
+                "target_property_name": "#content",
+                "source_property_name": "(not #toggle_state)"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#hud_visible_centered and #content)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "not_centered_gui_elements": {
+        "bindings": [
+            {
+                "binding_name": "#hud_visible_not_centered",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "asakizuki:hide_hotbar",
+                "target_property_name": "#content",
+                "source_property_name": "(not #toggle_state)"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#hud_visible_not_centered and #content)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "root_panel/exp_rend": {
+        "bindings": [
+            {
+                "binding_name": "#hotbar_visible_not_centered",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "asakizuki:hide_hotbar",
+                "target_property_name": "#content",
+                "source_property_name": "(not #toggle_state)"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#hotbar_visible_not_centered and #content)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "root_panel/exp_rend_resizable": {
+        "bindings": [
+            {
+                "binding_name": "#hotbar_visible_not_centered_resizable",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "asakizuki:hide_hotbar",
+                "target_property_name": "#content",
+                "source_property_name": "#toggle_state"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#hotbar_visible_not_centered_resizable and #content)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "hotbar_elipses_button": {
+        "bindings": [
+            {
+                "binding_name": "#inventory_touch_button",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "asakizuki:show_inventory_button",
+                "target_property_name": "#show_inventory_button",
+                "source_property_name": "#toggle_state"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#inventory_touch_button or #show_inventory_button)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "hotbar_elipses_panel_right_content": {
+        "bindings": [
+            {
+                "binding_name": "#hotbar_elipses_right_visible",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "asakizuki:show_inventory_button",
+                "target_property_name": "#show_inventory_button",
+                "source_property_name": "#toggle_state"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#hotbar_elipses_right_visible or #show_inventory_button)",
+                "target_property_name": "#visible"
+            }
+        ]
+    }
+}

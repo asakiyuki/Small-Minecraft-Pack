@@ -1,0 +1,1714 @@
+{
+    "vignette_renderer": {
+        "visible": false
+    },
+    "inventory_item_amount": {
+        "size": [
+            0,
+            0
+        ],
+        "type": "panel",
+        "$item_id|default": 1,
+        "bindings": [
+            {
+                "binding_name": "#item_id_aux",
+                "binding_type": "collection",
+                "binding_collection_name": "hotbar_items"
+            },
+            {
+                "binding_name": "#inventory_stack_count",
+                "binding_type": "collection",
+                "binding_collection_name": "hotbar_items"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "( (not (#inventory_stack_count * 1 > 1) * (not (#item_id_aux = -1) + 0)) + #inventory_stack_count * 1 )",
+                "target_property_name": "#real_item_stack_count"
+            },
+            {
+                "binding_name": "#slot_selected",
+                "binding_type": "collection",
+                "binding_collection_name": "hotbar_items"
+            }
+        ]
+    },
+    "get_total_item_count": {
+        "type": "stack_panel",
+        "size": [
+            "100%cm",
+            "100%cm"
+        ],
+        "$item_count_element|default": "inventory_item_amount",
+        "collection_name": "hotbar_items",
+        "controls": [
+            {
+                "hotbar_slot_0@$item_count_element": {
+                    "collection_index": 0
+                }
+            },
+            {
+                "hotbar_slot_1@$item_count_element": {
+                    "collection_index": 1
+                }
+            },
+            {
+                "hotbar_slot_2@$item_count_element": {
+                    "collection_index": 2
+                }
+            },
+            {
+                "hotbar_slot_3@$item_count_element": {
+                    "collection_index": 3
+                }
+            },
+            {
+                "hotbar_slot_4@$item_count_element": {
+                    "collection_index": 4
+                }
+            },
+            {
+                "hotbar_slot_5@$item_count_element": {
+                    "collection_index": 5
+                }
+            },
+            {
+                "hotbar_slot_6@$item_count_element": {
+                    "collection_index": 6
+                }
+            },
+            {
+                "hotbar_slot_7@$item_count_element": {
+                    "collection_index": 7
+                }
+            },
+            {
+                "hotbar_slot_8@$item_count_element": {
+                    "collection_index": 8
+                }
+            },
+            {
+                "inventory_slot_0@$item_count_element": {
+                    "collection_index": 9
+                }
+            },
+            {
+                "inventory_slot_1@$item_count_element": {
+                    "collection_index": 10
+                }
+            },
+            {
+                "inventory_slot_2@$item_count_element": {
+                    "collection_index": 11
+                }
+            },
+            {
+                "inventory_slot_3@$item_count_element": {
+                    "collection_index": 12
+                }
+            },
+            {
+                "inventory_slot_4@$item_count_element": {
+                    "collection_index": 13
+                }
+            },
+            {
+                "inventory_slot_5@$item_count_element": {
+                    "collection_index": 14
+                }
+            },
+            {
+                "inventory_slot_6@$item_count_element": {
+                    "collection_index": 15
+                }
+            },
+            {
+                "inventory_slot_7@$item_count_element": {
+                    "collection_index": 16
+                }
+            },
+            {
+                "inventory_slot_8@$item_count_element": {
+                    "collection_index": 17
+                }
+            },
+            {
+                "inventory_slot_9@$item_count_element": {
+                    "collection_index": 18
+                }
+            },
+            {
+                "inventory_slot_10@$item_count_element": {
+                    "collection_index": 19
+                }
+            },
+            {
+                "inventory_slot_11@$item_count_element": {
+                    "collection_index": 20
+                }
+            },
+            {
+                "inventory_slot_12@$item_count_element": {
+                    "collection_index": 21
+                }
+            },
+            {
+                "inventory_slot_13@$item_count_element": {
+                    "collection_index": 22
+                }
+            },
+            {
+                "inventory_slot_14@$item_count_element": {
+                    "collection_index": 23
+                }
+            },
+            {
+                "inventory_slot_15@$item_count_element": {
+                    "collection_index": 24
+                }
+            },
+            {
+                "inventory_slot_16@$item_count_element": {
+                    "collection_index": 25
+                }
+            },
+            {
+                "inventory_slot_17@$item_count_element": {
+                    "collection_index": 26
+                }
+            },
+            {
+                "inventory_slot_18@$item_count_element": {
+                    "collection_index": 27
+                }
+            },
+            {
+                "inventory_slot_19@$item_count_element": {
+                    "collection_index": 28
+                }
+            },
+            {
+                "inventory_slot_20@$item_count_element": {
+                    "collection_index": 29
+                }
+            },
+            {
+                "inventory_slot_21@$item_count_element": {
+                    "collection_index": 30
+                }
+            },
+            {
+                "inventory_slot_22@$item_count_element": {
+                    "collection_index": 31
+                }
+            },
+            {
+                "inventory_slot_23@$item_count_element": {
+                    "collection_index": 32
+                }
+            },
+            {
+                "inventory_slot_24@$item_count_element": {
+                    "collection_index": 33
+                }
+            },
+            {
+                "inventory_slot_25@$item_count_element": {
+                    "collection_index": 34
+                }
+            },
+            {
+                "inventory_slot_26@$item_count_element": {
+                    "collection_index": 35
+                }
+            },
+            {
+                "item_stack_label": {
+                    "type": "label",
+                    "text": "#text",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_0",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_hotbar_slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_0",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_hotbar_slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_0",
+                            "source_property_name": "(#slot_selected * 1)",
+                            "target_property_name": "#selected_hotbar_slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_1",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_hotbar_slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_1",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_hotbar_slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_1",
+                            "source_property_name": "(#slot_selected * 1)",
+                            "target_property_name": "#selected_hotbar_slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_2",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_hotbar_slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_2",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_hotbar_slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_2",
+                            "source_property_name": "(#slot_selected * 1)",
+                            "target_property_name": "#selected_hotbar_slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_3",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_hotbar_slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_3",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_hotbar_slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_3",
+                            "source_property_name": "(#slot_selected * 1)",
+                            "target_property_name": "#selected_hotbar_slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_4",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_hotbar_slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_4",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_hotbar_slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_4",
+                            "source_property_name": "(#slot_selected * 1)",
+                            "target_property_name": "#selected_hotbar_slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_5",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_hotbar_slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_5",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_hotbar_slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_5",
+                            "source_property_name": "(#slot_selected * 1)",
+                            "target_property_name": "#selected_hotbar_slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_6",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_hotbar_slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_6",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_hotbar_slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_6",
+                            "source_property_name": "(#slot_selected * 1)",
+                            "target_property_name": "#selected_hotbar_slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_7",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_hotbar_slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_7",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_hotbar_slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_7",
+                            "source_property_name": "(#slot_selected * 1)",
+                            "target_property_name": "#selected_hotbar_slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_8",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_hotbar_slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_8",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_hotbar_slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "hotbar_slot_8",
+                            "source_property_name": "(#slot_selected * 1)",
+                            "target_property_name": "#selected_hotbar_slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_0",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_0",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_1",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_1",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_2",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_2",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_3",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_3",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_4",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_4",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_5",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_5",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_6",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_6",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_7",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_7",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_8",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_8",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_9",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_9"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_9",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_9"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_10",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_10"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_10",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_10"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_11",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_11"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_11",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_11"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_12",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_12"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_12",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_12"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_13",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_13"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_13",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_13"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_14",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_14"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_14",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_14"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_15",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_15"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_15",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_15"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_16",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_16"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_16",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_16"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_17",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_17"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_17",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_17"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_18",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_18"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_18",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_18"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_19",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_19"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_19",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_19"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_20",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_20"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_20",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_20"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_21",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_21"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_21",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_21"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_22",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_22"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_22",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_22"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_23",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_23"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_23",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_23"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_24",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_24"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_24",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_24"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_25",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_25"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_25",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_25"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_26",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_inventory_slot_26"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "inventory_slot_26",
+                            "source_property_name": "#real_item_stack_count",
+                            "target_property_name": "#count_inventory_slot_26"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#selected_hotbar_slot_0 * #item_hotbar_slot_0) + (#selected_hotbar_slot_1 * #item_hotbar_slot_1) + (#selected_hotbar_slot_2 * #item_hotbar_slot_2) + (#selected_hotbar_slot_3 * #item_hotbar_slot_3) + (#selected_hotbar_slot_4 * #item_hotbar_slot_4) + (#selected_hotbar_slot_5 * #item_hotbar_slot_5) + (#selected_hotbar_slot_6 * #item_hotbar_slot_6) + (#selected_hotbar_slot_7 * #item_hotbar_slot_7) + (#selected_hotbar_slot_8 * #item_hotbar_slot_8))",
+                            "target_property_name": "#selected_slot_item_aux_id"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#selected_hotbar_slot_0 * #count_hotbar_slot_0) + (#selected_hotbar_slot_1 * #count_hotbar_slot_1) + (#selected_hotbar_slot_2 * #count_hotbar_slot_2) + (#selected_hotbar_slot_3 * #count_hotbar_slot_3) + (#selected_hotbar_slot_4 * #count_hotbar_slot_4) + (#selected_hotbar_slot_5 * #count_hotbar_slot_5) + (#selected_hotbar_slot_6 * #count_hotbar_slot_6) + (#selected_hotbar_slot_7 * #count_hotbar_slot_7) + (#selected_hotbar_slot_8 * #count_hotbar_slot_8))",
+                            "target_property_name": "#selected_slot_item_count"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#selected_slot_item_aux_id = #item_hotbar_slot_0) * #count_hotbar_slot_0) + ((#selected_slot_item_aux_id = #item_hotbar_slot_1) * #count_hotbar_slot_1) + ((#selected_slot_item_aux_id = #item_hotbar_slot_2) * #count_hotbar_slot_2) + ((#selected_slot_item_aux_id = #item_hotbar_slot_3) * #count_hotbar_slot_3) + ((#selected_slot_item_aux_id = #item_hotbar_slot_4) * #count_hotbar_slot_4) + ((#selected_slot_item_aux_id = #item_hotbar_slot_5) * #count_hotbar_slot_5) + ((#selected_slot_item_aux_id = #item_hotbar_slot_6) * #count_hotbar_slot_6) + ((#selected_slot_item_aux_id = #item_hotbar_slot_7) * #count_hotbar_slot_7) + ((#selected_slot_item_aux_id = #item_hotbar_slot_8) * #count_hotbar_slot_8) + ((#selected_slot_item_aux_id = #item_inventory_slot_0) * #count_inventory_slot_0) + ((#selected_slot_item_aux_id = #item_inventory_slot_1) * #count_inventory_slot_1) + ((#selected_slot_item_aux_id = #item_inventory_slot_2) * #count_inventory_slot_2) + ((#selected_slot_item_aux_id = #item_inventory_slot_3) * #count_inventory_slot_3) + ((#selected_slot_item_aux_id = #item_inventory_slot_4) * #count_inventory_slot_4) + ((#selected_slot_item_aux_id = #item_inventory_slot_5) * #count_inventory_slot_5) + ((#selected_slot_item_aux_id = #item_inventory_slot_6) * #count_inventory_slot_6) + ((#selected_slot_item_aux_id = #item_inventory_slot_7) * #count_inventory_slot_7) + ((#selected_slot_item_aux_id = #item_inventory_slot_8) * #count_inventory_slot_8) + ((#selected_slot_item_aux_id = #item_inventory_slot_9) * #count_inventory_slot_9) + ((#selected_slot_item_aux_id = #item_inventory_slot_10) * #count_inventory_slot_10) + ((#selected_slot_item_aux_id = #item_inventory_slot_11) * #count_inventory_slot_11) + ((#selected_slot_item_aux_id = #item_inventory_slot_12) * #count_inventory_slot_12) + ((#selected_slot_item_aux_id = #item_inventory_slot_13) * #count_inventory_slot_13) + ((#selected_slot_item_aux_id = #item_inventory_slot_14) * #count_inventory_slot_14) + ((#selected_slot_item_aux_id = #item_inventory_slot_15) * #count_inventory_slot_15) + ((#selected_slot_item_aux_id = #item_inventory_slot_16) * #count_inventory_slot_16) + ((#selected_slot_item_aux_id = #item_inventory_slot_17) * #count_inventory_slot_17) + ((#selected_slot_item_aux_id = #item_inventory_slot_18) * #count_inventory_slot_18) + ((#selected_slot_item_aux_id = #item_inventory_slot_19) * #count_inventory_slot_19) + ((#selected_slot_item_aux_id = #item_inventory_slot_20) * #count_inventory_slot_20) + ((#selected_slot_item_aux_id = #item_inventory_slot_21) * #count_inventory_slot_21) + ((#selected_slot_item_aux_id = #item_inventory_slot_22) * #count_inventory_slot_22) + ((#selected_slot_item_aux_id = #item_inventory_slot_23) * #count_inventory_slot_23) + ((#selected_slot_item_aux_id = #item_inventory_slot_24) * #count_inventory_slot_24) + ((#selected_slot_item_aux_id = #item_inventory_slot_25) * #count_inventory_slot_25) + ((#selected_slot_item_aux_id = #item_inventory_slot_26) * #count_inventory_slot_26))",
+                            "target_property_name": "#total_mainhand_item_count"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#item_hotbar_slot_0 = -1) + 0) + ((#item_hotbar_slot_1 = -1) + 0) + ((#item_hotbar_slot_2 = -1) + 0) + ((#item_hotbar_slot_3 = -1) + 0) + ((#item_hotbar_slot_4 = -1) + 0) + ((#item_hotbar_slot_5 = -1) + 0) + ((#item_hotbar_slot_6 = -1) + 0) + ((#item_hotbar_slot_7 = -1) + 0) + ((#item_hotbar_slot_8 = -1) + 0) + ((#item_inventory_slot_0 = -1) + 0) + ((#item_inventory_slot_1 = -1) + 0) + ((#item_inventory_slot_2 = -1) + 0) + ((#item_inventory_slot_3 = -1) + 0) + ((#item_inventory_slot_4 = -1) + 0) + ((#item_inventory_slot_5 = -1) + 0) + ((#item_inventory_slot_6 = -1) + 0) + ((#item_inventory_slot_7 = -1) + 0) + ((#item_inventory_slot_8 = -1) + 0) + ((#item_inventory_slot_9 = -1) + 0) + ((#item_inventory_slot_10 = -1) + 0) + ((#item_inventory_slot_11 = -1) + 0) + ((#item_inventory_slot_12 = -1) + 0) + ((#item_inventory_slot_13 = -1) + 0) + ((#item_inventory_slot_14 = -1) + 0) + ((#item_inventory_slot_15 = -1) + 0) + ((#item_inventory_slot_16 = -1) + 0) + ((#item_inventory_slot_17 = -1) + 0) + ((#item_inventory_slot_18 = -1) + 0) + ((#item_inventory_slot_19 = -1) + 0) + ((#item_inventory_slot_20 = -1) + 0) + ((#item_inventory_slot_21 = -1) + 0) + ((#item_inventory_slot_22 = -1) + 0) + ((#item_inventory_slot_23 = -1) + 0) + ((#item_inventory_slot_24 = -1) + 0) + ((#item_inventory_slot_25 = -1) + 0) + ((#item_inventory_slot_26 = -1) + 0))",
+                            "target_property_name": "#free_slot_counter"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(((#item_hotbar_slot_0 = #selected_slot_item_aux_id) + 0) + ((#item_hotbar_slot_1 = #selected_slot_item_aux_id) + 0) + ((#item_hotbar_slot_2 = #selected_slot_item_aux_id) + 0) + ((#item_hotbar_slot_3 = #selected_slot_item_aux_id) + 0) + ((#item_hotbar_slot_4 = #selected_slot_item_aux_id) + 0) + ((#item_hotbar_slot_5 = #selected_slot_item_aux_id) + 0) + ((#item_hotbar_slot_6 = #selected_slot_item_aux_id) + 0) + ((#item_hotbar_slot_7 = #selected_slot_item_aux_id) + 0) + ((#item_hotbar_slot_8 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_0 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_1 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_2 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_3 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_4 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_5 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_6 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_7 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_8 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_9 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_10 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_11 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_12 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_13 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_14 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_15 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_16 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_17 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_18 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_19 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_20 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_21 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_22 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_23 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_24 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_25 = #selected_slot_item_aux_id) + 0) + ((#item_inventory_slot_26 = #selected_slot_item_aux_id) + 0))",
+                            "target_property_name": "#same_item_slot_counter"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(§zx + #selected_slot_item_count + ' (x' + #total_mainhand_item_count + '/' + #same_item_slot_counter + ')')",
+                            "target_property_name": "#text"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "item_counter_by_id": {
+        "type": "label",
+        "text": "#text",
+        "$item_id|default": 1,
+        "property_bag": {
+            "#item_id": "$item_id"
+        },
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_0",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_hotbar_slot_0"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_0",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_hotbar_slot_0"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_1",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_hotbar_slot_1"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_1",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_hotbar_slot_1"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_2",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_hotbar_slot_2"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_2",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_hotbar_slot_2"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_3",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_hotbar_slot_3"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_3",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_hotbar_slot_3"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_4",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_hotbar_slot_4"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_4",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_hotbar_slot_4"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_5",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_hotbar_slot_5"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_5",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_hotbar_slot_5"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_6",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_hotbar_slot_6"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_6",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_hotbar_slot_6"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_7",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_hotbar_slot_7"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_7",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_hotbar_slot_7"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_8",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_hotbar_slot_8"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hotbar_slot_8",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_hotbar_slot_8"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_0",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_0"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_0",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_0"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_1",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_1"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_1",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_1"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_2",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_2"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_2",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_2"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_3",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_3"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_3",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_3"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_4",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_4"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_4",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_4"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_5",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_5"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_5",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_5"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_6",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_6"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_6",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_6"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_7",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_7"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_7",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_7"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_8",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_8"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_8",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_8"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_9",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_9"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_9",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_9"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_10",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_10"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_10",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_10"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_11",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_11"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_11",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_11"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_12",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_12"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_12",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_12"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_13",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_13"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_13",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_13"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_14",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_14"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_14",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_14"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_15",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_15"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_15",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_15"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_16",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_16"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_16",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_16"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_17",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_17"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_17",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_17"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_18",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_18"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_18",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_18"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_19",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_19"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_19",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_19"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_20",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_20"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_20",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_20"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_21",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_21"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_21",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_21"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_22",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_22"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_22",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_22"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_23",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_23"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_23",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_23"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_24",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_24"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_24",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_24"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_25",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_25"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_25",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_25"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_26",
+                "source_property_name": "#item_id_aux",
+                "target_property_name": "#item_inventory_slot_26"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "inventory_slot_26",
+                "source_property_name": "#real_item_stack_count",
+                "target_property_name": "#count_inventory_slot_26"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(§zx + (((#item_id = #item_hotbar_slot_0 / 65536 + 0) * #count_hotbar_slot_0) + ((#item_id = #item_hotbar_slot_1 / 65536 + 0) * #count_hotbar_slot_1) + ((#item_id = #item_hotbar_slot_2 / 65536 + 0) * #count_hotbar_slot_2) + ((#item_id = #item_hotbar_slot_3 / 65536 + 0) * #count_hotbar_slot_3) + ((#item_id = #item_hotbar_slot_4 / 65536 + 0) * #count_hotbar_slot_4) + ((#item_id = #item_hotbar_slot_5 / 65536 + 0) * #count_hotbar_slot_5) + ((#item_id = #item_hotbar_slot_6 / 65536 + 0) * #count_hotbar_slot_6) + ((#item_id = #item_hotbar_slot_7 / 65536 + 0) * #count_hotbar_slot_7) + ((#item_id = #item_hotbar_slot_8 / 65536 + 0) * #count_hotbar_slot_8) + ((#item_id = #item_inventory_slot_0 / 65536 + 0) * #count_inventory_slot_0) + ((#item_id = #item_inventory_slot_1 / 65536 + 0) * #count_inventory_slot_1) + ((#item_id = #item_inventory_slot_2 / 65536 + 0) * #count_inventory_slot_2) + ((#item_id = #item_inventory_slot_3 / 65536 + 0) * #count_inventory_slot_3) + ((#item_id = #item_inventory_slot_4 / 65536 + 0) * #count_inventory_slot_4) + ((#item_id = #item_inventory_slot_5 / 65536 + 0) * #count_inventory_slot_5) + ((#item_id = #item_inventory_slot_6 / 65536 + 0) * #count_inventory_slot_6) + ((#item_id = #item_inventory_slot_7 / 65536 + 0) * #count_inventory_slot_7) + ((#item_id = #item_inventory_slot_8 / 65536 + 0) * #count_inventory_slot_8) + ((#item_id = #item_inventory_slot_9 / 65536 + 0) * #count_inventory_slot_9) + ((#item_id = #item_inventory_slot_10 / 65536 + 0) * #count_inventory_slot_10) + ((#item_id = #item_inventory_slot_11 / 65536 + 0) * #count_inventory_slot_11) + ((#item_id = #item_inventory_slot_12 / 65536 + 0) * #count_inventory_slot_12) + ((#item_id = #item_inventory_slot_13 / 65536 + 0) * #count_inventory_slot_13) + ((#item_id = #item_inventory_slot_14 / 65536 + 0) * #count_inventory_slot_14) + ((#item_id = #item_inventory_slot_15 / 65536 + 0) * #count_inventory_slot_15) + ((#item_id = #item_inventory_slot_16 / 65536 + 0) * #count_inventory_slot_16) + ((#item_id = #item_inventory_slot_17 / 65536 + 0) * #count_inventory_slot_17) + ((#item_id = #item_inventory_slot_18 / 65536 + 0) * #count_inventory_slot_18) + ((#item_id = #item_inventory_slot_19 / 65536 + 0) * #count_inventory_slot_19) + ((#item_id = #item_inventory_slot_20 / 65536 + 0) * #count_inventory_slot_20) + ((#item_id = #item_inventory_slot_21 / 65536 + 0) * #count_inventory_slot_21) + ((#item_id = #item_inventory_slot_22 / 65536 + 0) * #count_inventory_slot_22) + ((#item_id = #item_inventory_slot_23 / 65536 + 0) * #count_inventory_slot_23) + ((#item_id = #item_inventory_slot_24 / 65536 + 0) * #count_inventory_slot_24) + ((#item_id = #item_inventory_slot_25 / 65536 + 0) * #count_inventory_slot_25) + ((#item_id = #item_inventory_slot_26 / 65536 + 0) * #count_inventory_slot_26)))",
+                "target_property_name": "#text"
+            }
+        ]
+    },
+    "item_counter_by_id_2": {
+        "type": "image",
+        "size": [
+            "100%cm + 4px",
+            "100%cm + 4px"
+        ],
+        "texture": "textures/ui/hud_tip_text_background",
+        "alpha": 0.7,
+        "layer": 0,
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "item_stack_label",
+                "source_property_name": "((#selected_slot_item_aux_id / 65536 + 0 = 302) or (#selected_slot_item_aux_id / 65536 + 0 = 582))",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "stack": {
+                    "type": "stack_panel",
+                    "size": [
+                        "100%c",
+                        "100%cm"
+                    ],
+                    "orientation": "horizontal",
+                    "controls": [
+                        {
+                            "item_renderer": {
+                                "layer": 1,
+                                "type": "custom",
+                                "size": [
+                                    16,
+                                    16
+                                ],
+                                "renderer": "inventory_item_renderer",
+                                "property_bag": {
+                                    "#item_id_aux": "($item_id * 65536)"
+                                }
+                            }
+                        },
+                        {
+                            "item_count_panel": {
+                                "size": [
+                                    "100%cm + 4px",
+                                    16
+                                ],
+                                "type": "panel",
+                                "layer": 1,
+                                "controls": [
+                                    {
+                                        "get_total_item_count@item_counter_by_id": {
+                                            "anchor_from": "bottom_right",
+                                            "anchor_to": "bottom_right"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "item_id_viewer": {
+        "type": "label",
+        "text": "#text",
+        "layer": 2,
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "item_stack_label",
+                "source_property_name": "#selected_slot_item_aux_id",
+                "target_property_name": "#x"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#x - (#x < 0) * 65535) / 65536)",
+                "target_property_name": "#item_id"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#x - (#item_id * 65536))",
+                "target_property_name": "#item_data_value"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#item_data_value > 32767)",
+                "target_property_name": "#enchant"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#enchant + ' [Enchanted]' - 'true' - 'false [Enchanted]')",
+                "target_property_name": "#item_has_enchant"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(('Item ID: ' + #item_id + ':' + (#item_data_value - (#enchant * 32768))) + #item_has_enchant)",
+                "target_property_name": "#text"
+            }
+        ]
+    },
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "arrow_counter@item_counter_by_id_2": {
+                            "offset": [
+                                -5,
+                                -28
+                            ],
+                            "$item_id": 303,
+                            "anchor_from": "bottom_right",
+                            "anchor_to": "bottom_right"
+                        }
+                    },
+                    {
+                        "total_item_count": {
+                            "type": "stack_panel",
+                            "orientation": "horizontal",
+                            "size": [
+                                "100%c",
+                                "100%cm"
+                            ],
+                            "offset": [
+                                -5,
+                                -5
+                            ],
+                            "anchor_from": "bottom_right",
+                            "anchor_to": "bottom_right",
+                            "controls": [
+                                {
+                                    "mainhand_slot": {
+                                        "type": "image",
+                                        "size": [
+                                            "100%cm + 4px",
+                                            "100%cm + 4px"
+                                        ],
+                                        "anchor_from": "bottom_right",
+                                        "anchor_to": "bottom_right",
+                                        "texture": "textures/ui/hud_tip_text_background",
+                                        "alpha": 0.7,
+                                        "layer": 0,
+                                        "bindings": [
+                                            {
+                                                "binding_type": "view",
+                                                "source_control_name": "item_stack_label",
+                                                "source_property_name": "(not (#selected_slot_item_aux_id = -1))",
+                                                "target_property_name": "#visible"
+                                            }
+                                        ],
+                                        "controls": [
+                                            {
+                                                "stack": {
+                                                    "type": "stack_panel",
+                                                    "size": [
+                                                        "100%c",
+                                                        "100%cm"
+                                                    ],
+                                                    "orientation": "horizontal",
+                                                    "controls": [
+                                                        {
+                                                            "item_renderer": {
+                                                                "layer": 1,
+                                                                "type": "custom",
+                                                                "size": [
+                                                                    16,
+                                                                    16
+                                                                ],
+                                                                "renderer": "inventory_item_renderer",
+                                                                "bindings": [
+                                                                    {
+                                                                        "binding_type": "view",
+                                                                        "source_control_name": "item_stack_label",
+                                                                        "source_property_name": "#selected_slot_item_aux_id",
+                                                                        "target_property_name": "#item_id_aux"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "item_count_panel": {
+                                                                "size": [
+                                                                    "100%cm + 4px",
+                                                                    16
+                                                                ],
+                                                                "layer": 1,
+                                                                "type": "panel",
+                                                                "controls": [
+                                                                    {
+                                                                        "get_total_item_count@get_total_item_count": {
+                                                                            "anchor_from": "bottom_right",
+                                                                            "anchor_to": "bottom_right"
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "free_slot_counter": {
+                                        "type": "panel",
+                                        "size": [
+                                            "100%cm + 4px",
+                                            "100%sm"
+                                        ],
+                                        "controls": [
+                                            {
+                                                "stack": {
+                                                    "type": "image",
+                                                    "size": [
+                                                        "100%cm + 4px",
+                                                        "100%cm + 4px"
+                                                    ],
+                                                    "anchor_from": "bottom_right",
+                                                    "anchor_to": "bottom_right",
+                                                    "texture": "textures/ui/hud_tip_text_background",
+                                                    "alpha": 0.7,
+                                                    "layer": 0,
+                                                    "controls": [
+                                                        {
+                                                            "stack": {
+                                                                "type": "stack_panel",
+                                                                "size": [
+                                                                    "100%c",
+                                                                    "100%cm"
+                                                                ],
+                                                                "orientation": "horizontal",
+                                                                "controls": [
+                                                                    {
+                                                                        "item_renderer": {
+                                                                            "layer": 1,
+                                                                            "type": "custom",
+                                                                            "size": [
+                                                                                16,
+                                                                                16
+                                                                            ],
+                                                                            "renderer": "inventory_item_renderer",
+                                                                            "property_bag": {
+                                                                                "#item_id_aux": "(54 * 65536)"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "item_count_panel": {
+                                                                            "size": [
+                                                                                "100%cm + 4px",
+                                                                                16
+                                                                            ],
+                                                                            "layer": 1,
+                                                                            "type": "panel",
+                                                                            "controls": [
+                                                                                {
+                                                                                    "get_total_item_count": {
+                                                                                        "type": "label",
+                                                                                        "text": "#text",
+                                                                                        "layer": 1,
+                                                                                        "anchor_from": "bottom_right",
+                                                                                        "anchor_to": "bottom_right",
+                                                                                        "bindings": [
+                                                                                            {
+                                                                                                "binding_type": "view",
+                                                                                                "source_control_name": "item_stack_label",
+                                                                                                "source_property_name": "(§zx + (36 - #free_slot_counter) + '/36')",
+                                                                                                "target_property_name": "#text"
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                    // ,{
+                    //     "world_name_and_item_id": {
+                    //         "type": "stack_panel",
+                    //         "size": [
+                    //             "100%cm",
+                    //             "100%c"
+                    //         ],
+                    //         "offset": [
+                    //             5,
+                    //             -5
+                    //         ],
+                    //         "anchor_from": "bottom_left",
+                    //         "anchor_to": "bottom_left",
+                    //         "controls": [
+                    //             {
+                    //                 "item_id": {
+                    //                     "type": "image",
+                    //                     "size": [
+                    //                         "100%cm + 8px",
+                    //                         "100%cm + 4px"
+                    //                     ],
+                    //                     "anchor_from": "bottom_left",
+                    //                     "anchor_to": "bottom_left",
+                    //                     "texture": "textures/ui/hud_tip_text_background",
+                    //                     "alpha": 0.7,
+                    //                     "layer": 1,
+                    //                     "bindings": [
+                    //                         {
+                    //                             "binding_type": "view",
+                    //                             "source_control_name": "item_stack_label",
+                    //                             "source_property_name": "(not (#selected_slot_item_aux_id = -1))",
+                    //                             "target_property_name": "#visible"
+                    //                         }
+                    //                     ],
+                    //                     "controls": [
+                    //                         {
+                    //                             "item_id_stack@item_id_viewer": {}
+                    //                         }
+                    //                     ]
+                    //                 }
+                    //             },
+                    //             {
+                    //                 "b": {
+                    //                     "type": "panel",
+                    //                     "bindings": [
+                    //                         {
+                    //                             "binding_type": "view",
+                    //                             "source_control_name": "item_stack_label",
+                    //                             "source_property_name": "(not (#selected_slot_item_aux_id = -1))",
+                    //                             "target_property_name": "#visible"
+                    //                         }
+                    //                     ],
+                    //                     "size": [
+                    //                         3,
+                    //                         3
+                    //                     ]
+                    //                 }
+                    //             },
+                    //             {
+                    //                 "item_id_aux": {
+                    //                     "type": "image",
+                    //                     "size": [
+                    //                         "100%cm + 8px",
+                    //                         "100%cm + 4px"
+                    //                     ],
+                    //                     "anchor_from": "bottom_left",
+                    //                     "anchor_to": "bottom_left",
+                    //                     "texture": "textures/ui/hud_tip_text_background",
+                    //                     "alpha": 0.7,
+                    //                     "layer": 1,
+                    //                     "bindings": [
+                    //                         {
+                    //                             "binding_type": "view",
+                    //                             "source_control_name": "item_stack_label",
+                    //                             "source_property_name": "(not (#selected_slot_item_aux_id = -1))",
+                    //                             "target_property_name": "#visible"
+                    //                         }
+                    //                     ],
+                    //                     "controls": [
+                    //                         {
+                    //                             "a@item_id_viewer": {
+                    //                                 "bindings": [
+                    //                                     {
+                    //                                         "binding_type": "view",
+                    //                                         "source_control_name": "item_stack_label",
+                    //                                         "source_property_name": "('Item ID AUX: ' + #selected_slot_item_aux_id)",
+                    //                                         "target_property_name": "#text"
+                    //                                     }
+                    //                                 ]
+                    //                             }
+                    //                         }
+                    //                     ]
+                    //                 }
+                    //             },
+                    //             {
+                    //                 "c": {
+                    //                     "type": "panel",
+                    //                     "bindings": [
+                    //                         {
+                    //                             "binding_type": "view",
+                    //                             "source_control_name": "item_stack_label",
+                    //                             "source_property_name": "(not (#selected_slot_item_aux_id = -1))",
+                    //                             "target_property_name": "#visible"
+                    //                         }
+                    //                     ],
+                    //                     "size": [
+                    //                         3,
+                    //                         3
+                    //                     ]
+                    //                 }
+                    //             },
+                    //             {
+                    //                 "world_name": {
+                    //                     "type": "image",
+                    //                     "size": [
+                    //                         "100%cm + 8px",
+                    //                         "100%cm + 4px"
+                    //                     ],
+                    //                     "anchor_from": "bottom_left",
+                    //                     "anchor_to": "bottom_left",
+                    //                     "texture": "textures/ui/hud_tip_text_background",
+                    //                     "alpha": 0.7,
+                    //                     "layer": 1,
+                    //                     "controls": [
+                    //                         {
+                    //                             "a@item_id_viewer": {
+                    //                                 "bindings": [
+                    //                                     {
+                    //                                         "binding_name": "#player_list_title",
+                    //                                         "binding_name_override": "#text"
+                    //                                     }
+                    //                                 ]
+                    //                             }
+                    //                         }
+                    //                     ]
+                    //                 }
+                    //             }
+                    //         ]
+                    //     }
+                    // }
+                ]
+            }
+        ]
+    }
+}

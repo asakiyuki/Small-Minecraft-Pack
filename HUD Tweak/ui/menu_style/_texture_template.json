@@ -1,0 +1,89 @@
+{
+    "namespace": "shiki_texture_template",
+    //Template
+    "toggle_texture_with_outline@_.i": {
+        "color": "$border_color",
+        "$texture_content|default": "_.p",
+        "$toggle_textures|default": "textures/ui/Black",
+        "$border_color|default": [
+            0,
+            0,
+            0
+        ],
+        "size": [
+            "100% + 2px",
+            "100% + 2px"
+        ],
+        "texture": "textures/ui/focus_border_selected",
+        "controls": [
+            {
+                "toggle@_.i": {
+                    "size": [
+                        "100% - 2px",
+                        "100% - 2px"
+                    ],
+                    "texture": "$toggle_textures",
+                    "controls": [
+                        {
+                            "content@$texture_content": {}
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    //Label
+    "label_for_toggle@_.p": {
+        "size": [
+            "100%cm",
+            "100%cm"
+        ],
+        "$toggle_text|default": "shiki.open_menu",
+        "$toggle_text_color|default": [
+            1,
+            1,
+            1
+        ],
+        "controls": [
+            {
+                "labelForToggle@_.l": {
+                    "size": [
+                        "default",
+                        10
+                    ],
+                    "color": "$toggle_text_color",
+                    "text": "$toggle_text"
+                }
+            }
+        ]
+    },
+    //Texture with toggle
+    "toggle_with_label_off@toggle_texture_with_outline": {
+        "$texture_content": "shiki_texture_template.label_for_toggle",
+        "$toggle_text": "shiki.open_menu",
+        "$toggle_textures": "textures/ui/button_borderless_light",
+        "$toggle_text_color": "$light_toggle_default_text_color",
+        "$border_color": "$light_border_toggle_default_color"
+    },
+    "toggle_with_label_off_hover@toggle_texture_with_outline": {
+        "$texture_content": "shiki_texture_template.label_for_toggle",
+        "$toggle_text": "shiki.open_menu",
+        "$toggle_textures": "textures/ui/button_borderless_lighthover",
+        "$toggle_text_color": "$light_toggle_hover_text_color",
+        "$border_color": "$light_border_toggle_hover_color"
+    },
+    "toggle_with_label_on@toggle_texture_with_outline": {
+        "$texture_content": "shiki_texture_template.label_for_toggle",
+        "$toggle_text": "shiki.open_menu",
+        "$toggle_textures": "textures/ui/button_borderless_lightpressednohover",
+        "$toggle_text_color": "$light_toggle_checked_default_text_color",
+        "$border_color": "$light_border_toggle_default_color"
+    },
+    "toggle_with_label_on_hover@toggle_texture_with_outline": {
+        "$texture_content": "shiki_texture_template.label_for_toggle",
+        "$toggle_text": "shiki.open_menu",
+        "$toggle_textures": "textures/ui/button_borderless_lightpressed",
+        "$toggle_text_color": "$light_toggle_checked_hover_text_color",
+        "$border_color": "$light_border_toggle_hover_color"
+    }
+}

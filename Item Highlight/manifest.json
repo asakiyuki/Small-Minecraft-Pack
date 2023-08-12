@@ -1,0 +1,29 @@
+{
+      "format_version": 2,
+      "header": {
+            "description": "Original Concept by TLGM2308, code by Asaki Zuki\nThis pack is used to get the item search bar in the chest\nCan also be used with some other resource packs",
+            "name": "Item Highlight",
+            "uuid": "66778855-6a03-4e58-a2e5-76ebaff564c8",
+            "version": [
+                  1,
+                  0,
+                  0
+            ],
+            "min_engine_version": [
+                  1,
+                  17,
+                  30
+            ]
+      },
+      "modules": [
+            {
+                  "type": "resources",
+                  "uuid": "ab92c37c-9aac-44f9-9cb5-17244edd7677",
+                  "version": [
+                        0,
+                        0,
+                        1
+                  ]
+            }
+      ]
+}

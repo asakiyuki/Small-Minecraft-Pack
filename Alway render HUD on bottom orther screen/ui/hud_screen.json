@@ -1,0 +1,7 @@
+{
+    "hud_screen": {
+        "$use_loading_bars": false,
+        "$screen_animations": [],
+        "render_only_when_topmost": false
+    }
+}

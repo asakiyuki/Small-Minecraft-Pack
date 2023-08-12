@@ -1,0 +1,197 @@
+{
+    "namespace": "menu_screen",
+    "menu_content@_.p": {
+        "layer": 100,
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "screen_menu": {
+                    "type": "panel",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "open_mods_menu",
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "menu_screen": {
+                                "type": "screen",
+                                "size": [
+                                    "100%",
+                                    "100%"
+                                ],
+                                "controls": [
+                                    {
+                                        "keyBinds@asa_menu_toggle.draggable_menu": {
+                                            "$mod_layer": 0,
+                                            "$menu_panel_control": "menu:keyboard_shortcut",
+                                            "$header_name": "menu_header.keyboard_shortcut",
+                                            "$mod_list": [
+                                                {
+                                                    "@asa_menu_toggle.mod_button": {
+                                                        "$mod_control": "hotbar_key"
+                                                    }
+                                                },
+                                                {
+                                                    "@asa_menu_toggle.mod_button": {
+                                                        "$mod_control": "paper_doll"
+                                                    }
+                                                },
+                                                {
+                                                    "@asa_menu_toggle.mod_button": {
+                                                        "$mod_control": "hide_tooltips"
+                                                    }
+                                                },
+                                                {
+                                                    "@asa_menu_toggle.mod_button": {
+                                                        "$mod_control": "hide_gui"
+                                                    }
+                                                },
+                                                {
+                                                    "@asa_menu_toggle.mod_button": {
+                                                        "$mod_control": "hotbar_switch"
+                                                    }
+                                                },
+                                                {
+                                                    "@asa_menu_toggle.mod_button": {
+                                                        "$mod_control": "scoreboard"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "modContent@asa_menu_toggle.draggable_menu": {
+                                            "offset": [
+                                                -110,
+                                                5
+                                            ],
+                                            "$mod_layer": 50,
+                                            "$menu_panel_control": "menu:gameplay",
+                                            "$header_name": "menu_header.gameplay",
+                                            "$mod_list": [
+                                                {
+                                                    "@asa_menu_toggle.mod_button": {
+                                                        "$mod_description": true,
+                                                        "$mod_control": "hide_hotbar"
+                                                    }
+                                                },
+                                                {
+                                                    "@asa_menu_toggle.mod_button": {
+                                                        "$mod_description": true,
+                                                        "$with_option_button": true,
+                                                        "$mod_control": "show_inventory_button"
+                                                    }
+                                                },
+                                                {
+                                                    "@asa_menu_toggle.menu_add_and_minus": {
+                                                        "$control_name": "a",
+                                                        "$default_value": 0,
+                                                        "$min_value": -10,
+                                                        "$max_value": 10
+                                                    }
+                                                },
+                                                {
+                                                    "@asa_menu_toggle.menu_add_and_minus": {
+                                                        "$control_name": "b",
+                                                        "$next_value": true,
+                                                        "$default_value": 5,
+                                                        "$min_value": -1,
+                                                        "$max_value": 10
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "menu@mod_menu_toggle": {
+                    "propagate_alpha": true,
+                    "alpha": 0,
+                    "$click_volume": 0
+                }
+            }
+        ]
+    },
+    "mod_menu_toggle@_.p": {
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "open_mods_menu@shiki_toggle.toggle_template": {
+                    "size": [
+                        35,
+                        20
+                    ],
+                    "$mouse_click_type": "double_pressed",
+                    "$mapping_type": "none",
+                    "$mapping_click": "none",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        2.5,
+                        2.5
+                    ],
+                    //Toggle State
+                    "$t_radio": true,
+                    "$t_default": false,
+                    "$t_index": 0,
+                    "$t_name": "open_menu",
+                    "$t_selected": 1,
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "open_mods_menu",
+                            "source_property_name": "(not #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "close_menu@shiki_toggle.toggle_template": {
+                    "size": [
+                        35,
+                        20
+                    ],
+                    "$mouse_click_type": "pressed",
+                    "$mapping_type": "global",
+                    "$mapping_click": "button.menu_cancel",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        2.5,
+                        2.5
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "open_mods_menu",
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+                    //Toggle State
+                    "$t_radio": true,
+                    "$t_default": true,
+                    "$t_index": 1,
+                    "$t_name": "open_menu",
+                    "$t_selected": 0
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "recipe_book_scroll_panel": {
+        "$require_durability": false
+    }
+}
