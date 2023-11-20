@@ -25,7 +25,18 @@
             },
             {
                 "binding_type": "view",
+                "source_control_name": "hook_for_c95",
+                "source_property_name": "#set_visible",
+                "target_property_name": "#visible_empty_slot"
+            },
+            {
+                "binding_type": "view",
                 "source_property_name": "$v0",
+                "target_property_name": "#visible_quick_slot"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#visible_quick_slot and (not #visible_empty_slot)) or (#visible_empty_slot and #b3 = -1))",
                 "target_property_name": "#visible"
             }
         ],
@@ -379,6 +390,36 @@
                             "controls": [
                                 {
                                     "json_c95@crafting.c95": {}
+                                },
+                                {
+                                    "hook_for_c95": {
+                                        "type": "panel",
+                                        "size": [
+                                            0,
+                                            0
+                                        ],
+                                        "bindings": [
+                                            {
+                                                "binding_name": "#inventory_selected_item",
+                                                "binding_name_override": "#b3"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "((#b3 - (#b3 < 0) * 65535) / 65536)",
+                                                "target_property_name": "#b1"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(#b3 - (#b1 * 65536))",
+                                                "target_property_name": "#b2"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(((#b1 > -626) and (#b1 < -612)) or (#b1 = 205) or (#b1 = -626) or (#b1 = -627) or (#b1 = 218) or ((#b1 = 130) and (#b2 = 2)))",
+                                                "target_property_name": "#set_visible"
+                                            }
+                                        ]
+                                    }
                                 }
                             ]
                         }
