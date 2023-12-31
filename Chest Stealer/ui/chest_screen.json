@@ -177,8 +177,8 @@
             },
             {
                 "binding_type": "view",
-                "source_control_name": "hook_for_selected_123124",
-                "source_property_name": "#selected_item_id",
+                "source_control_name": "global_selected_item_id_aux",
+                "source_property_name": "#selected_item_id_aux",
                 "target_property_name": "#selected_item_id"
             },
             {
