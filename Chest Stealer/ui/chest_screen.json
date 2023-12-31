@@ -204,6 +204,8 @@
                     "default_control": "default_state",
                     "hover_control": "hover_state",
                     "always_listen_to_input": true,
+                    "ignored": "$no",
+                    "$no|default": true,
                     "button_mappings": [
                         {
                             "from_button_id": "button.menu_select",
