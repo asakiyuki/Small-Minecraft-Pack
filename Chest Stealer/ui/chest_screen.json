@@ -200,8 +200,6 @@
         "controls": [
             {
                 "onSingleClick": {
-                    "$no": true,
-                    "ignored": "$no",
                     "type": "button",
                     "default_control": "default_state",
                     "hover_control": "hover_state",
