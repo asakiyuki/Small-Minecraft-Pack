@@ -1,0 +1,67 @@
+{
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "remove",
+                "where": {
+                    "hotbar_toggle_left_handed_panel@hud.hotbar_toggle_panel": {
+                        "offset": [
+                            -160,
+                            0
+                        ],
+                        "$toggle_view_binding_name": "hotbar_toggle_left_handed",
+                        "$toggle_visible_binding_name": "#hotbar_elipses_left_visible"
+                    }
+                }
+            },
+            {
+                "array_name": "controls",
+                "operation": "remove",
+                "where": {
+                    "hotbar_toggle_right_handed_panel@hud.hotbar_toggle_panel": {
+                        "offset": [
+                            160,
+                            0
+                        ],
+                        "$toggle_view_binding_name": "hotbar_toggle_right_handed",
+                        "$toggle_visible_binding_name": "#hotbar_elipses_right_visible"
+                    }
+                }
+            }
+        ]
+    },
+    "root_panel/gui_elements": {
+        "modifications": [
+            {
+                "array_name": "bindings",
+                "operation": "remove",
+                "where": {
+                    "binding_type": "view",
+                    "source_control_name": "hotbar_toggle_right_handed",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#hotbar_toggle_state_right_handed"
+                }
+            },
+            {
+                "array_name": "bindings",
+                "operation": "remove",
+                "where": {
+                    "binding_type": "view",
+                    "source_control_name": "hotbar_toggle_left_handed",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#hotbar_toggle_state_left_handed"
+                }
+            },
+            {
+                "array_name": "bindings",
+                "operation": "remove",
+                "where": {
+                    "binding_type": "view",
+                    "source_property_name": "(#hotbar_toggle_state_left_handed = #hotbar_toggle_state_right_handed)",
+                    "target_property_name": "#visible"
+                }
+            }
+        ]
+    }
+}

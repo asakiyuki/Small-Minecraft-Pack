@@ -1,6 +1,4 @@
 {
-    "chat_grid_item/chat_background": {},
-    "chat_grid_item/chat_background/chat_text": {},
     "player_position": {
         "alpha": 0,
         "size": [
@@ -209,68 +207,5 @@
                 }
             }
         ]
-    },
-    "root_panel": {
-        "modifications": [
-            {
-                "array_name": "controls",
-                "operation": "insert_front",
-                "value": [
-                    {
-                        "item_renderer": {
-                            "anchor_from": "top_right",
-                            "anchor_to": "top_right",
-                            "size": [
-                                "100%c",
-                                "100%cm"
-                            ],
-                            "type": "stack_panel",
-                            "orientation": "horizontal",
-                            "controls": [
-                                {
-                                    "1@inventory_item_renderer": {
-                                        "$item_id": 395 // Clock
-                                    }
-                                },
-                                {
-                                    "2@inventory_item_renderer": {
-                                        "$item_id": 393 // Compass
-                                    }
-                                },
-                                {
-                                    "3@inventory_item_renderer": {
-                                        "$item_id": 653 // Recovery Compass
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    "inventory_item_renderer": {
-        "type": "custom",
-        "property_bag": "$viewItemMode",
-        "renderer": "inventory_item_renderer",
-        "size": "$renderer_size",
-        "$viewItemMode|default": {
-            "#item_id_aux": "($item_id * 65536 + $item_data_value)"
-        },
-        "variables": [
-            {
-                "requires": "($item_id < 0)",
-                "$viewItemMode|default": {
-                    "#item_id_aux": "($item_id * 65536 - $item_data_value)"
-                }
-            }
-        ],
-        //Sử dụng 3 variable ở dưới để tùy chỉnh
-        "$renderer_size|default": [
-            16,
-            16
-        ],
-        "$item_id|default": 1, // Dành cho ITEM ID
-        "$item_data_value|default": 0 // Dành cho ITEM DATA VALUE
     }
 }

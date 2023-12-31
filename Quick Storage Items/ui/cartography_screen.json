@@ -1,0 +1,502 @@
+{
+    "cartography_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "special_item": {
+                            "type": "image",
+                            "size": [
+                                "100%cm + 10px",
+                                "100%cm + 10px"
+                            ],
+                            "anchor_from": "center",
+                            "anchor_to": "top_middle",
+                            "offset": [
+                                0,
+                                115
+                            ],
+                            "texture": "textures/ui/dialog_background_opaque",
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s0_cocaiconcacconcaccon",
+                                    "target_property_name": "#b0"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s1_cocaiconcacconcaccon",
+                                    "target_property_name": "#b1"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s2_cocaiconcacconcaccon",
+                                    "target_property_name": "#b2"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s3_cocaiconcacconcaccon",
+                                    "target_property_name": "#b3"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s4_cocaiconcacconcaccon",
+                                    "target_property_name": "#b4"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s5_cocaiconcacconcaccon",
+                                    "target_property_name": "#b5"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s6_cocaiconcacconcaccon",
+                                    "target_property_name": "#b6"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s7_cocaiconcacconcaccon",
+                                    "target_property_name": "#b7"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s8_cocaiconcacconcaccon",
+                                    "target_property_name": "#b8"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s9_cocaiconcacconcaccon",
+                                    "target_property_name": "#b9"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s10_cocaiconcacconcaccon",
+                                    "target_property_name": "#b10"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s11_cocaiconcacconcaccon",
+                                    "target_property_name": "#b11"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s12_cocaiconcacconcaccon",
+                                    "target_property_name": "#b12"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s13_cocaiconcacconcaccon",
+                                    "target_property_name": "#b13"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s14_cocaiconcacconcaccon",
+                                    "target_property_name": "#b14"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s15_cocaiconcacconcaccon",
+                                    "target_property_name": "#b15"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s16_cocaiconcacconcaccon",
+                                    "target_property_name": "#b16"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s17_cocaiconcacconcaccon",
+                                    "target_property_name": "#b17"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s18_cocaiconcacconcaccon",
+                                    "target_property_name": "#b18"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s19_cocaiconcacconcaccon",
+                                    "target_property_name": "#b19"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s20_cocaiconcacconcaccon",
+                                    "target_property_name": "#b20"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s21_cocaiconcacconcaccon",
+                                    "target_property_name": "#b21"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s22_cocaiconcacconcaccon",
+                                    "target_property_name": "#b22"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s23_cocaiconcacconcaccon",
+                                    "target_property_name": "#b23"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s24_cocaiconcacconcaccon",
+                                    "target_property_name": "#b24"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s25_cocaiconcacconcaccon",
+                                    "target_property_name": "#b25"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#visible",
+                                    "source_control_name": "s26_cocaiconcacconcaccon",
+                                    "target_property_name": "#b26"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "((not #is_creative_layout) and (#b0 or #b1 or #b2 or #b3 or #b4 or #b5 or #b6 or #b7 or #b8 or #b9 or #b10 or #b11 or #b12 or #b13 or #b14 or #b15 or #b16 or #b17 or #b18 or #b19 or #b20 or #b21 or #b22 or #b23 or #b24 or #b25 or #b26))",
+                                    "target_property_name": "#visible"
+                                }
+                            ],
+                            "controls": [
+                                {
+                                    "json_c95@crafting.c95": {}
+                                },
+                                {
+                                    "json_c96@crafting.c96": {}
+                                },
+                                {
+                                    "hook_for_c95": {
+                                        "type": "panel",
+                                        "size": [
+                                            0,
+                                            0
+                                        ],
+                                        "bindings": [
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#selected_item_id",
+                                                "source_control_name": "hook_for_selected_123124",
+                                                "target_property_name": "#b3"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "((#b3 - (#b3 < 0) * 65535) / 65536)",
+                                                "target_property_name": "#b1"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(#b3 - (#b1 * 65536))",
+                                                "target_property_name": "#b2"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(((#b1 > -626) and (#b1 < -612)) or (#b1 = 205) or (#b1 = -626) or (#b1 = -627) or (#b1 = 218) or ((#b1 = 130) and (#b2 = 2)))",
+                                                "target_property_name": "#set_visible"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "hook_for_selected_123124": {
+                                        "type": "panel",
+                                        "size": [
+                                            0,
+                                            0
+                                        ],
+                                        "bindings": [
+                                            {
+                                                "binding_name": "#inventory_selected_item"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(not (#inventory_selected_item = -1) * #inventory_selected_item)",
+                                                "target_property_name": "#selected"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s0_cocaiconcacconcaccon",
+                                                "target_property_name": "#b0"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s1_cocaiconcacconcaccon",
+                                                "target_property_name": "#b1"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s2_cocaiconcacconcaccon",
+                                                "target_property_name": "#b2"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s3_cocaiconcacconcaccon",
+                                                "target_property_name": "#b3"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s4_cocaiconcacconcaccon",
+                                                "target_property_name": "#b4"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s5_cocaiconcacconcaccon",
+                                                "target_property_name": "#b5"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s6_cocaiconcacconcaccon",
+                                                "target_property_name": "#b6"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s7_cocaiconcacconcaccon",
+                                                "target_property_name": "#b7"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s8_cocaiconcacconcaccon",
+                                                "target_property_name": "#b8"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s9_cocaiconcacconcaccon",
+                                                "target_property_name": "#b9"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s10_cocaiconcacconcaccon",
+                                                "target_property_name": "#b10"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s11_cocaiconcacconcaccon",
+                                                "target_property_name": "#b11"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s12_cocaiconcacconcaccon",
+                                                "target_property_name": "#b12"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s13_cocaiconcacconcaccon",
+                                                "target_property_name": "#b13"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s14_cocaiconcacconcaccon",
+                                                "target_property_name": "#b14"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s15_cocaiconcacconcaccon",
+                                                "target_property_name": "#b15"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s16_cocaiconcacconcaccon",
+                                                "target_property_name": "#b16"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s17_cocaiconcacconcaccon",
+                                                "target_property_name": "#b17"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s18_cocaiconcacconcaccon",
+                                                "target_property_name": "#b18"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s19_cocaiconcacconcaccon",
+                                                "target_property_name": "#b19"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s20_cocaiconcacconcaccon",
+                                                "target_property_name": "#b20"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s21_cocaiconcacconcaccon",
+                                                "target_property_name": "#b21"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s22_cocaiconcacconcaccon",
+                                                "target_property_name": "#b22"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s23_cocaiconcacconcaccon",
+                                                "target_property_name": "#b23"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s24_cocaiconcacconcaccon",
+                                                "target_property_name": "#b24"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s25_cocaiconcacconcaccon",
+                                                "target_property_name": "#b25"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "s26_cocaiconcacconcaccon",
+                                                "target_property_name": "#b26"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "cccccccccccccc_0",
+                                                "target_property_name": "#s0"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "cccccccccccccc_1",
+                                                "target_property_name": "#s1"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "cccccccccccccc_2",
+                                                "target_property_name": "#s2"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "cccccccccccccc_3",
+                                                "target_property_name": "#s3"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "cccccccccccccc_4",
+                                                "target_property_name": "#s4"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "cccccccccccccc_5",
+                                                "target_property_name": "#s5"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "cccccccccccccc_6",
+                                                "target_property_name": "#s6"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "cccccccccccccc_7",
+                                                "target_property_name": "#s7"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "#id",
+                                                "source_control_name": "cccccccccccccc_8",
+                                                "target_property_name": "#s8"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(#selected + #b0 + #b1 + #b2 + #b3 + #b4 + #b5 + #b6 + #b7 + #b8 + #b9 + #b10 + #b11 + #b12 + #b13 + #b14 + #b15 + #b16 + #b17 + #b18 + #b19 + #b20 + #b21 + #b22 + #b23 + #b24 + #b25 + #b26 + #s0 + #s1 + #s2 + #s3 + #s4 + #s5 + #s6 + #s7 + #s8)",
+                                                "target_property_name": "#selected_item_id"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "selected_item_id_aux": {
+                            "type": "label",
+                            "text": "#text",
+                            "anchor_from": "bottom_left",
+                            "anchor_to": "bottom_left",
+                            "offset": [
+                                5,
+                                -5
+                            ],
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "#selected_item_id",
+                                    "source_control_name": "hook_for_selected_123124",
+                                    "target_property_name": "#b2"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "('Selected Item: ' +  #b2)",
+                                    "target_property_name": "#text"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "inventory_screen_base": {
+        "$isNotInventory": false
+    }
+}

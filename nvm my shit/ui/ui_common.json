@@ -1,0 +1,145 @@
+{
+    "nothing": {
+        "type": "panel",
+        "size": [
+            0,
+            0
+        ]
+    },
+    "inventory_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "quick_put_all": {
+                            "type": "image",
+                            "texture": "textures/ui/dialog_background_opaque_overlap_bottom",
+                            "anchor_from": "bottom_right",
+                            "anchor_to": "bottom_right",
+                            "size": [
+                                "100%cm + 14px",
+                                "100%cm + 8px"
+                            ],
+                            "offset": [
+                                44,
+                                21
+                            ],
+                            "layer": 5,
+                            "controls": [
+                                {
+                                    "black_image": {
+                                        "type": "image",
+                                        "texture": "textures/ui/Black",
+                                        "anchor_from": "top_right",
+                                        "anchor_to": "top_right",
+                                        "size": [
+                                            1,
+                                            1
+                                        ],
+                                        "offset": [
+                                            0,
+                                            3
+                                        ],
+                                        "layer": -5
+                                    }
+                                },
+                                {
+                                    "sort_stack": {
+                                        "type": "stack_panel",
+                                        "size": [
+                                            "100%c",
+                                            "100%cm"
+                                        ],
+                                        "anchor_from": "center",
+                                        "anchor_to": "center",
+                                        "$isNotInventory|default": true,
+                                        "orientation": "horizontal",
+                                        "controls": [
+                                            {
+                                                "extra_button@chest.auto_place_stack_button": {
+                                                    "ignored": "$isNotInventory",
+                                                    "$hover_text": "Destroy All",
+                                                    "$collection_name": "inventory_items",
+                                                    "$btn_texture": "textures/ui/icon_trash",
+                                                    "size": [
+                                                        18,
+                                                        18
+                                                    ],
+                                                    "layer": 9,
+                                                    "$extraBtnStack": "quick_hotbar_button",
+                                                    "$extra_collection_name": "hotbar_items",
+                                                    "$onClickMapping": "button.container_auto_destroy",
+                                                    "$no": false,
+                                                    "bindings": [
+                                                        {
+                                                            "binding_type": "global",
+                                                            "binding_name": "#is_creative_mode",
+                                                            "binding_name_override": "#visible"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "empty1": {
+                                                    "type": "panel",
+                                                    "size": [
+                                                        1,
+                                                        1
+                                                    ],
+                                                    "bindings": [
+                                                        {
+                                                            "binding_type": "global",
+                                                            "binding_name": "#is_creative_mode",
+                                                            "binding_name_override": "#visible"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "storageall_button@chest.auto_place_stack_button": {
+                                                    "$hover_text": "Put All Inventory Items",
+                                                    "$collection_name": "inventory_items",
+                                                    "$btn_texture": "textures/ui/chevron_white_down",
+                                                    "size": [
+                                                        18,
+                                                        18
+                                                    ],
+                                                    "layer": 9
+                                                }
+                                            },
+                                            {
+                                                "empty": {
+                                                    "type": "panel",
+                                                    "size": [
+                                                        1,
+                                                        1
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "hotbar_sort@chest.auto_place_stack_button": {
+                                                    "$item_id_aux": 8519682,
+                                                    "$btn_texture": "textures/ui/chevron_white_up",
+                                                    "$hover_text": "Put All Hotbar Items",
+                                                    "$btnStack": "quick_hotbar_button",
+                                                    "$collection_name": "hotbar_items",
+                                                    "size": [
+                                                        18,
+                                                        18
+                                                    ],
+                                                    "layer": 9
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

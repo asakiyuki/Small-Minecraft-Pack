@@ -1,0 +1,30 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "by: minecraft (Fixed by Asaki Zuki)",
+        "name": "§eCustom Armor Stand model by Nametag",
+        "uuid": "e8945304-44e7-e4f5-ca25-d7d4f92ed369",
+        "version": [
+            0,
+            0,
+            3
+        ],
+        "min_engine_version": [
+            1,
+            18,
+            0
+        ]
+    },
+    "modules": [
+        {
+            "description": "",
+            "type": "resources",
+            "uuid": "4e90720a-c94c-11ec-9d64-0242ac120002",
+            "version": [
+                0,
+                0,
+                3
+            ]
+        }
+    ]
+}

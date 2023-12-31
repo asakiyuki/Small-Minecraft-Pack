@@ -1,8 +1,8 @@
 {
     "format_version": 2,
     "header": {
-        "description": "sex",
-        "name": "Inventory Shulker Box/Ender Chest slot",
+        "description": "Display the Shulker Box/Ender chest below the hotbar for easier access and storage\nThis pack not compatible for Pocket UI",
+        "name": "Asa - Quick Storage Items",
         "uuid": "81247124-3093-462a-9c36-dbb052165822",
         "version": [
             0,

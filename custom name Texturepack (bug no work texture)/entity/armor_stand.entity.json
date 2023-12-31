@@ -1,0 +1,63 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "minecraft:armor_stand",
+            "min_engine_version": "1.8.0",
+            "materials": {
+                "default": "armor_stand"
+            },
+            "textures": {
+                "default": "textures/entity/armor_stand",
+                "etid1": "textures/entity/etid1",
+                "chair1": "textures/entity/Chair1"
+            },
+            "scripts": {
+                "initialize": [
+                    "variable.armor_stand.pose_index = 0;",
+                    "variable.armor_stand.hurt_time = 0;"
+                ],
+                "pre_animation": [
+                    "v.armor.index = 0 + ((q.get_name == 'chair1' ? 1) + (q.get_name == 'etid1' ? 2));"
+                ],
+                "animate": [
+                    "controller.pose",
+                    "windmill_spin.controller",
+                    "flag_move.controller",
+                    "controller.wiggling"
+                ]
+            },
+            "animations": {
+                "default_pose": "animation.armor_stand.default_pose",
+                "windmill_spin": "animation.windmill_spin",
+                "windmill_spin.controller": "controller.animation.windmill_spin",
+                "flag_move": "animation.flag_move",
+                "flag_move.controller": "controller.animation.flag_move",
+                "no_pose": "animation.armor_stand.no_pose",
+                "solemn_pose": "animation.armor_stand.solemn_pose",
+                "athena_pose": "animation.armor_stand.athena_pose",
+                "brandish_pose": "animation.armor_stand.brandish_pose",
+                "honor_pose": "animation.armor_stand.honor_pose",
+                "entertain_pose": "animation.armor_stand.entertain_pose",
+                "salute_pose": "animation.armor_stand.salute_pose",
+                "riposte_pose": "animation.armor_stand.riposte_pose",
+                "zombie_pose": "animation.armor_stand.zombie_pose",
+                "cancan_a_pose": "animation.armor_stand.cancan_a_pose",
+                "cancan_b_pose": "animation.armor_stand.cancan_b_pose",
+                "hero_pose": "animation.armor_stand.hero_pose",
+                "wiggle": "animation.armor_stand.wiggle",
+                "controller.pose": "controller.animation.armor_stand.pose",
+                "controller.wiggling": "controller.animation.armor_stand.wiggle"
+            },
+            "geometry": {
+                "default": "geometry.armor_stand",
+                "etid1": "geometry.etid1",
+                "chair1": "geometry.chair1"
+            },
+            "render_controllers": [
+                "controller.render.armor_stand"
+            ],
+            "enable_attachables": true
+        }
+    }
+}

@@ -1,0 +1,684 @@
+{
+    "small_chest_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "lootall_button@auto_place_stack_button": {
+                            "anchor_from": "center",
+                            "anchor_to": "top_middle",
+                            "offset": [
+                                58,
+                                -79
+                            ],
+                            "size": [
+                                16,
+                                16
+                            ],
+                            "layer": 9
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "large_chest_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "lootall_button@auto_place_stack_button": {
+                            "anchor_from": "center",
+                            "anchor_to": "top_middle",
+                            "$btnStack": "quick_large_chest_button",
+                            "offset": [
+                                58,
+                                -106
+                            ],
+                            "size": [
+                                16,
+                                16
+                            ],
+                            "layer": 9
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "auto_place_stack_button": {
+        "type": "panel",
+        "$btnStack|default": "quick_small_chest_button",
+        "$extraBtnStack|default": "common.nothing",
+        "$btn_texture|default": "textures/ui/chevron_white_down",
+        "$hover_text|default": "Take All",
+        "$item_id_aux|default": 3538946,
+        "$extra_collection_name|default": "none",
+        "controls": [
+            {
+                "slot_texture_button": {
+                    "type": "button",
+                    "default_control": "default_state",
+                    "hover_control": "hover_state",
+                    "button_mappings": [
+                        {
+                            "from_button_id": "button.menu_select",
+                            "to_button_id": "button.menu_select",
+                            "mapping_type": "pressed"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "btnTex": {
+                                "type": "image",
+                                "layer": 11,
+                                "size": [
+                                    "33%",
+                                    "33%"
+                                ],
+                                "offset": [
+                                    -1,
+                                    -1
+                                ],
+                                "texture": "$btn_texture",
+                                "anchor_from": "bottom_right",
+                                "anchor_to": "bottom_right"
+                            }
+                        },
+                        {
+                            "chest_icon_renderer": {
+                                "type": "custom",
+                                "renderer": "inventory_item_renderer",
+                                "layer": 10,
+                                "size": [
+                                    "100% - 1px",
+                                    "100% - 1px"
+                                ],
+                                "property_bag": {
+                                    "#item_id_aux": "$item_id_aux"
+                                }
+                            }
+                        },
+                        {
+                            "default_state": {
+                                "type": "image",
+                                "layer": 9,
+                                "color": [
+                                    0.5,
+                                    0.5,
+                                    0.5
+                                ],
+                                "texture": "textures/ui/beacon_selected_button_pocket"
+                            }
+                        },
+                        {
+                            "hover_state": {
+                                "type": "image",
+                                "layer": 9,
+                                "color": [
+                                    0.5,
+                                    1,
+                                    0
+                                ],
+                                "texture": "textures/ui/beacon_selected_button_pocket",
+                                "controls": [
+                                    {
+                                        "hover_text": {
+                                            "type": "custom",
+                                            "renderer": "hover_text_renderer",
+                                            "layer": 99,
+                                            "property_bag": {
+                                                "#hover_text": "$hover_text"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "btnAction@$btnStack": {}
+            },
+            {
+                "btnAction2@$extraBtnStack": {
+                    "$collection_name": "$extra_collection_name"
+                }
+            }
+        ]
+    },
+    "slotButton": {
+        "type": "button",
+        "always_listen_to_input": true,
+        "$onClickMapping|default": "button.container_auto_place",
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_select",
+                "to_button_id": "$onClickMapping",
+                "mapping_type": "pressed"
+            }
+        ],
+        "bindings": "$button_bindings",
+        "$button_bindings|default": [
+            {
+                "binding_type": "collection_details",
+                "binding_collection_name": "$collection_name",
+                "binding_condition": "once"
+            },
+            {
+                "binding_type": "collection_details",
+                "binding_collection_name": "$collection_name",
+                "binding_condition": "once"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "hook_for_selected_123124",
+                "source_property_name": "#selected_item_id",
+                "target_property_name": "#selected_item_id"
+            },
+            {
+                "binding_name": "#item_id_aux",
+                "binding_type": "collection",
+                "binding_collection_name": "$collection_name"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#selected_item_id = 0 or #item_id_aux = #selected_item_id)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "quick_small_chest_button": {
+        "type": "collection_panel",
+        "$collection_name|default": "container_items",
+        "collection_name": "$collection_name",
+        "controls": [
+            {
+                "onSingleClick": {
+                    "$no": true,
+                    "ignored": "$no",
+                    "type": "button",
+                    "default_control": "default_state",
+                    "hover_control": "hover_state",
+                    "always_listen_to_input": true,
+                    "button_mappings": [
+                        {
+                            "from_button_id": "button.menu_select",
+                            "to_button_id": "button.destroy_selection",
+                            "mapping_type": "pressed"
+                        }
+                    ]
+                }
+            },
+            {
+                "getItemBtn-0@slotButton": {
+                    "collection_index": 26
+                }
+            },
+            {
+                "getItemBtn-1@slotButton": {
+                    "collection_index": 25
+                }
+            },
+            {
+                "getItemBtn-2@slotButton": {
+                    "collection_index": 24
+                }
+            },
+            {
+                "getItemBtn-3@slotButton": {
+                    "collection_index": 23
+                }
+            },
+            {
+                "getItemBtn-4@slotButton": {
+                    "collection_index": 22
+                }
+            },
+            {
+                "getItemBtn-5@slotButton": {
+                    "collection_index": 21
+                }
+            },
+            {
+                "getItemBtn-6@slotButton": {
+                    "collection_index": 20
+                }
+            },
+            {
+                "getItemBtn-7@slotButton": {
+                    "collection_index": 19
+                }
+            },
+            {
+                "getItemBtn-8@slotButton": {
+                    "collection_index": 18
+                }
+            },
+            {
+                "getItemBtn-9@slotButton": {
+                    "collection_index": 17
+                }
+            },
+            {
+                "getItemBtn-10@slotButton": {
+                    "collection_index": 16
+                }
+            },
+            {
+                "getItemBtn-11@slotButton": {
+                    "collection_index": 15
+                }
+            },
+            {
+                "getItemBtn-12@slotButton": {
+                    "collection_index": 14
+                }
+            },
+            {
+                "getItemBtn-13@slotButton": {
+                    "collection_index": 13
+                }
+            },
+            {
+                "getItemBtn-14@slotButton": {
+                    "collection_index": 12
+                }
+            },
+            {
+                "getItemBtn-15@slotButton": {
+                    "collection_index": 11
+                }
+            },
+            {
+                "getItemBtn-16@slotButton": {
+                    "collection_index": 10
+                }
+            },
+            {
+                "getItemBtn-17@slotButton": {
+                    "collection_index": 9
+                }
+            },
+            {
+                "getItemBtn-18@slotButton": {
+                    "collection_index": 8
+                }
+            },
+            {
+                "getItemBtn-19@slotButton": {
+                    "collection_index": 7
+                }
+            },
+            {
+                "getItemBtn-20@slotButton": {
+                    "collection_index": 6
+                }
+            },
+            {
+                "getItemBtn-21@slotButton": {
+                    "collection_index": 5
+                }
+            },
+            {
+                "getItemBtn-22@slotButton": {
+                    "collection_index": 4
+                }
+            },
+            {
+                "getItemBtn-23@slotButton": {
+                    "collection_index": 3
+                }
+            },
+            {
+                "getItemBtn-24@slotButton": {
+                    "collection_index": 2
+                }
+            },
+            {
+                "getItemBtn-25@slotButton": {
+                    "collection_index": 1
+                }
+            },
+            {
+                "getItemBtn-26@slotButton": {
+                    "collection_index": 0
+                }
+            }
+        ]
+    },
+    "quick_hotbar_button": {
+        "type": "collection_panel",
+        "$collection_name|default": "container_items",
+        "collection_name": "$collection_name",
+        "controls": [
+            {
+                "getItemBtn-45@slotButton": {
+                    "collection_index": 8
+                }
+            },
+            {
+                "getItemBtn-46@slotButton": {
+                    "collection_index": 7
+                }
+            },
+            {
+                "getItemBtn-47@slotButton": {
+                    "collection_index": 6
+                }
+            },
+            {
+                "getItemBtn-48@slotButton": {
+                    "collection_index": 5
+                }
+            },
+            {
+                "getItemBtn-49@slotButton": {
+                    "collection_index": 4
+                }
+            },
+            {
+                "getItemBtn-50@slotButton": {
+                    "collection_index": 3
+                }
+            },
+            {
+                "getItemBtn-51@slotButton": {
+                    "collection_index": 2
+                }
+            },
+            {
+                "getItemBtn-52@slotButton": {
+                    "collection_index": 1
+                }
+            },
+            {
+                "getItemBtn-53@slotButton": {
+                    "collection_index": 0
+                }
+            }
+        ]
+    },
+    "quick_large_chest_button": {
+        "type": "collection_panel",
+        "$collection_name|default": "container_items",
+        "collection_name": "$collection_name",
+        "controls": [
+            {
+                "getItemBtn-0@slotButton": {
+                    "collection_index": 53
+                }
+            },
+            {
+                "getItemBtn-1@slotButton": {
+                    "collection_index": 52
+                }
+            },
+            {
+                "getItemBtn-2@slotButton": {
+                    "collection_index": 51
+                }
+            },
+            {
+                "getItemBtn-3@slotButton": {
+                    "collection_index": 50
+                }
+            },
+            {
+                "getItemBtn-4@slotButton": {
+                    "collection_index": 49
+                }
+            },
+            {
+                "getItemBtn-5@slotButton": {
+                    "collection_index": 48
+                }
+            },
+            {
+                "getItemBtn-6@slotButton": {
+                    "collection_index": 47
+                }
+            },
+            {
+                "getItemBtn-7@slotButton": {
+                    "collection_index": 46
+                }
+            },
+            {
+                "getItemBtn-8@slotButton": {
+                    "collection_index": 45
+                }
+            },
+            {
+                "getItemBtn-9@slotButton": {
+                    "collection_index": 44
+                }
+            },
+            {
+                "getItemBtn-10@slotButton": {
+                    "collection_index": 43
+                }
+            },
+            {
+                "getItemBtn-11@slotButton": {
+                    "collection_index": 42
+                }
+            },
+            {
+                "getItemBtn-12@slotButton": {
+                    "collection_index": 41
+                }
+            },
+            {
+                "getItemBtn-13@slotButton": {
+                    "collection_index": 40
+                }
+            },
+            {
+                "getItemBtn-14@slotButton": {
+                    "collection_index": 39
+                }
+            },
+            {
+                "getItemBtn-15@slotButton": {
+                    "collection_index": 38
+                }
+            },
+            {
+                "getItemBtn-16@slotButton": {
+                    "collection_index": 37
+                }
+            },
+            {
+                "getItemBtn-17@slotButton": {
+                    "collection_index": 36
+                }
+            },
+            {
+                "getItemBtn-18@slotButton": {
+                    "collection_index": 35
+                }
+            },
+            {
+                "getItemBtn-19@slotButton": {
+                    "collection_index": 34
+                }
+            },
+            {
+                "getItemBtn-20@slotButton": {
+                    "collection_index": 33
+                }
+            },
+            {
+                "getItemBtn-21@slotButton": {
+                    "collection_index": 32
+                }
+            },
+            {
+                "getItemBtn-22@slotButton": {
+                    "collection_index": 31
+                }
+            },
+            {
+                "getItemBtn-23@slotButton": {
+                    "collection_index": 30
+                }
+            },
+            {
+                "getItemBtn-24@slotButton": {
+                    "collection_index": 29
+                }
+            },
+            {
+                "getItemBtn-25@slotButton": {
+                    "collection_index": 28
+                }
+            },
+            {
+                "getItemBtn-26@slotButton": {
+                    "collection_index": 27
+                }
+            },
+            {
+                "getItemBtn-27@slotButton": {
+                    "collection_index": 26
+                }
+            },
+            {
+                "getItemBtn-28@slotButton": {
+                    "collection_index": 25
+                }
+            },
+            {
+                "getItemBtn-29@slotButton": {
+                    "collection_index": 24
+                }
+            },
+            {
+                "getItemBtn-30@slotButton": {
+                    "collection_index": 23
+                }
+            },
+            {
+                "getItemBtn-31@slotButton": {
+                    "collection_index": 22
+                }
+            },
+            {
+                "getItemBtn-32@slotButton": {
+                    "collection_index": 21
+                }
+            },
+            {
+                "getItemBtn-33@slotButton": {
+                    "collection_index": 20
+                }
+            },
+            {
+                "getItemBtn-34@slotButton": {
+                    "collection_index": 19
+                }
+            },
+            {
+                "getItemBtn-35@slotButton": {
+                    "collection_index": 18
+                }
+            },
+            {
+                "getItemBtn-36@slotButton": {
+                    "collection_index": 17
+                }
+            },
+            {
+                "getItemBtn-37@slotButton": {
+                    "collection_index": 16
+                }
+            },
+            {
+                "getItemBtn-38@slotButton": {
+                    "collection_index": 15
+                }
+            },
+            {
+                "getItemBtn-39@slotButton": {
+                    "collection_index": 14
+                }
+            },
+            {
+                "getItemBtn-40@slotButton": {
+                    "collection_index": 13
+                }
+            },
+            {
+                "getItemBtn-41@slotButton": {
+                    "collection_index": 12
+                }
+            },
+            {
+                "getItemBtn-42@slotButton": {
+                    "collection_index": 11
+                }
+            },
+            {
+                "getItemBtn-43@slotButton": {
+                    "collection_index": 10
+                }
+            },
+            {
+                "getItemBtn-44@slotButton": {
+                    "collection_index": 9
+                }
+            },
+            {
+                "getItemBtn-45@slotButton": {
+                    "collection_index": 8
+                }
+            },
+            {
+                "getItemBtn-46@slotButton": {
+                    "collection_index": 7
+                }
+            },
+            {
+                "getItemBtn-47@slotButton": {
+                    "collection_index": 6
+                }
+            },
+            {
+                "getItemBtn-48@slotButton": {
+                    "collection_index": 5
+                }
+            },
+            {
+                "getItemBtn-49@slotButton": {
+                    "collection_index": 4
+                }
+            },
+            {
+                "getItemBtn-50@slotButton": {
+                    "collection_index": 3
+                }
+            },
+            {
+                "getItemBtn-51@slotButton": {
+                    "collection_index": 2
+                }
+            },
+            {
+                "getItemBtn-52@slotButton": {
+                    "collection_index": 1
+                }
+            },
+            {
+                "getItemBtn-53@slotButton": {
+                    "collection_index": 0
+                }
+            }
+        ]
+    }
+}
