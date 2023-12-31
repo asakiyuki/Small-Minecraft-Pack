@@ -71,7 +71,7 @@
                                                     "$extraBtnStack": "quick_hotbar_button",
                                                     "$extra_collection_name": "hotbar_items",
                                                     "$onClickMapping": "button.container_auto_destroy",
-                                                    "$no": false,
+                                                    "$cak": "button.destroy_selection",
                                                     "bindings": [
                                                         {
                                                             "binding_type": "global",

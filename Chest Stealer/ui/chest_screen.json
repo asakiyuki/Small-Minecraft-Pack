@@ -204,12 +204,11 @@
                     "default_control": "default_state",
                     "hover_control": "hover_state",
                     "always_listen_to_input": true,
-                    "ignored": "$no",
-                    "$no|default": true,
+                    "$cak|default": "none",
                     "button_mappings": [
                         {
                             "from_button_id": "button.menu_select",
-                            "to_button_id": "button.destroy_selection",
+                            "to_button_id": "$cak",
                             "mapping_type": "pressed"
                         }
                     ]

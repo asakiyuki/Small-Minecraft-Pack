@@ -12,11 +12,11 @@
                                 "100%cm + 10px",
                                 "100%cm + 10px"
                             ],
-                            "anchor_from": "center",
-                            "anchor_to": "top_middle",
+                            "anchor_from": "bottom_middle",
+                            "anchor_to": "bottom_middle",
                             "offset": [
                                 0,
-                                115
+                                -8
                             ],
                             "texture": "textures/ui/dialog_background_opaque",
                             "bindings": [
@@ -472,6 +472,7 @@
                     },
                     {
                         "selected_item_id_aux": {
+                            "ignored": true,
                             "type": "label",
                             "text": "#text",
                             "anchor_from": "bottom_left",

@@ -12,11 +12,11 @@
                                 "100%cm + 10px",
                                 "100%cm + 10px"
                             ],
-                            "anchor_from": "center",
-                            "anchor_to": "top_middle",
+                            "anchor_from": "bottom_middle",
+                            "anchor_to": "bottom_middle",
                             "offset": [
                                 0,
-                                85
+                                -8
                             ],
                             "texture": "textures/ui/dialog_background_opaque",
                             "bindings": [
@@ -472,6 +472,7 @@
                     },
                     {
                         "selected_item_id_aux": {
+                            "ignored": true,
                             "type": "label",
                             "text": "#text",
                             "anchor_from": "bottom_left",
@@ -512,11 +513,11 @@
                                 "100%cm + 10px",
                                 "100%cm + 10px"
                             ],
-                            "anchor_from": "center",
-                            "anchor_to": "top_middle",
+                            "anchor_from": "bottom_middle",
+                            "anchor_to": "bottom_middle",
                             "offset": [
                                 0,
-                                115
+                                -8
                             ],
                             "texture": "textures/ui/dialog_background_opaque",
                             "bindings": [
@@ -972,31 +973,33 @@
                     },
                     {
                         "selected_item_id_aux": {
-                            "type": "label",
-                            "text": "#text",
-                            "anchor_from": "bottom_left",
-                            "anchor_to": "bottom_left",
-                            "offset": [
-                                5,
-                                -5
-                            ],
-                            "bindings": [
-                                {
-                                    "binding_type": "view",
-                                    "source_property_name": "#selected_item_id",
-                                    "source_control_name": "hook_for_selected_123124",
-                                    "target_property_name": "#b2"
-                                },
-                                {
-                                    "binding_type": "view",
-                                    "source_property_name": "('Selected Item: ' +  #b2)",
-                                    "target_property_name": "#text"
-                                }
-                            ]
+                            "ignored": true,
+                            {
+                                "type": "label",
+                                "text": "#text",
+                                "anchor_from": "bottom_left",
+                                "anchor_to": "bottom_left",
+                                "offset": [
+                                    5,
+                                    -5
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "#selected_item_id",
+                                        "source_control_name": "hook_for_selected_123124",
+                                        "target_property_name": "#b2"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "('Selected Item: ' +  #b2)",
+                                        "target_property_name": "#text"
+                                    }
+                                ]
+                            }
                         }
-                    }
-                ]
-            }
-        ]
+                    ]
+                }
+            ]
+        }
     }
-}
