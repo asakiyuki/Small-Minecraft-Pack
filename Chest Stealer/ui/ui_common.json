@@ -1,4 +1,5 @@
 {
+    // Item ID
     "selected_item_id_aux@common.nothing": {
         "bindings": [
             {
@@ -60,6 +61,7 @@
         "type": "stack_panel",
         "$collection_name": "hotbar_items",
         "collection_name": "$collection_name",
+        "$selected_hotbar_item_name|default": "selected_hotbar_item_id",
         "controls": [
             {
                 "selected_hotbar_slot_0@common.get_item_id_on_selected": {
@@ -107,7 +109,7 @@
                 }
             },
             {
-                "selected_hotbar_item_id@common.nothing": {
+                "$selected_hotbar_item_name@common.nothing": {
                     "bindings": [
                         {
                             "binding_type": "view",
@@ -190,6 +192,7 @@
         "type": "stack_panel",
         "$collection_name": "inventory_items",
         "collection_name": "$collection_name",
+        "$selected_inventory_item_name|default": "selected_inventory_item_id",
         "controls": [
             {
                 "selected_inventory_slot_0@common.get_item_id_on_selected": {
@@ -327,7 +330,7 @@
                 }
             },
             {
-                "selected_inventory_item_id@common.nothing": {
+                "$selected_inventory_item_name@common.nothing": {
                     "bindings": [
                         {
                             "binding_type": "view",
@@ -547,15 +550,49 @@
                             "type": "label",
                             "layer": 999,
                             "anchor_from": "bottom_left",
-                            "anchor_to": "top_right",
+                            "anchor_to": "top_left",
                             "shadow": true,
                             "text": "#text",
+                            "offset": [
+                                -44,
+                                2
+                            ],
                             "bindings": [
                                 {
                                     "binding_type": "view",
                                     "source_control_name": "global_selected_item_id_aux",
-                                    "source_property_name": "('ID: ' + #selected_item_id_aux)",
+                                    "source_property_name": "#selected_item_id_aux",
+                                    "target_property_name": "#item_id_aux"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "((#item_id_aux - (#item_id_aux < 0) * 65535) / 65536)",
+                                    "target_property_name": "#item_id"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#item_id_aux - #item_id * 65536)",
+                                    "target_property_name": "#item_data_value"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#item_data_value > 32767)",
+                                    "target_property_name": "#is_enchanted"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#item_data_value - #is_enchanted * 32768)",
+                                    "target_property_name": "#item_data_value_without_enchant"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "('ID Aux: ' + #item_id_aux + '\nID: ' + #item_id + ':' + #item_data_value_without_enchant - ':0' + ((#is_enchanted + ' [Enchanted]') - 'false [Enchanted]' - 'true'))",
                                     "target_property_name": "#text"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(not #item_id = 0)",
+                                    "target_property_name": "#visible"
                                 }
                             ]
                         }

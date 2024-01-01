@@ -472,7 +472,7 @@
                     },
                     {
                         "selected_item_id_aux": {
-                            "ignored": true,
+                            "visible": true,
                             "type": "label",
                             "text": "#text",
                             "anchor_from": "bottom_left",
@@ -973,7 +973,7 @@
                     },
                     {
                         "selected_item_id_aux": {
-                            "ignored": true,
+                            "visible": true,
                             {
                                 "type": "label",
                                 "text": "#text",
