@@ -548,7 +548,7 @@
                     {
                         "debugger": {
                             "type": "label",
-                            "layer": 999,
+                            "layer": 5,
                             "anchor_from": "bottom_left",
                             "anchor_to": "top_left",
                             "shadow": true,
