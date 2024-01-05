@@ -1288,7 +1288,7 @@
             {
                 "binding_type": "view",
                 "source_control_name": "item_stack_label",
-                "source_property_name": "((#selected_slot_item_aux_id / 65536 + 0 = 302) or (#selected_slot_item_aux_id / 65536 + 0 = 582))",
+                "source_property_name": "((#selected_slot_item_aux_id / 65536 + 0 = 303) or (#selected_slot_item_aux_id / 65536 + 0 = 583))",
                 "target_property_name": "#visible"
             }
         ],
@@ -1389,7 +1389,7 @@
                                 -5,
                                 -28
                             ],
-                            "$item_id": 303,
+                            "$item_id": 304,
                             "anchor_from": "bottom_right",
                             "anchor_to": "bottom_right"
                         }
