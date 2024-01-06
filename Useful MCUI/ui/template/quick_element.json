@@ -1,0 +1,44 @@
+{
+    "namespace": "t",
+    // Quick Element
+    "p": {
+        "type": "panel"
+    },
+    "sp": {
+        "type": "stack_panel"
+    },
+    "cp": {
+        "type": "collection_panel"
+    },
+    "ip": {
+        "type": "input_panel"
+    },
+    "s": {
+        "type": "screen"
+    },
+    "b": {
+        "type": "button"
+    },
+    "t": {
+        "type": "toggle"
+    },
+    "i": {
+        "type": "image"
+    },
+    "l": {
+        "type": "label"
+    },
+    "c": {
+        "type": "custom"
+    },
+    // Template Element
+    "ep@t.p": {
+        "size": [
+            0,
+            0
+        ]
+    },
+    "r_i@t.c": {
+        "renderer": "inventory_item_renderer"
+    }
+}

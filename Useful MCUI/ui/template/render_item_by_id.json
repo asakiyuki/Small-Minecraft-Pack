@@ -1,0 +1,15 @@
+{
+    "namespace": "controls",
+    "item_renderer-id_aux@t.ir": {
+        "$item_id_aux|default": 65536,
+        "property_bag": {
+            "#item_id_aux": "$item_id_aux"
+        }
+    },
+    "item_renderer-id@t.ir": {
+        "$item_id_aux|default": 1,
+        "property_bag": {
+            "#item_id_aux": "$item_id_aux * 65536"
+        }
+    }
+}

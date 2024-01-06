@@ -1,0 +1,26 @@
+{
+    "namespace": "controls",
+    "float_to_int": {
+        "$bindings|default": [
+            {
+                "binding_name": "#item_durability_total_amount",
+                "binding_name_override": "#convert_this",
+                "binding_type": "collection",
+                "binding_collection_name": "hotbar_items"
+            }
+        ],
+        "bindings": "$bindings",
+        "modifications": [
+            {
+                "array_name": "$bindings",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "binding_type": "view",
+                        "source_property_name": "#convert_this"
+                    }
+                ]
+            }
+        ]
+    }
+}
