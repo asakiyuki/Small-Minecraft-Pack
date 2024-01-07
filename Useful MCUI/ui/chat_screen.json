@@ -1,0 +1,720 @@
+{
+    "button_texture@t.i": {
+        "$state_texture|default": "textures/ui/button_borderless_light",
+        "$wbd|default": false,
+        "texture": "$state_texture",
+        "$extra_control|default": "t.ep",
+        "$unique_control|default": "t.ep",
+        "size": [
+            "100% - 2px",
+            "100% - 2px"
+        ],
+        "controls": [
+            {
+                "border@t.i": {
+                    "texture": "textures/ui/focus_border_selected",
+                    "size": [
+                        "100% + 2px",
+                        "100% + 2px"
+                    ],
+                    "$border_color|default": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "color": "$border_color",
+                    "variables": [
+                        {
+                            "requires": "$wbd",
+                            "$border_color": [
+                                1,
+                                1,
+                                1
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "extra_controls@$extra_control": {}
+            },
+            {
+                "unique@$unique_control": {}
+            }
+        ]
+    },
+    "button_template@t.cb": {
+        "default_control": "d",
+        "hover_control": "h",
+        "pressed_control": "p",
+        "sound_name": "random.click",
+        "sound_volume": 1.0,
+        "sound_pitch": 1.0,
+        "$default_element|default": "t.ep",
+        "$hover_element|default": "t.ep",
+        "$pressed_element|default": "t.ep",
+        "$unique_hover|default": "t.ep",
+        "controls": [
+            {
+                "d@button_texture": {
+                    "$extra_control": "$default_element"
+                }
+            },
+            {
+                "h@button_texture": {
+                    "$state_texture": "textures/ui/button_borderless_lighthover",
+                    "$wbd": true,
+                    "$on_hover": true,
+                    "$extra_control": "$hover_element",
+                    "$unique_control": "$unique_hover",
+                    "$color": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            },
+            {
+                "p@button_texture": {
+                    "$state_texture": "textures/ui/button_borderless_lightpressed",
+                    "$wbd": true,
+                    "$on_pressed": true,
+                    "$extra_control": "$pressed_element",
+                    "$color": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            }
+        ]
+    },
+    "toggle_template@t.t": {
+        "sound_name": "random.click",
+        "sound_volume": 1.0,
+        "sound_pitch": 1.0,
+        "button_mappings": [
+            {
+                "mapping_type": "pressed",
+                "from_button_id": "button.menu_select",
+                "to_button_id": "button.menu_select"
+            }
+        ],
+        "unchecked_control": "d",
+        "unchecked_hover_control": "dh",
+        "checked_control": "e",
+        "checked_hover_control": "eh",
+        "$disable_hover_element|default": "t.ep",
+        "$disable_unique_hover|default": "t.ep",
+        "$enable_hover_element|default": "t.ep",
+        "$enable_unique_hover|default": "t.ep",
+        "$disable_element|default": "t.ep",
+        "$enable_element|default": "t.ep",
+        "controls": [
+            {
+                "d@chat.button_texture": {
+                    "$extra_control": "$disable_element"
+                }
+            },
+            {
+                "dh@chat.button_texture": {
+                    "$state_texture": "textures/ui/button_borderless_lighthover",
+                    "$extra_control": "$disable_hover_element",
+                    "$unique_control": "$disable_unique_hover",
+                    "$wbd": true,
+                    "$color": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            },
+            {
+                "e@chat.button_texture": {
+                    "$extra_control": "$enable_element"
+                }
+            },
+            {
+                "eh@chat.button_texture": {
+                    "$state_texture": "textures/ui/button_borderless_lighthover",
+                    "$extra_control": "$enable_hover_element",
+                    "$unique_control": "$enable_unique_hover",
+                    "$wbd": true,
+                    "$color": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            }
+        ]
+    },
+    "hover_text_position@t.i": {
+        "anchor_from": "top_right",
+        "anchor_to": "bottom_right",
+        "offset": [
+            50,
+            -5
+        ],
+        "size": [
+            "100%cm + 6px",
+            "100%cm + 6px"
+        ],
+        "texture": "textures/ui/Black",
+        "alpha": 0.8,
+        "controls": [
+            {
+                "label@t.l": {
+                    "text": "#view_text",
+                    "text_alignment": "center",
+                    "bindings": [
+                        {
+                            "binding_name": "#coordinates_text"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "('Position: ' + #coordinates_text + '\n§oPress to Copy\nDouble Press to Paste')",
+                            "target_property_name": "#view_text"
+                        },
+                        {
+                            "binding_name": "(not #chat_title_visible)",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "when_copy_coordiate_off@t.l": {
+                    "text": "§oPress to Copy Position\nDouble Press to Paste Position",
+                    "text_alignment": "center",
+                    "bindings": [
+                        {
+                            "binding_name": "#chat_title_visible",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "steve_icon@t.i": {
+        "texture": "textures/ui/icon_steve",
+        "size": [
+            14,
+            14
+        ],
+        "controls": [
+            {
+                "border@t.i": {
+                    "texture": "textures/ui/focus_border_selected",
+                    "color": "$color",
+                    "size": [
+                        "100% + 2px",
+                        "100% + 2px"
+                    ],
+                    "$color|default": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            }
+        ]
+    },
+    "simple_button_icon@t.i": {
+        "size": [
+            14,
+            14
+        ],
+        "offset": "$o",
+        "$o|default": [
+            0,
+            2
+        ],
+        "$button_icon|default": "textures/ui/up_arrow",
+        "texture": "$button_icon",
+        "color": "$color",
+        "$color|default": [
+            0.3,
+            0.3,
+            0.3
+        ]
+    },
+    "auto_complete_panel_contents_with_item/autocomplete_button": {
+        "bindings": [
+            {
+                "binding_type": "collection_details",
+                "binding_collection_name": "auto_complete"
+            },
+            {
+                "binding_type": "collection",
+                "binding_name": "#auto_complete_text",
+                "binding_collection_name": "auto_complete"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not ((#auto_complete_text = '...') or (#auto_complete_text = '')))",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "auto_complete_panel_contents_with_item/text": {
+        "bindings": [
+            {
+                "binding_type": "collection",
+                "binding_name": "#auto_complete_text",
+                "binding_collection_name": "auto_complete"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "('§f' + #auto_complete_text - '/execute ... ')",
+                "target_property_name": "#text"
+            }
+        ]
+    },
+    "on_command@t.i": {
+        "texture": "textures/blocks/command_block_front_mipmap",
+        "size": [
+            16,
+            16
+        ]
+    },
+    "on_chat@t.i": {
+        "texture": "textures/items/book_writable",
+        "size": [
+            16,
+            16
+        ]
+    },
+    "hover_text_show_chat@t.i": {
+        "anchor_from": "top_middle",
+        "anchor_to": "bottom_middle",
+        "offset": [
+            0,
+            -5
+        ],
+        "size": [
+            "100%cm + 6px",
+            "100%cm + 6px"
+        ],
+        "texture": "textures/ui/Black",
+        "alpha": 0.8,
+        "controls": [
+            {
+                "label@t.l": {
+                    "$text|default": "View Chat",
+                    "text": "$text",
+                    "text_alignment": "center"
+                }
+            }
+        ]
+    },
+    "hover_text_show_command@chat.hover_text_show_chat": {
+        "$text": "View Commands List"
+    },
+    "hover_text_auto_complete@chat.hover_text_show_chat": {
+        "$text": "Auto Complete"
+    },
+    "hover_text_auto_complete_back@chat.hover_text_show_chat": {
+        "$text": "Auto Complete Back"
+    },
+    "hover_text_chat_previous_message@chat.hover_text_show_chat": {
+        "$text": "Previous Message"
+    },
+    "hover_text_chat_next_message@chat.hover_text_show_chat": {
+        "$text": "Next Message"
+    },
+    "chat_bottom_panel": {
+        "controls": [
+            {
+                "keyboard_button@chat.keyboard_button": {}
+            },
+            {
+                "host_main_button@host_options.host_main_button": {
+                    "ignored": "$is_pregame",
+                    "$focus_override_up": "coordinate_dropdown_focus_id"
+                }
+            },
+            {
+                "chat_settings@chat.chat_settings_button": {}
+            },
+            {
+                "up@chat.button_template": {
+                    "size": [
+                        27,
+                        27
+                    ],
+                    "layer": 30,
+                    "$onClick": "button.chat_previous_message",
+                    "$default_element": "chat.simple_button_icon",
+                    "$hover_element": "chat.simple_button_icon",
+                    "$unique_hover": "chat.hover_text_chat_previous_message",
+                    "$pressed_element": "chat.simple_button_icon"
+                }
+            },
+            {
+                "down@chat.button_template": {
+                    "size": [
+                        27,
+                        27
+                    ],
+                    "layer": 30,
+                    "$onClick": "button.chat_next_message",
+                    "$default_element": "chat.simple_button_icon",
+                    "$hover_element": "chat.simple_button_icon",
+                    "$pressed_element": "chat.simple_button_icon",
+                    "$unique_hover": "chat.hover_text_chat_next_message",
+                    "$button_icon": "textures/ui/down_arrow",
+                    "$o": [
+                        0,
+                        2
+                    ]
+                }
+            },
+            {
+                "text_box@chat.text_edit_box": {}
+            },
+            {
+                "right@chat.button_template": {
+                    "size": [
+                        27,
+                        27
+                    ],
+                    "layer": 30,
+                    "$onClick": "button.chat_autocomplete_back",
+                    "$default_element": "chat.simple_button_icon",
+                    "$hover_element": "chat.simple_button_icon",
+                    "$pressed_element": "chat.simple_button_icon",
+                    "$unique_hover": "chat.hover_text_auto_complete_back",
+                    "$button_icon": "textures/ui/arrow_right_white",
+                    "$o": [
+                        0,
+                        0
+                    ],
+                    "bindings": [
+                        {
+                            "binding_name": "#message_text_box_content"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(('%.2s' * ('a' + #message_text_box_content)) = 'a/')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "left@chat.button_template": {
+                    "size": [
+                        27,
+                        27
+                    ],
+                    "layer": 30,
+                    "$onClick": "button.chat_autocomplete",
+                    "$default_element": "chat.simple_button_icon",
+                    "$hover_element": "chat.simple_button_icon",
+                    "$pressed_element": "chat.simple_button_icon",
+                    "$unique_hover": "chat.hover_text_auto_complete",
+                    "$button_icon": "textures/ui/chevron_left",
+                    "$o": [
+                        0,
+                        0
+                    ],
+                    "bindings": [
+                        {
+                            "binding_name": "#message_text_box_content"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(('%.2s' * ('a' + #message_text_box_content)) = 'a/')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "show_chat_on_command@chat.toggle_template": {
+                    "size": [
+                        27,
+                        27
+                    ],
+                    "$disable_element": "chat.on_chat",
+                    "$disable_hover_element": "chat.on_chat",
+                    "$enable_element": "chat.on_command",
+                    "$enable_hover_element": "chat.on_command",
+                    "$disable_unique_hover": "chat.hover_text_show_chat",
+                    "$enable_unique_hover": "chat.hover_text_show_command",
+                    "bindings": [
+                        {
+                            "binding_name": "#message_text_box_content"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(('%.2s' * ('a' + #message_text_box_content)) = 'a/')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "copy_paste_position@chat.button_template": {
+                    "size": [
+                        27,
+                        27
+                    ],
+                    "layer": 30,
+                    "$onClick": "copy_coordinates_button",
+                    "$onDoubleClick": "paste_button",
+                    "$unique_hover": "chat.hover_text_position",
+                    "$default_element": "chat.steve_icon",
+                    "$hover_element": "chat.steve_icon",
+                    "$pressed_element": "chat.steve_icon",
+                    "$disableDoubleClick": false
+                }
+            },
+            {
+                "send_button@chat.send_button": {
+                    "offset": [
+                        -20,
+                        0
+                    ]
+                }
+            }
+        ]
+    },
+    "messages_text": {
+        "bindings": [
+            {
+                "binding_name": "#chat_visible"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "show_chat_on_command",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#toggle_state"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#toggle_state or #chat_visible)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "chat_with_preview@t.sp": {
+        "size": [
+            "100%-2px",
+            "100%-50px"
+        ],
+        "anchor_from": "bottom_left",
+        "anchor_to": "bottom_left",
+        "offset": [
+            2,
+            -27
+        ],
+        "controls": [
+            {
+                "fill_panel@t.p": {
+                    "size": [
+                        "100%",
+                        "fill"
+                    ],
+                    "controls": [
+                        {
+                            "chat@chat.messages_scrolling_panel": {
+                                "size": [
+                                    "100%",
+                                    "100%"
+                                ],
+                                "offset": [
+                                    0,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "autocomplete_commands_panel@chat.commands_panel": {
+                                "size": [
+                                    "100% + 2px",
+                                    "100%"
+                                ],
+                                "offset": [
+                                    -2,
+                                    0
+                                ],
+                                "layer": 3,
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "show_chat_on_command",
+                                        "source_property_name": "(not #toggle_state)",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "chat_preview@t.sp": {
+                    "size": [
+                        "100%",
+                        "100%c"
+                    ],
+                    "bindings": [
+                        {
+                            "binding_name": "#message_text_box_content"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not (#message_text_box_content = ''))",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "padding@t.p": {
+                                "size": [
+                                    0,
+                                    10
+                                ]
+                            }
+                        },
+                        {
+                            "chatPreview@t.sp": {
+                                "size": [
+                                    "100%",
+                                    "100%cm"
+                                ],
+                                "orientation": "horizontal",
+                                "controls": [
+                                    {
+                                        "preview_text_panel@t.p": {
+                                            "size": [
+                                                "100%cm",
+                                                "100%sm"
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "text@t.l": {
+                                                        "text": "§oPreview: ",
+                                                        "anchor_from": "top_left",
+                                                        "anchor_to": "top_left",
+                                                        "color": [
+                                                            0.8,
+                                                            0.8,
+                                                            0.8
+                                                        ],
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#message_text_box_content"
+                                                            },
+                                                            {
+                                                                "binding_type": "view",
+                                                                "source_property_name": "(('%.2s' * ('a' + #message_text_box_content)) = 'a/')",
+                                                                "target_property_name": "#console_1"
+                                                            },
+                                                            {
+                                                                "binding_type": "view",
+                                                                "source_property_name": "(not #console_1)",
+                                                                "target_property_name": "#visible"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "text_1@t.l": {
+                                                        "text": "§oCommand: ",
+                                                        "anchor_from": "top_left",
+                                                        "anchor_to": "top_left",
+                                                        "color": [
+                                                            0.8,
+                                                            0.8,
+                                                            0.8
+                                                        ],
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#message_text_box_content"
+                                                            },
+                                                            {
+                                                                "binding_type": "view",
+                                                                "source_property_name": "(('%.2s' * ('a' + #message_text_box_content)) = 'a/')",
+                                                                "target_property_name": "#visible"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "preview_chat@t.p": {
+                                            "size": [
+                                                "fill",
+                                                "100%cm"
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "text@t.l": {
+                                                        "anchor_from": "top_left",
+                                                        "anchor_to": "top_left",
+                                                        "text": "#text",
+                                                        "max_size": [
+                                                            "100%",
+                                                            "default"
+                                                        ],
+                                                        "color": [
+                                                            0.8,
+                                                            0.8,
+                                                            0.8
+                                                        ],
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#message_text_box_content"
+                                                            },
+                                                            {
+                                                                "binding_type": "view",
+                                                                "source_property_name": "('§o' + #message_text_box_content + '§a|')",
+                                                                "target_property_name": "#text"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "chat_screen_content": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "replace",
+                "where": {
+                    "messages_panel@chat.messages_scrolling_panel": {}
+                },
+                "value": {
+                    "messages_panel@chat.chat_with_preview": {}
+                }
+            },
+            {
+                "array_name": "controls",
+                "operation": "remove",
+                "where": {
+                    "autocomplete_commands_panel@chat.commands_panel": {
+                        "layer": 3
+                    }
+                }
+            }
+        ]
+    },
+    "text_edit_box": {
+        "max_length": 5000
+    }
+}

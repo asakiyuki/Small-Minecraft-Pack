@@ -40,5 +40,23 @@
     },
     "r_i@t.c": {
         "renderer": "inventory_item_renderer"
+    },
+    "cb@t.b": {
+        "$onClick|default": "button.menu_select",
+        "$onDoubleClick|default": "button.menu_select",
+        "$disableDoubleClick|default": true,
+        "button_mappings": [
+            {
+                "mapping_type": "pressed",
+                "from_button_id": "button.menu_select",
+                "to_button_id": "$onClick"
+            },
+            {
+                "mapping_type": "double_pressed",
+                "from_button_id": "button.menu_select",
+                "ignored": "$disableDoubleClick",
+                "to_button_id": "$onDoubleClick"
+            }
+        ]
     }
 }
