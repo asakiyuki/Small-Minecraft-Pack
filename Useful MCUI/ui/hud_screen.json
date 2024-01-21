@@ -1,7 +1,438 @@
 {
+    "root_panel/exp_rend": {
+        "$is_pocket_ui": true
+    },
     "hud_screen": {
         "$use_loading_bars": false,
         "$screen_animations": [],
         "render_only_when_topmost": false
+    },
+    "exp_progress_bar_and_hotbar/resizing_xp_bar_with_hotbar": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "exp_point_caculator@experience_point.exp_point_caculator": {}
+                    },
+                    {
+                        "no@t.p": {
+                            "size": [
+                                0,
+                                0
+                            ],
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_right",
+                            "controls": [
+                                {
+                                    "label@t.l": {
+                                        "text": "#text",
+                                        "anchor_from": "top_right",
+                                        "anchor_to": "top_left",
+                                        "offset": [
+                                            2,
+                                            -4
+                                        ],
+                                        "shadow": true,
+                                        "color": "$experience_text_color",
+                                        "bindings": [
+                                            {
+                                                "binding_type": "view",
+                                                "source_control_name": "exp_point_caculator",
+                                                "source_property_name": "('§z' + #current_point + '/' + #exp_require)",
+                                                "target_property_name": "#text"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "array_name": "controls",
+                "operation": "replace",
+                "where": {
+                    "progress_text_label@progress_text_label": {
+                        "offset": [
+                            0,
+                            0
+                        ],
+                        "layer": 7
+                    }
+                },
+                "value": [
+                    {
+                        "progress_text_label@t.p": {
+                            "size": [
+                                0,
+                                0
+                            ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "controls": [
+                                {
+                                    "progress_text_label@hud.progress_text_label": {
+                                        "anchor_from": "top_left",
+                                        "anchor_to": "top_right",
+                                        "offset": [
+                                            -2,
+                                            -4
+                                        ],
+                                        "layer": 7
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#show_survival_ui"
+            },
+            {
+                "binding_name": "#is_creative_mode"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#show_survival_ui or #is_creative_mode)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "exp_progress_bar_and_hotbar/resizing_hotbar_no_xp_bar": {
+        "ignored": true
+    },
+    "item_name_text_root/item_text_aligner": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_back",
+                "value": [
+                    {
+                        "creative_padding@t.p": {
+                            "size": [
+                                "100%sm",
+                                8
+                            ],
+                            "bindings": [
+                                {
+                                    "binding_name": "#is_creative_mode",
+                                    "binding_name_override": "#visible"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "gui_hotbar_grid_item/hotbar_parent/item_count": {
+        "bindings": [
+            {
+                "binding_name": "#inventory_stack_count",
+                "binding_type": "collection",
+                "binding_collection_name": "$stack_count_collection_name"
+            }
+        ]
+    },
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "inventory_hud@inventory_hud.inventory_hud": {
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "inventory_hud_pc_toggle",
+                                    "source_property_name": "#ts",
+                                    "target_property_name": "#pc_toggle"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "inventory_hud_mobile_toggle",
+                                    "source_property_name": "#ts",
+                                    "target_property_name": "#mobile_toggle"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#pc_toggle or #mobile_toggle)",
+                                    "target_property_name": "#visible"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "inventory_hud_pc_toggle@t.t": {
+                            "size": [
+                                0,
+                                0
+                            ],
+                            "anchor_from": "bottom_left",
+                            "anchor_to": "bottom_left",
+                            "button_mappings": [
+                                {
+                                    "from_button_id": "button.scoreboard",
+                                    "to_button_id": "button.menu_select",
+                                    "mapping_type": "global"
+                                }
+                            ],
+                            "bindings": [
+                                {
+                                    "binding_name": "#inventory_touch_button",
+                                    "binding_type": "global"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "((not #inventory_touch_button) and #toggle_state)",
+                                    "target_property_name": "#ts"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "noname_panel@hud.item_tool_with_actionbar": {}
+                    }
+                ]
+            }
+        ]
+    },
+    "hotbar_chooser": {
+        "type": "panel",
+        "size": [
+            "100%c",
+            "100%c"
+        ],
+        "controls": [
+            {
+                "desktop_hotbar@hotbar_panel": {
+                    "offset": [
+                        -4,
+                        0
+                    ]
+                }
+            }
+        ]
+    },
+    "hotbar_panel": {
+        "$is_pocket_ui|default": false,
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "replace",
+                "where": {
+                    "hotbar_start_cap@hud.hotbar_start_cap": {}
+                },
+                "value": [
+                    {
+                        "hotbar_start_cap@hud.hotbar_start_cap": {}
+                    },
+                    {
+                        "inventory_hud_mobile_button@t.p": {
+                            "size": [
+                                20,
+                                22
+                            ],
+                            "ignored": "$is_pocket_ui",
+                            "bindings": [
+                                {
+                                    "binding_name": "#inventory_touch_button",
+                                    "binding_name_override": "#visible",
+                                    "binding_type": "global"
+                                }
+                            ],
+                            "controls": [
+                                {
+                                    "slot@hud.hotbar_slot_image": {
+                                        "layer": 2,
+                                        "$hotbar_slot_image_size": [
+                                            "100%",
+                                            "100%"
+                                        ],
+                                        "texture": "textures/ui/hotbar_0"
+                                    }
+                                },
+                                {
+                                    "inventory_hud_mobile_toggle@hud.inventory_hud_button": {}
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "inventory_hud_button@t.t": {
+        "button_mappings": [
+            {
+                "mapping_type": "pressed",
+                "from_button_id": "button.menu_select",
+                "to_button_id": "button.menu_select"
+            }
+        ],
+        "sound_name": "random.click",
+        "sound_volume": 1.0,
+        "sound_pitch": 1.0,
+        "size": [
+            16,
+            16
+        ],
+        "unchecked_control": "d",
+        "unchecked_hover_control": "dh",
+        "checked_control": "e",
+        "checked_hover_control": "eh",
+        "bindings": [
+            {
+                "binding_name": "#inventory_touch_button",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#inventory_touch_button and #toggle_state)",
+                "target_property_name": "#ts"
+            }
+        ],
+        "controls": [
+            {
+                "d@hud.default_borderless_button_layout": {}
+            },
+            {
+                "dh@hud.hover_borderless_button_layout": {}
+            },
+            {
+                "e@t.i": {
+                    "texture": "textures/ui/button_borderless_darkpressednohover",
+                    "alpha": 0.45
+                }
+            },
+            {
+                "eh@hud.pressed_borderless_button_layout": {}
+            },
+            {
+                "chest_icon@t.i": {
+                    "size": [
+                        12,
+                        12
+                    ],
+                    "texture": "textures/blocks/chest_front"
+                }
+            }
+        ]
+    },
+    "exp_progress_bar_and_hotbar/resizing_xp_bar_with_hotbar/empty_progress_bar/full_progress_bar/progress_bar_nub": {
+        "max_size": [
+            214,
+            5
+        ]
+    },
+    "player_position": {
+        "size": [
+            "100%cm",
+            "100%cm"
+        ],
+        "alpha": 0,
+        "controls": [
+            {
+                "coor@chunk_coor.content": {}
+            }
+        ]
+    },
+    "root_panel/hud_actionbar_text_area": {
+        "ignored": true
+    },
+    "anim_actionbar_text_background_alpha_out": {
+        "destroy_at_end": "none"
+    },
+    "anim_actionbar_text_alpha_out": {
+        "destroy_at_end": "none"
+    },
+    "anim_actionbar_text_background_size_in": {
+        "anim_type": "size",
+        "from": [
+            "100%c + 12px",
+            "100%c + 5px"
+        ],
+        "to": [
+            "100%c + 12px",
+            "100%c + 5px"
+        ],
+        "duration": 3,
+        "next": "@hud.anim_actionbar_text_background_size_out"
+    },
+    "anim_actionbar_text_background_size_out": {
+        "anim_type": "size",
+        "from": [
+            "100%c + 12px",
+            "100%c + 5px"
+        ],
+        "to": [
+            "100%c + 12px",
+            0
+        ],
+        "duration": 0.7,
+        "easing": "in_out_cubic",
+        "destroy_at_end": "hud_actionbar_text"
+    },
+    "hud_actionbar_text": {
+        "size": "@hud.anim_actionbar_text_background_size_in",
+        "offset": [
+            0,
+            0
+        ]
+    },
+    "hud_actionbar_text/actionbar_message": {
+        "max_size": [
+            250,
+            "default"
+        ]
+    },
+    "item_tool_with_actionbar@t.sp": {
+        "size": [
+            "100%cm",
+            "100%c"
+        ],
+        "offset": [
+            -5,
+            2.5
+        ],
+        "use_child_anchors": true,
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "controls": [
+            {
+                "hud_actionbar_text_area@t.p": {
+                    "size": [
+                        "100%cm",
+                        "100%cm"
+                    ],
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "factory": {
+                        "name": "hud_actionbar_text_factory",
+                        "control_ids": {
+                            "hud_actionbar_text": "hud_actionbar_text@hud.hud_actionbar_text"
+                        }
+                    }
+                }
+            },
+            {
+                "padding@t.p": {
+                    "size": [
+                        0,
+                        2.5
+                    ]
+                }
+            },
+            {
+                "items_hud@items_hud.content": {}
+            }
+        ]
     }
 }

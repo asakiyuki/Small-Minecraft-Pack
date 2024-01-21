@@ -1,0 +1,109 @@
+{
+    "namespace": "experience_point",
+    "exp_point_caculator@t.p": {
+        "size": [
+            0,
+            0
+        ],
+        "bindings": [
+            {
+                "binding_type": "global",
+                "binding_name": "#level_number"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#level_number * 1)",
+                "target_property_name": "#lv_int"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((2 * #lv_int + 7) * (#lv_int < 16))",
+                "target_property_name": "#nl1"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((5 * #lv_int - 38) * ((#lv_int < 31) and (#lv_int > 15)))",
+                "target_property_name": "#nl2"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((9 * #lv_int - 158) * (#lv_int > 30))",
+                "target_property_name": "#nl3"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#nl1 + #nl2 + #nl3)",
+                "target_property_name": "#exp_require"
+            },
+            {
+                "binding_type": "global",
+                "binding_name": "#exp_progress"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#exp_require * 100 + 10) * (1 - #exp_progress))",
+                "target_property_name": "#epc"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(10000000 * ((#epc > 10000000) + (#epc > 20000000)))",
+                "target_property_name": "#cep1"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#epc - #cep1)",
+                "target_property_name": "#cep_1"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(1000000 * ((#cep_1 > 1000000) + (#cep_1 > 2000000) + (#cep_1 > 3000000) + (#cep_1 > 4000000) + (#cep_1 > 5000000) + (#cep_1 > 6000000) + (#cep_1 > 7000000) + (#cep_1 > 8000000) + (#cep_1 > 9000000)))",
+                "target_property_name": "#cep2"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#cep_1 - #cep2)",
+                "target_property_name": "#cep_2"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(100000 * ((#cep_2 > 100000) + (#cep_2 > 200000) + (#cep_2 > 300000) + (#cep_2 > 400000) + (#cep_2 > 500000) + (#cep_2 > 600000) + (#cep_2 > 700000) + (#cep_2 > 800000) + (#cep_2 > 900000)))",
+                "target_property_name": "#cep3"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#cep_2 - #cep3)",
+                "target_property_name": "#cep_3"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(10000 * ((#cep_3 > 10000) + (#cep_3 > 20000) + (#cep_3 > 30000) + (#cep_3 > 40000) + (#cep_3 > 50000) + (#cep_3 > 60000) + (#cep_3 > 70000) + (#cep_3 > 80000) + (#cep_3 > 90000)))",
+                "target_property_name": "#cep4"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#cep_3 - #cep4)",
+                "target_property_name": "#cep_4"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(1000 * ((#cep_4 > 1000) + (#cep_4 > 2000) + (#cep_4 > 3000) + (#cep_4 > 4000) + (#cep_4 > 5000) + (#cep_4 > 6000) + (#cep_4 > 7000) + (#cep_4 > 8000) + (#cep_4 > 9000)))",
+                "target_property_name": "#cep5"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#cep_4 - #cep5)",
+                "target_property_name": "#cep_5"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(100 * ((#cep_5 > 100) + (#cep_5 > 200) + (#cep_5 > 300) + (#cep_5 > 400) + (#cep_5 > 500) + (#cep_5 > 600) + (#cep_5 > 700) + (#cep_5 > 800) + (#cep_5 > 900)))",
+                "target_property_name": "#cep6"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#cep1 + #cep2 + #cep3 + #cep4 + #cep5 + #cep6) / 100)",
+                "target_property_name": "#current_point"
+            }
+        ]
+    }
+}

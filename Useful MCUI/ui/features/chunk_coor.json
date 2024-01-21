@@ -1,1 +1,150 @@
-{}
+{
+    "namespace": "chunk_coor",
+    "content@t.sp": {
+        "size": [
+            "100%cm",
+            "100%c"
+        ],
+        "controls": [
+            {
+                "player_position@t.i": {
+                    "size": [
+                        "100%c + 6px",
+                        "100%c + 2px"
+                    ],
+                    "texture": "textures/ui/Black",
+                    "alpha": 0.5,
+                    "$disable_chunkcoor|default": false,
+                    "controls": [
+                        {
+                            "player_position_text@t.l": {
+                                "anchor_from": "bottom_middle",
+                                "anchor_to": "bottom_middle",
+                                "layer": 1,
+                                "enable_profanity_filter": false,
+                                "color": "$chat_text_color",
+                                "text": "#text",
+                                "shadow": true,
+                                "bindings": [
+                                    {
+                                        "binding_name": "#player_position_text",
+                                        "binding_condition": "always",
+                                        "binding_type": "global"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "ignored": "$disable_chunkcoor",
+                                        "source_property_name": "(': ' + #player_position_text - ('%.1s' * #player_position_text + ': ') - ('%.2s' * #player_position_text + ': ') - ('%.3s' * #player_position_text + ': ') - ('%.4s' * #player_position_text + ': ') - ('%.5s' * #player_position_text + ': ') - ('%.6s' * #player_position_text + ': ') - ('%.7s' * #player_position_text + ': ') - ('%.8s' * #player_position_text + ': ') - ('%.9s' * #player_position_text + ': ') - ('%.10s' * #player_position_text + ': ') - ('%.11s' * #player_position_text + ': ') - ('%.12s' * #player_position_text + ': ') - ('%.13s' * #player_position_text + ': ') - ('%.14s' * #player_position_text + ': ') - ('%.15s' * #player_position_text + ': ') - ('%.16s' * #player_position_text + ': ') - ('%.17s' * #player_position_text + ': ') - ('%.18s' * #player_position_text + ': ') - ('%.19s' * #player_position_text + ': ') - ('%.20s' * #player_position_text + ': ') - ('%.21s' * #player_position_text + ': ') - ('%.22s' * #player_position_text + ': ') - ('%.23s' * #player_position_text + ': ') - ('%.24s' * #player_position_text + ': ') - ('%.25s' * #player_position_text + ': ') - ('%.26s' * #player_position_text + ': ') - ('%.27s' * #player_position_text + ': ') - ('%.28s' * #player_position_text + ': ') - ('%.29s' * #player_position_text + ': ') - ('%.30s' * #player_position_text + ': ') - ('%.31s' * #player_position_text + ': ') - ('%.32s' * #player_position_text + ': '))",
+                                        "target_property_name": "#position_text"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "ignored": "$disable_chunkcoor",
+                                        "source_property_name": "(#position_text - ': ')",
+                                        "target_property_name": "#coor_x"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "ignored": "$disable_chunkcoor",
+                                        "source_property_name": "(#position_text - (': ' + #coor_x + ', '))",
+                                        "target_property_name": "#coor_y"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "ignored": "$disable_chunkcoor",
+                                        "source_property_name": "(#position_text - (': ' + #coor_x + ', ' + #coor_y + ', '))",
+                                        "target_property_name": "#coor_z"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "#player_position_text",
+                                        "target_property_name": "#text"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "player_chunk_position@t.i": {
+                    "size": [
+                        "100%c + 6px",
+                        "100%c + 2px"
+                    ],
+                    "ignored": "$disable_chunkcoor",
+                    "texture": "textures/ui/Black",
+                    "alpha": 0.5,
+                    "controls": [
+                        {
+                            "player_chunk_position_text@t.l": {
+                                "anchor_from": "bottom_middle",
+                                "anchor_to": "bottom_middle",
+                                "layer": 1,
+                                "enable_profanity_filter": false,
+                                "color": "$chat_text_color",
+                                "text": "#text",
+                                "shadow": true,
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "player_position_text",
+                                        "source_property_name": "#coor_x",
+                                        "target_property_name": "#coor_x"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "player_position_text",
+                                        "source_property_name": "#coor_y",
+                                        "target_property_name": "#coor_y"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "player_position_text",
+                                        "source_property_name": "#coor_z",
+                                        "target_property_name": "#coor_z"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#coor_x / 16 - (#coor_x < 0))",
+                                        "target_property_name": "#chunk_coor_x"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#coor_y / 16 - (#coor_y < 0))",
+                                        "target_property_name": "#chunk_coor_y"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#coor_z / 16 - (#coor_z < 0))",
+                                        "target_property_name": "#chunk_coor_z"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#coor_x - #chunk_coor_x * 16)",
+                                        "target_property_name": "#in_chunk_coor_x"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#coor_y - #chunk_coor_y * 16)",
+                                        "target_property_name": "#in_chunk_coor_y"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#coor_z - #chunk_coor_z * 16)",
+                                        "target_property_name": "#in_chunk_coor_z"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "('Chunk: ' + (#in_chunk_coor_x < 16) * #in_chunk_coor_x + ', ' + (#in_chunk_coor_y < 16) * #in_chunk_coor_y + ', ' + (#in_chunk_coor_z < 16) * #in_chunk_coor_z + ' in ' + #chunk_coor_x + ', ' + #chunk_coor_y + ', ' + #chunk_coor_z)",
+                                        "target_property_name": "#text"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

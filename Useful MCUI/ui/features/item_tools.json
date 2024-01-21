@@ -1,1 +1,58 @@
-{}
+{
+    "namespace": "items_hud",
+    "content@t.i": {
+        "ignored": "$disable_item_on_hud",
+        "texture": "textures/ui/hud_tip_text_background",
+        "size": [
+            "100%cm + 5px",
+            "100%cm + 5px"
+        ],
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "offset": [
+            -5,
+            5
+        ],
+        "alpha": 0.5,
+        "controls": [
+            {
+                "sp@t.sp": {
+                    "orientation": "horizontal",
+                    "size": [
+                        "100%c",
+                        "100%cm"
+                    ],
+                    "controls": [
+                        {
+                            "clock@controls.item_renderer-id": {
+                                "size": [
+                                    16,
+                                    16
+                                ],
+                                "$item_id": "$clock"
+                            }
+                        },
+                        {
+                            "compass@controls.item_renderer-id": {
+                                "size": [
+                                    16,
+                                    16
+                                ],
+                                "$item_id": "$compass"
+                            }
+                        },
+                        {
+                            "recovery_compass@controls.item_renderer-id": {
+                                "size": [
+                                    16,
+                                    16
+                                ],
+                                "$item_id": "$recovery_compass"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

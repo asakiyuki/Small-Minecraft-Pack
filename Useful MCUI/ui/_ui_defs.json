@@ -9,8 +9,8 @@
         "ui/features/item_tools.json",
         "ui/features/total_mainhand_item_in_inventory.json",
         "ui/features/trade_unlocked.json",
+        "ui/features/experience_point.json",
         // Temp
-        "ui/template/float_to_int.json",
         "ui/template/quick_element.json",
         "ui/template/render_item_by_id.json",
         "ui/template/selected_item.json",

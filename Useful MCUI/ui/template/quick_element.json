@@ -34,6 +34,12 @@
     "eb": {
         "type": "edit_box"
     },
+    "g": {
+        "type": "grid"
+    },
+    "f": {
+        "type": "factory"
+    },
     // Template Element
     "ep@t.p": {
         "size": [
@@ -41,7 +47,7 @@
             0
         ]
     },
-    "r_i@t.c": {
+    "ir@t.c": {
         "renderer": "inventory_item_renderer"
     },
     "cb@t.b": {
