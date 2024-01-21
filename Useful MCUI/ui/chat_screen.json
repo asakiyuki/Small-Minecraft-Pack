@@ -1,4 +1,87 @@
 {
+    "chat_header/title_panel/chat_header_content_area": {
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "offset": [
+            -5,
+            1
+        ]
+    },
+    "chat_header/title_panel/title": {
+        "ignored": "(not $disable_list)"
+    },
+    "chat_header/title_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "show_id_list@t.t": {
+                            "size": [
+                                20,
+                                20
+                            ],
+                            "offset": [
+                                0,
+                                -1
+                            ],
+                            "ignored": "$disable_list",
+                            "anchor_from": "top_middle",
+                            "anchor_to": "top_middle",
+                            "sound_name": "random.click",
+                            "sound_volume": 1.0,
+                            "sound_pitch": 1.0,
+                            "layer": 100,
+                            "button_mappings": [
+                                {
+                                    "mapping_type": "pressed",
+                                    "from_button_id": "button.menu_select",
+                                    "to_button_id": "button.menu_select"
+                                }
+                            ],
+                            "unchecked_control": "d",
+                            "unchecked_hover_control": "dh",
+                            "checked_control": "e",
+                            "checked_hover_control": "eh",
+                            "controls": [
+                                {
+                                    "d@t.i": {
+                                        "texture": "textures/ui/arrowDown"
+                                    }
+                                },
+                                {
+                                    "dh@t.i": {
+                                        "texture": "textures/ui/arrowDown",
+                                        "color": [
+                                            0.9,
+                                            0.9,
+                                            0.9
+                                        ]
+                                    }
+                                },
+                                {
+                                    "e@t.i": {
+                                        "texture": "textures/ui/chevron_white_up"
+                                    }
+                                },
+                                {
+                                    "eh@t.i": {
+                                        "texture": "textures/ui/chevron_white_up",
+                                        "color": [
+                                            0.9,
+                                            0.9,
+                                            0.9
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
     "button_texture@t.i": {
         "$state_texture|default": "textures/ui/button_borderless_light",
         "$wbd|default": false,
@@ -711,6 +794,24 @@
                         "layer": 3
                     }
                 }
+            },
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "list@sound_id_list.content": {
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "show_id_list",
+                                    "source_property_name": "#toggle_state",
+                                    "target_property_name": "#visible"
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         ]
     },

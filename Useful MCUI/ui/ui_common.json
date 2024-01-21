@@ -1,0 +1,238 @@
+{
+    "nav_toggle_texture@t.i": {
+        "texture": "textures/ui/focus_border_selected",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "color": "$border_color",
+        "$border_color|default": [
+            0,
+            0,
+            0
+        ],
+        "$btn_tex|default": "textures/ui/button_borderless_light",
+        "$btn_icon|default": "textures/ui/Black",
+        "$tex_col|default": [
+            {
+                "icon@t.i": {
+                    "texture": "$btn_icon",
+                    "size": [
+                        18,
+                        18
+                    ]
+                }
+            }
+        ],
+        "controls": [
+            {
+                "tex@t.i": {
+                    "texture": "$btn_tex",
+                    "size": [
+                        "100% - 2px",
+                        "100% - 2px"
+                    ],
+                    "controls": [
+                        {
+                            "icon_outline@t.i": {
+                                "color": "$border_color",
+                                "layer": 10,
+                                "texture": "textures/ui/focus_border_selected",
+                                "size": [
+                                    20,
+                                    20
+                                ],
+                                "controls": "$tex_col"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "nav_toggle@t.t": {
+        "$toggle_binding_name|default": "none",
+        "sound_name": "random.click",
+        "sound_volume": 1.0,
+        "sound_pitch": 1.0,
+        "button_mappings": [
+            {
+                "mapping_type": "pressed",
+                "from_button_id": "button.menu_select",
+                "to_button_id": "button.menu_select"
+            }
+        ],
+        "unchecked_control": "d",
+        "unchecked_hover_control": "dh",
+        "checked_control": "e",
+        "checked_hover_control": "eh",
+        "toggle_name": "$toggle_binding_name",
+        "$toggle_binding_name_edit|default": "$toggle_binding_name",
+        "bindings": [
+            {
+                "binding_type": "global",
+                "binding_name": "$toggle_binding_name_edit",
+                "binding_name_override": "#toggle_state"
+            }
+        ],
+        "controls": [
+            {
+                "d@common.nav_toggle_texture": {
+                    "$on_hover": false,
+                    "$on_enabled": false
+                }
+            },
+            {
+                "dh@common.nav_toggle_texture": {
+                    "$border_color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "$btn_tex": "textures/ui/button_borderless_lighthover",
+                    "$on_hover": true,
+                    "$on_enabled": false
+                }
+            },
+            {
+                "e@common.nav_toggle_texture": {
+                    "$btn_tex": "textures/ui/button_borderless_lightpressednohover",
+                    "$on_hover": false,
+                    "$on_enabled": true
+                }
+            },
+            {
+                "eh@common.nav_toggle_texture": {
+                    "$border_color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "$btn_tex": "textures/ui/button_borderless_lightpressed",
+                    "$on_hover": true,
+                    "$on_enabled": true
+                }
+            }
+        ]
+    },
+    "nav_toggle_without_pressed@common.nav_toggle": {
+        "controls": [
+            {
+                "d@common.nav_toggle_texture": {
+                    "$on_hover": false,
+                    "$on_enabled": false
+                }
+            },
+            {
+                "dh@common.nav_toggle_texture": {
+                    "$border_color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "$btn_tex": "textures/ui/button_borderless_lighthover",
+                    "$on_hover": true,
+                    "$on_enabled": false
+                }
+            },
+            {
+                "e@common.nav_toggle_texture": {
+                    "$on_hover": false,
+                    "$on_enabled": true
+                }
+            },
+            {
+                "eh@common.nav_toggle_texture": {
+                    "$border_color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "$btn_tex": "textures/ui/button_borderless_lighthover",
+                    "$on_hover": true,
+                    "$on_enabled": true
+                }
+            }
+        ]
+    },
+    "playsound_button@t.b": {
+        "sound_name": "$playsound_id",
+        "$playsound_id|default": "ambient.basalt_deltas.additions",
+        "sound_volume": 1.0,
+        "sound_pitch": 1.0,
+        "hover_control": "h",
+        "pressed_control": "p",
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "sound_id_searchbar",
+                "source_property_name": "#item_name",
+                "target_property_name": "#item_search_name"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not (($playsound_id - #item_search_name) = $playsound_id)) or (#item_search_name = '')",
+                "target_property_name": "#visible"
+            }
+        ],
+        "size": [
+            "100%",
+            15
+        ],
+        "button_mappings": [
+            {
+                "mapping_type": "pressed",
+                "from_button_id": "button.menu_select",
+                "to_button_id": "button.menu_select"
+            }
+        ],
+        "controls": [
+            {
+                "text@t.p": {
+                    "size": [
+                        "100%",
+                        "100%"
+                    ],
+                    "controls": [
+                        {
+                            "label@t.l": {
+                                "size": [
+                                    "100%",
+                                    "default"
+                                ],
+                                "text": "$playsound_id"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "h@t.i": {
+                    "texture": "textures/ui/list_item_divider_line_light",
+                    "size": [
+                        "100%",
+                        1
+                    ],
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle"
+                }
+            },
+            {
+                "p@t.i": {
+                    "texture": "textures/ui/list_item_divider_line_light",
+                    "size": [
+                        "100%",
+                        1
+                    ],
+                    "color": [
+                        0,
+                        1,
+                        1
+                    ],
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle"
+                }
+            }
+        ]
+    }
+}

@@ -31,6 +31,9 @@
     "c": {
         "type": "custom"
     },
+    "eb": {
+        "type": "edit_box"
+    },
     // Template Element
     "ep@t.p": {
         "size": [

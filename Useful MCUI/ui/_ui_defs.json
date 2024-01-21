@@ -13,6 +13,9 @@
         "ui/template/float_to_int.json",
         "ui/template/quick_element.json",
         "ui/template/render_item_by_id.json",
-        "ui/template/selected_item.json"
+        "ui/template/selected_item.json",
+        // Src
+        "ui/screen/sound_id_list.json",
+        "ui/screen/sound_id.json"
     ]
 }

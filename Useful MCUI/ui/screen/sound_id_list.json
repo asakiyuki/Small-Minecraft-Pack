@@ -1,0 +1,254 @@
+{
+    "namespace": "sound_id_list",
+    "content@t.s": {
+        "ignored": "$disable_list",
+        "layer": 75,
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "bg@t.i": {
+                    "texture": "textures/ui/Black",
+                    "alpha": 0.5,
+                    "controls": [
+                        {
+                            "item_list@t.p": {
+                                "size": [
+                                    310,
+                                    "100% - 85px"
+                                ],
+                                "controls": [
+                                    {
+                                        "bg2@t.i": {
+                                            "texture": "textures/ui/Black",
+                                            "alpha": 0.5,
+                                            "size": [
+                                                "100%",
+                                                "100%"
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "outline@t.i": {
+                                                        "size": [
+                                                            "100%",
+                                                            "100%"
+                                                        ],
+                                                        "texture": "textures/ui/focus_border_selected",
+                                                        "alpha": 0.5
+                                                    }
+                                                },
+                                                {
+                                                    "sound_id_list@t.sp": {
+                                                        "size": [
+                                                            "100% - 10px",
+                                                            "100% - 10px"
+                                                        ],
+                                                        "controls": [
+                                                            {
+                                                                "title@t.p": {
+                                                                    "size": [
+                                                                        "100%",
+                                                                        25
+                                                                    ],
+                                                                    "controls": [
+                                                                        {
+                                                                            "line@t.i": {
+                                                                                "texture": "textures/ui/list_item_divider_line_light",
+                                                                                "size": [
+                                                                                    "75%",
+                                                                                    1
+                                                                                ],
+                                                                                "anchor_from": "bottom_middle",
+                                                                                "anchor_to": "bottom_middle"
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "text@t.l": {
+                                                                                "text": "Ingame Sound ID List",
+                                                                                "font_scale_factor": 1.5,
+                                                                                "font_type": "MinecraftTen"
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "padding1@t.p": {
+                                                                    "size": [
+                                                                        0,
+                                                                        2
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "sil@sound_id_list.sound_id_searchbar": {}
+                                                            },
+                                                            {
+                                                                "padding2@t.p": {
+                                                                    "size": [
+                                                                        0,
+                                                                        2
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "sil_list@sound_id_list.sound_id_scroll": {}
+                                                            },
+                                                            {
+                                                                "padding3@t.p": {
+                                                                    "size": [
+                                                                        0,
+                                                                        5
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "minecraft_version@t.l": {
+                                                                    "size": [
+                                                                        "100%",
+                                                                        15
+                                                                    ],
+                                                                    "text_alignment": "center",
+                                                                    "text": "('Minecraft Version: ' + $version)"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "sound_id_searchbar@t.eb": {
+        "max_length": 32500,
+        "size": [
+            "100%",
+            15
+        ],
+        "enabled_newline": true,
+        "default_control": "d",
+        "hover_control": "h",
+        "pressed_control": "p",
+        "text_control": "sound_id_searchbar",
+        "place_holder_control": "ph",
+        "text_edit_box_grid_collection_name": "",
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_select",
+                "to_button_id": "button.text_edit_box_selected",
+                "handle_select": true,
+                "handle_deselect": false,
+                "mapping_type": "pressed"
+            },
+            {
+                "from_button_id": "button.menu_select",
+                "to_button_id": "button.text_edit_box_selected",
+                "handle_select": false,
+                "handle_deselect": true,
+                "mapping_type": "global",
+                "consume_event": false
+            },
+            {
+                "from_button_id": "button.menu_ok",
+                "to_button_id": "button.text_edit_box_selected",
+                "handle_select": true,
+                "handle_deselect": true,
+                "mapping_type": "pressed"
+            },
+            {
+                "from_button_id": "button.menu_ok",
+                "to_button_id": "button.text_edit_box_selected",
+                "handle_select": false,
+                "handle_deselect": true,
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.menu_cancel",
+                "to_button_id": "button.text_edit_box_deselected",
+                "handle_select": false,
+                "handle_deselect": true,
+                "mapping_type": "global"
+            },
+            {
+                "to_button_id": "button.text_edit_box_hovered",
+                "mapping_type": "pressed"
+            }
+        ],
+        "controls": [
+            {
+                "sound_id_searchbar@t.l": {
+                    "text": "#item_name",
+                    "size": [
+                        "100% - 8px",
+                        10
+                    ],
+                    "layer": 2,
+                    "property_bag": {
+                        "#property_field": "#item_name"
+                    }
+                }
+            },
+            {
+                "place_holder@t.l": {
+                    "text": "Search sound ID...",
+                    "alpha": 0.5,
+                    "size": [
+                        "100% - 8px",
+                        10
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "sound_id_searchbar",
+                            "resolve_sibling_scope": true,
+                            "source_property_name": "(#item_name = '')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "d@common.edit_box_indent": {
+                    "layer": 1
+                }
+            },
+            {
+                "h@common.edit_box_indent_hover": {
+                    "layer": 1
+                }
+            },
+            {
+                "p@common.edit_box_indent_hover": {
+                    "layer": 1
+                }
+            }
+        ]
+    },
+    "sound_id_scroll@common.scrolling_panel": {
+        "layer": 1,
+        "$scrolling_pane_size": [
+            "100%",
+            "100%"
+        ],
+        "$scrolling_content": "idlist.content",
+        "$scroll_size": [
+            5,
+            "100% - 4px"
+        ],
+        "size": [
+            "100%",
+            "fill"
+        ],
+        "$show_background": false
+    }
+}

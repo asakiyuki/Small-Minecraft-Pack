@@ -1,0 +1,1181 @@
+{
+    "right_scroll_panel_content": {
+        "type": "stack_panel",
+        "orientation": "vertical",
+        "controls": [
+            {
+                "command_block_commands_panel": {
+                    "type": "stack_panel",
+                    "orientation": "vertical",
+                    "size": [
+                        "100%",
+                        "100%c + 4px"
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "controls": [
+                        {
+                            "spacer1": {
+                                "type": "panel",
+                                "visible": true,
+                                "size": [
+                                    0,
+                                    3
+                                ]
+                            }
+                        },
+                        {
+                            "centering_panel": {
+                                "type": "panel",
+                                "size": [
+                                    "100%",
+                                    "100%c"
+                                ],
+                                "controls": [
+                                    {
+                                        "option_label": {
+                                            "type": "label",
+                                            "color": "$body_text_color",
+                                            "size": [
+                                                "100%",
+                                                "default"
+                                            ],
+                                            "offset": [
+                                                2,
+                                                0
+                                            ],
+                                            "layer": 1,
+                                            "text": "advMode.command",
+                                            "visible": true,
+                                            "locked_alpha": 0.5
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spacer2": {
+                                "type": "panel",
+                                "visible": true,
+                                "size": [
+                                    0,
+                                    1
+                                ]
+                            }
+                        },
+                        {
+                            "centering_panel1": {
+                                "type": "panel",
+                                "size": [
+                                    "100%",
+                                    "100%c"
+                                ],
+                                "controls": [
+                                    {
+                                        "command_block_commands_panel": {
+                                            "type": "stack_panel",
+                                            "orientation": "horizontal",
+                                            "anchor_from": "center",
+                                            "anchor_to": "center",
+                                            "size": [
+                                                "100% - 4px",
+                                                "100%cm"
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "edit_textbox@command_block_textbox": {}
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "command_block_previous_output_panel": {
+                    "type": "stack_panel",
+                    "orientation": "vertical",
+                    "size": [
+                        "100%",
+                        "100%c + 4px"
+                    ],
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "controls": [
+                        {
+                            "space": {
+                                "type": "panel",
+                                "visible": true,
+                                "size": [
+                                    0,
+                                    1
+                                ]
+                            }
+                        },
+                        {
+                            "previous_output_label_stack_centering_panel": {
+                                "type": "panel",
+                                "size": [
+                                    "100%",
+                                    "100%c"
+                                ],
+                                "controls": [
+                                    {
+                                        "previous_output_label_stack": {
+                                            "type": "stack_panel",
+                                            "orientation": "horizontal",
+                                            "size": [
+                                                "100%",
+                                                12
+                                            ],
+                                            "offset": [
+                                                2,
+                                                0
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "show_output_toggle@settings_common.option_toggle": {
+                                                        "size": [
+                                                            32,
+                                                            12
+                                                        ],
+                                                        "$show_option_label": false,
+                                                        "$focus_id": "show_output_toggle",
+                                                        "$option_binding_name": "#track_output_binding",
+                                                        "$option_enabled_binding_name": "#close_button_visible_binding_name",
+                                                        "$toggle_name": "track_output"
+                                                    }
+                                                },
+                                                {
+                                                    "option_label": {
+                                                        "type": "label",
+                                                        "color": "$body_text_color",
+                                                        "size": [
+                                                            "100%",
+                                                            "default"
+                                                        ],
+                                                        "layer": 2,
+                                                        "text": "advMode.previousOutput",
+                                                        "visible": true,
+                                                        "locked_alpha": 0.5
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "spacer": {
+                                "type": "panel",
+                                "bindings": [
+                                    {
+                                        "binding_name": "(not (#command_output_text = ''))",
+                                        "binding_name_override": "#visible"
+                                    }
+                                ],
+                                "size": [
+                                    0,
+                                    1
+                                ]
+                            }
+                        },
+                        {
+                            "command_output_text_centering_panel": {
+                                "type": "panel",
+                                "size": [
+                                    "100%",
+                                    "100%c"
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "(not (#command_output_text = ''))",
+                                        "binding_name_override": "#visible"
+                                    }
+                                ],
+                                "controls": [
+                                    {
+                                        "command_output_text@command_block.command_block_multiline_text_edit_box": {
+                                            "anchor_from": "center",
+                                            "anchor_to": "center",
+                                            "size": [
+                                                "85% + 26px",
+                                                60
+                                            ],
+                                            "focus_enabled": false,
+                                            "$text_box_name": "command_block.output_text",
+                                            "max_length": 32500,
+                                            "$text_edit_box_content_binding_name": "#command_output_text",
+                                            "$place_holder_text": "",
+                                            "button_mappings": [
+                                                {
+                                                    "from_button_id": "button.menu_select",
+                                                    "to_button_id": "button.menu_select",
+                                                    "handle_select": false,
+                                                    "handle_deselect": false,
+                                                    "mapping_type": "pressed"
+                                                },
+                                                {
+                                                    "from_button_id": "button.menu_ok",
+                                                    "to_button_id": "button.menu_ok",
+                                                    "handle_select": false,
+                                                    "handle_deselect": false,
+                                                    "mapping_type": "focused"
+                                                },
+                                                {
+                                                    "from_button_id": "button.menu_cancel",
+                                                    "to_button_id": "button.menu_cancel",
+                                                    "handle_select": false,
+                                                    "handle_deselect": false,
+                                                    "mapping_type": "global"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "right_scrolling_panel": {
+        "$jump_to_bottom_on_update": true
+    },
+    "command_block_textbox@t.eb": {
+        "max_length": 32500,
+        "size": [
+            "100%",
+            "100%cm"
+        ],
+        "text_box_name": "command_block.command_text",
+        "enabled_newline": true,
+        "default_control": "d",
+        "hover_control": "h",
+        "pressed_control": "p",
+        "text_control": "t",
+        "place_holder_control": "ph",
+        "text_edit_box_grid_collection_name": "",
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_select",
+                "to_button_id": "button.text_edit_box_selected",
+                "handle_select": true,
+                "handle_deselect": false,
+                "mapping_type": "pressed"
+            },
+            {
+                "from_button_id": "button.menu_select",
+                "to_button_id": "button.text_edit_box_selected",
+                "handle_select": false,
+                "handle_deselect": true,
+                "mapping_type": "global",
+                "consume_event": false
+            },
+            {
+                "from_button_id": "button.menu_ok",
+                "to_button_id": "button.text_edit_box_selected",
+                "handle_select": true,
+                "handle_deselect": true,
+                "mapping_type": "pressed"
+            },
+            {
+                "from_button_id": "button.menu_ok",
+                "to_button_id": "button.text_edit_box_selected",
+                "handle_select": false,
+                "handle_deselect": true,
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.menu_cancel",
+                "to_button_id": "button.text_edit_box_deselected",
+                "handle_select": false,
+                "handle_deselect": true,
+                "mapping_type": "global"
+            },
+            {
+                "to_button_id": "button.text_edit_box_hovered",
+                "mapping_type": "pressed"
+            }
+        ],
+        "controls": [
+            {
+                "t@t.l": {
+                    "text": "#item_name",
+                    "size": [
+                        "100% - 8px",
+                        "default"
+                    ],
+                    "layer": 2,
+                    "property_bag": {
+                        "#property_field": "#item_name"
+                    },
+                    "bindings": [
+                        {
+                            "binding_type": "global",
+                            "binding_condition": "always",
+                            "binding_name": "#command_text_edit",
+                            "binding_name_override": "#item_name"
+                        },
+                        {
+                            "binding_type": "none",
+                            "binding_name": "#edit_box_text_color",
+                            "binding_name_override": "#color"
+                        },
+                        {
+                            "binding_name": "#newline_refresh"
+                        }
+                    ]
+                }
+            },
+            {
+                "d@common.edit_box_indent": {
+                    "layer": 1,
+                    "min_size": [
+                        "100%",
+                        30
+                    ],
+                    "size": [
+                        "100%",
+                        "100%sm + 8px"
+                    ]
+                }
+            },
+            {
+                "h@common.edit_box_indent_hover": {
+                    "layer": 1,
+                    "min_size": [
+                        "100%",
+                        30
+                    ],
+                    "size": [
+                        "100%",
+                        "100%sm + 8px"
+                    ]
+                }
+            },
+            {
+                "p@common.edit_box_indent_hover": {
+                    "layer": 1,
+                    "min_size": [
+                        "100%",
+                        30
+                    ],
+                    "size": [
+                        "100%",
+                        "100%sm + 8px"
+                    ]
+                }
+            }
+        ]
+    },
+    "block_type_panel@t.sp": {
+        "size": [
+            "100%",
+            30
+        ],
+        "orientation": "horizontal",
+        "controls": [
+            {
+                "impulse@common.nav_toggle": {
+                    "size": [
+                        "fill",
+                        30
+                    ],
+                    "$toggle_binding_name": "#command_impulse_mode",
+                    "$btn_icon": "textures/blocks/command_block_back_mipmap"
+                }
+            },
+            {
+                "chain@common.nav_toggle": {
+                    "size": [
+                        "fill",
+                        30
+                    ],
+                    "$toggle_binding_name": "#command_chain_mode",
+                    "$btn_icon": "textures/blocks/chain_command_block_back_mipmap"
+                }
+            },
+            {
+                "repeat@common.nav_toggle": {
+                    "size": [
+                        "fill",
+                        30
+                    ],
+                    "$toggle_binding_name": "#command_repeat_mode",
+                    "$btn_icon": "textures/blocks/repeating_command_block_back_mipmap"
+                }
+            }
+        ]
+    },
+    "condition_mode_panel@t.sp": {
+        "size": [
+            "100%",
+            "100%c"
+        ],
+        "controls": [
+            {
+                "text@t.sp": {
+                    "orientation": "horizontal",
+                    "size": [
+                        "100%",
+                        "100%cm"
+                    ],
+                    "controls": [
+                        {
+                            "condition@t.l": {
+                                "size": [
+                                    "50%",
+                                    "default"
+                                ],
+                                "text": "commandBlockScreen.condition"
+                            }
+                        },
+                        {
+                            "redstone@t.l": {
+                                "size": [
+                                    "50%",
+                                    "default"
+                                ],
+                                "text": "commandBlockScreen.redstone"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "sp@t.sp": {
+                    "size": [
+                        "100%",
+                        30
+                    ],
+                    "orientation": "horizontal",
+                    "controls": [
+                        {
+                            "condition@t.p": {
+                                "size": [
+                                    "fill",
+                                    "100%"
+                                ],
+                                "controls": [
+                                    {
+                                        "conditional@common.nav_toggle_without_pressed": {
+                                            "$toggle_binding_name": "#command_conditional_mode",
+                                            "$tex_col": [
+                                                {
+                                                    "impluse@t.i": {
+                                                        "texture": "textures/blocks/command_block_side_mipmap",
+                                                        "size": [
+                                                            18,
+                                                            18
+                                                        ],
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#command_impulse_mode",
+                                                                "binding_name_override": "#visible"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "chain@t.i": {
+                                                        "texture": "textures/blocks/chain_command_block_side_mipmap",
+                                                        "size": [
+                                                            18,
+                                                            18
+                                                        ],
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#command_chain_mode",
+                                                                "binding_name_override": "#visible"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "repeat@t.i": {
+                                                        "texture": "textures/blocks/repeating_command_block_side_mipmap",
+                                                        "size": [
+                                                            18,
+                                                            18
+                                                        ],
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#command_repeat_mode",
+                                                                "binding_name_override": "#visible"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "#command_unconditional_mode",
+                                                    "binding_name_override": "#visible"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "unconditional@common.nav_toggle_without_pressed": {
+                                            "$toggle_binding_name": "#command_unconditional_mode",
+                                            "$tex_col": [
+                                                {
+                                                    "impluse@t.i": {
+                                                        "texture": "textures/blocks/command_block_conditional_mipmap",
+                                                        "size": [
+                                                            18,
+                                                            18
+                                                        ],
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#command_impulse_mode",
+                                                                "binding_name_override": "#visible"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "chain@t.i": {
+                                                        "texture": "textures/blocks/chain_command_block_conditional_mipmap",
+                                                        "size": [
+                                                            18,
+                                                            18
+                                                        ],
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#command_chain_mode",
+                                                                "binding_name_override": "#visible"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "repeat@t.i": {
+                                                        "texture": "textures/blocks/repeating_command_block_conditional_mipmap",
+                                                        "size": [
+                                                            18,
+                                                            18
+                                                        ],
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#command_repeat_mode",
+                                                                "binding_name_override": "#visible"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "#command_conditional_mode",
+                                                    "binding_name_override": "#visible"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "redstone@t.p": {
+                                "size": [
+                                    "fill",
+                                    "100%"
+                                ],
+                                "controls": [
+                                    {
+                                        "redstone@common.nav_toggle_without_pressed": {
+                                            "$toggle_binding_name": "#command_needs_redstone_mode",
+                                            "$btn_icon": "textures/blocks/redstone_lamp_on",
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "#command_always_on_mode",
+                                                    "binding_name_override": "#visible"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "always@common.nav_toggle_without_pressed": {
+                                            "$toggle_binding_name": "#command_always_on_mode",
+                                            "$btn_icon": "textures/blocks/redstone_lamp_off",
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "#command_needs_redstone_mode",
+                                                    "binding_name_override": "#visible"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "left_scroll_panel_content/content_stack_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "remove",
+                "where": {
+                    "redstone_mode_panel@command_block.redstone_mode_panel": {}
+                }
+            },
+            {
+                "array_name": "controls",
+                "operation": "remove",
+                "where": {
+                    "offset5": {
+                        "type": "panel",
+                        "size": [
+                            "100%",
+                            2
+                        ]
+                    }
+                }
+            },
+            {
+                "array_name": "controls",
+                "operation": "remove",
+                "where": {
+                    "offset_execute_on_first_tick": {
+                        "type": "panel",
+                        "size": [
+                            "100%",
+                            2
+                        ]
+                    }
+                }
+            },
+            {
+                "array_name": "controls",
+                "operation": "remove",
+                "where": {
+                    "option_label_execute_on_first_tick": {
+                        "type": "label",
+                        "color": "$body_text_color",
+                        "size": [
+                            "100%",
+                            "default"
+                        ],
+                        "layer": 2,
+                        "text": "commandBlockScreen.executeFirstTick",
+                        "visible": true,
+                        "locked_alpha": 0.5
+                    }
+                }
+            },
+            {
+                "array_name": "controls",
+                "operation": "remove",
+                "where": {
+                    "execute_on_first_tick_toggle@settings_common.option_toggle": {
+                        "$option_binding_name": "#execute_on_first_tick",
+                        "$option_enabled_binding_name": "#execute_on_first_tick_enabled",
+                        "$show_option_label": false,
+                        "$toggle_name": "execute_on_first_tick",
+                        "$toggle_binding_condition": "visible"
+                    }
+                }
+            },
+            {
+                "array_name": "controls",
+                "operation": "replace",
+                "where": {
+                    "tick_delay_text@common.text_edit_box": {
+                        "anchor_from": "center",
+                        "anchor_to": "center",
+                        "size": [
+                            "100%",
+                            30
+                        ],
+                        "$focus_id": "tick_delay_text",
+                        "layer": 5,
+                        "max_length": 5,
+                        "$text_edit_box_text_type": "NumberChars",
+                        "$text_box_name": "command_block.tick_delay_textbox",
+                        "$text_edit_box_content_binding_name": "#command_tick_delay"
+                    }
+                },
+                "value": [
+                    {
+                        "tick_delay_text@t.sp": {
+                            "orientation": "horizontal",
+                            "size": [
+                                "100%",
+                                30
+                            ],
+                            "controls": [
+                                {
+                                    "tick_delay_text@common.text_edit_box": {
+                                        "anchor_from": "center",
+                                        "anchor_to": "center",
+                                        "size": [
+                                            "fill",
+                                            30
+                                        ],
+                                        "$focus_id": "tick_delay_text",
+                                        "layer": 5,
+                                        "max_length": 5,
+                                        "$text_edit_box_text_type": "NumberChars",
+                                        "$text_box_name": "command_block.tick_delay_textbox",
+                                        "$text_edit_box_content_binding_name": "#command_tick_delay"
+                                    }
+                                },
+                                {
+                                    "first_tick_delay@common.nav_toggle_without_pressed": {
+                                        "$toggle_binding_name": "execute_on_first_tick",
+                                        "size": [
+                                            30,
+                                            30
+                                        ],
+                                        "$btn_icon": "textures/blocks/redstone_lamp_on",
+                                        "bindings": [
+                                            {
+                                                "binding_name": "#execute_on_first_tick_enabled",
+                                                "binding_name_override": "#visible"
+                                            },
+                                            {
+                                                "binding_type": "global",
+                                                "binding_name": "$toggle_binding_name_edit",
+                                                "binding_name_override": "#toggle_state"
+                                            }
+                                        ],
+                                        "$toggle_binding_name_edit": "#execute_on_first_tick",
+                                        "$tex_col": [
+                                            {
+                                                "hover_text@t.i": {
+                                                    "layer": 10,
+                                                    "anchor_from": "top_middle",
+                                                    "anchor_to": "bottom_middle",
+                                                    "texture": "textures/ui/Black",
+                                                    "alpha": 0.8,
+                                                    "allow_clipping": false,
+                                                    "offset": [
+                                                        0,
+                                                        -10
+                                                    ],
+                                                    "size": [
+                                                        "100%cm + 6px",
+                                                        "100%cm + 6px"
+                                                    ],
+                                                    "ignored": "(not $on_hover)",
+                                                    "controls": [
+                                                        {
+                                                            "text@t.l": {
+                                                                "text": "#text",
+                                                                "bindings": [
+                                                                    {
+                                                                        "binding_name": "#execute_on_first_tick"
+                                                                    },
+                                                                    {
+                                                                        "binding_type": "view",
+                                                                        "source_property_name": "('Execute on First Tick: ' + #execute_on_first_tick)",
+                                                                        "target_property_name": "#text"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "disable_texture@t.i": {
+                                                    "size": [
+                                                        18,
+                                                        18
+                                                    ],
+                                                    "texture": "textures/blocks/reactor_core_stage_2",
+                                                    "layer": 10,
+                                                    "ignored": "$on_enabled"
+                                                }
+                                            },
+                                            {
+                                                "enable_texture@t.i": {
+                                                    "size": [
+                                                        18,
+                                                        18
+                                                    ],
+                                                    "texture": "textures/blocks/reactor_core_stage_1",
+                                                    "layer": 10,
+                                                    "ignored": "(not $on_enabled)"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "left_scroll_panel_content/content_stack_panel/option_label_tick_delay": {
+        "size": [
+            "default",
+            10
+        ],
+        "layer": 5,
+        "text": "#asa_delay_tick",
+        "bindings": [
+            {
+                "binding_type": "global",
+                "binding_condition": "always",
+                "binding_name": "#command_tick_delay"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "('asa' + #command_tick_delay - 'asa')",
+                "target_property_name": "#asa_cmd_delay_tick"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#asa_cmd_delay_tick / 20)",
+                "target_property_name": "#delay_second"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#delay_second / 60)",
+                "target_property_name": "#asa_minute"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#delay_second / 60)",
+                "target_property_name": "#delay_minute"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#delay_minute / 60)",
+                "target_property_name": "#delay_time_hours"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#delay_minute - (#delay_time_hours * 60))",
+                "target_property_name": "#delay_time_minutes"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#delay_second - (#asa_minute * 60))",
+                "target_property_name": "#delay_time_seconds"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(((#asa_cmd_delay_tick * 10) / 2) - (#delay_second * 100))",
+                "target_property_name": "#delay_time_demical_seconds"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(('§f0' + ((('§f' + #delay_time_demical_seconds + '§f') - '§f5§f' - '§f0§f') - '§f')) - '§f010' - '§f015' - '§f020' - '§f025' - '§f030' - '§f035' - '§f040' - '§f045' - '§f050' - '§f055' - '§f060' - '§f065' - '§f070' - '§f075' - '§f080' - '§f085' - '§f090' - '§f095')",
+                "target_property_name": "#asa_fixed_number"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "('§zDelay: ' + #delay_time_hours + 'h:' + #delay_time_minutes + 'm:' + #delay_time_seconds + '.' + #asa_fixed_number + #delay_time_demical_seconds + 's' - '0h:0m:' - '0h:')",
+                "target_property_name": "#asa_delay_tick"
+            }
+        ]
+    },
+    "command_block_screen_content": {
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "max_size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "cmd_screen@t.p": {
+                    "size": "$extra_large_screen_size",
+                    "max_size": "$extra_large_max_screen_size",
+                    "controls": [
+                        {
+                            "background_divider@common.common_panel": {
+                                "$dialog_background": "common.dialog_background_hollow_3",
+                                "$fill_alpha": 1.0,
+                                "$show_divider": true,
+                                "$divider_offset": [
+                                    "40%",
+                                    "22px"
+                                ],
+                                "$divider_visible_binding_name": "#divider_visible",
+                                "$divider_visible_binding_type": "global",
+                                "controls": [
+                                    {
+                                        "bg_image@$dialog_background": {
+                                            "layer": 1
+                                        }
+                                    },
+                                    {
+                                        "dialog_divider@common.dialog_divider": {
+                                            "visible": "$show_divider",
+                                            "anchor_from": "top_left",
+                                            "anchor_to": "top_left",
+                                            "offset": "$divider_offset",
+                                            "size": [
+                                                "5px",
+                                                "100% - 29px"
+                                            ],
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "$divider_visible_binding_name",
+                                                    "binding_name_override": "#visible",
+                                                    "binding_type": "$divider_visible_binding_type"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "header_buttons_stack_panel": {
+                                            "type": "stack_panel",
+                                            "anchor_from": "top_right",
+                                            "anchor_to": "top_right",
+                                            "orientation": "horizontal",
+                                            "size": [
+                                                "100%c",
+                                                18
+                                            ],
+                                            "offset": [
+                                                -4,
+                                                4
+                                            ],
+                                            "layer": 3,
+                                            "controls": [
+                                                {
+                                                    "paste_button@command_block.paste_button": {
+                                                        "layer": 2,
+                                                        "anchor_from": "top_right",
+                                                        "anchor_to": "top_right",
+                                                        "size": [
+                                                            16,
+                                                            16
+                                                        ],
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name": "#minimize_button_visible_binding_name",
+                                                                "binding_name_override": "#visible",
+                                                                "binding_type": "global"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "close_button_holder": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            18,
+                                                            16
+                                                        ],
+                                                        "controls": [
+                                                            {
+                                                                "close@common.close_button": {
+                                                                    "layer": 2,
+                                                                    "anchor_to": "center",
+                                                                    "anchor_from": "center",
+                                                                    "$close_button_offset": [
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "bindings": [
+                                                                        {
+                                                                            "binding_name": "#close_button_visible_binding_name",
+                                                                            "binding_name_override": "#visible",
+                                                                            "binding_type": "global"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "minimize@common.close_button": {
+                                                                    "anchor_to": "center",
+                                                                    "anchor_from": "center",
+                                                                    "$close_button_offset": [
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "button_mappings": [
+                                                                        {
+                                                                            "from_button_id": "button.menu_select",
+                                                                            "to_button_id": "command_block.input_minimize",
+                                                                            "mapping_type": "pressed"
+                                                                        },
+                                                                        {
+                                                                            "from_button_id": "button.menu_ok",
+                                                                            "to_button_id": "command_block.input_minimize",
+                                                                            "mapping_type": "focused"
+                                                                        }
+                                                                    ],
+                                                                    "controls": [
+                                                                        {
+                                                                            "default@close_button_panel": {
+                                                                                "$close_button_texture": "textures/ui/minimize"
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "hover@close_button_panel": {
+                                                                                "$close_button_texture": "textures/ui/minimizeHover"
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "pressed@close_button_panel": {
+                                                                                "$close_button_texture": "textures/ui/minimizePress"
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "bindings": [
+                                                                        {
+                                                                            "binding_name": "#minimize_button_visible_binding_name",
+                                                                            "binding_name_override": "#visible",
+                                                                            "binding_type": "global"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "title": {
+                                "type": "label",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "offset": [
+                                    0,
+                                    8
+                                ],
+                                "layer": 4,
+                                "text": "commandBlock.genericName",
+                                "color": "$title_text_color"
+                            }
+                        },
+                        {
+                            "content@command_block.divider_content": {
+                                "layer": 4,
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left"
+                            }
+                        },
+                        {
+                            "maximized_command_block_text@command_block.command_block_text_edit_box": {
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "layer": 17,
+                                "size": [
+                                    "100% - 16px",
+                                    "100% - 31px"
+                                ],
+                                "offset": [
+                                    0,
+                                    "23px"
+                                ],
+                                "max_length": 32500,
+                                "$text_box_name": "command_block.command_text",
+                                "$text_edit_box_content_binding_name": "#command_text_edit",
+                                "$place_holder_text": "Enter your command input here",
+                                "$cancel_button_id": "command_block.input_minimize",
+                                "bindings": [
+                                    {
+                                        "binding_name": "#maximized_input_visible",
+                                        "binding_name_override": "#visible"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "list@sound_id_list.content": {
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "show_id_list",
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#visible",
+                            "resolve_sibling_scope": true
+                        }
+                    ]
+                }
+            },
+            {
+                "show_id_list@t.t": {
+                    "size": [
+                        20,
+                        20
+                    ],
+                    "offset": [
+                        0,
+                        3
+                    ],
+                    "ignored": "$disable_list",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "sound_name": "random.click",
+                    "sound_volume": 1.0,
+                    "sound_pitch": 1.0,
+                    "layer": 100,
+                    "button_mappings": [
+                        {
+                            "mapping_type": "pressed",
+                            "from_button_id": "button.menu_select",
+                            "to_button_id": "button.menu_select"
+                        }
+                    ],
+                    "unchecked_control": "d",
+                    "unchecked_hover_control": "dh",
+                    "checked_control": "e",
+                    "checked_hover_control": "eh",
+                    "controls": [
+                        {
+                            "d@t.i": {
+                                "texture": "textures/ui/arrowDown"
+                            }
+                        },
+                        {
+                            "dh@t.i": {
+                                "texture": "textures/ui/arrowDown",
+                                "color": [
+                                    0.9,
+                                    0.9,
+                                    0.9
+                                ]
+                            }
+                        },
+                        {
+                            "e@t.i": {
+                                "texture": "textures/ui/chevron_white_up"
+                            }
+                        },
+                        {
+                            "eh@t.i": {
+                                "texture": "textures/ui/chevron_white_up",
+                                "color": [
+                                    0.9,
+                                    0.9,
+                                    0.9
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
