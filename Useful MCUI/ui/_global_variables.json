@@ -4,7 +4,7 @@
     "$compass": 394,
     "$recovery_compass": 654,
     // Features
-    "$disable_list": false,
+    "$disable_list": true,
     "$disable_chunkcoor": false,
     "$disable_item_on_hud": false,
     // Pack config

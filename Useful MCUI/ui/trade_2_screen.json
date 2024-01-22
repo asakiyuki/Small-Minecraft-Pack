@@ -1,0 +1,445 @@
+{
+    "level_check@t.p": {
+        "size": [
+            0,
+            0
+        ],
+        "bindings": [
+            {
+                "binding_name": "#is_tier_unlocked",
+                "binding_type": "collection",
+                "binding_collection_name": "trade_tiers",
+                "binding_condition": "always"
+            }
+        ]
+    },
+    "trade_level_hook@t.cp": {
+        "collection_name": "trade_tiers",
+        "size": [
+            0,
+            0
+        ],
+        "controls": [
+            {
+                "level_0@trade2.level_check": {
+                    "collection_index": 0
+                }
+            },
+            {
+                "level_1@trade2.level_check": {
+                    "collection_index": 1
+                }
+            },
+            {
+                "level_2@trade2.level_check": {
+                    "collection_index": 2
+                }
+            },
+            {
+                "level_3@trade2.level_check": {
+                    "collection_index": 3
+                }
+            },
+            {
+                "level_4@trade2.level_check": {
+                    "collection_index": 4
+                }
+            },
+            {
+                "level_5@trade2.level_check": {
+                    "collection_index": 5
+                }
+            },
+            {
+                "current_villager_level@t.p": {
+                    "size": [
+                        0,
+                        0
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "level_0",
+                            "source_property_name": "#is_tier_unlocked",
+                            "target_property_name": "#lv0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "level_1",
+                            "source_property_name": "#is_tier_unlocked",
+                            "target_property_name": "#lv1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "level_2",
+                            "source_property_name": "#is_tier_unlocked",
+                            "target_property_name": "#lv2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "level_3",
+                            "source_property_name": "#is_tier_unlocked",
+                            "target_property_name": "#lv3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "level_4",
+                            "source_property_name": "#is_tier_unlocked",
+                            "target_property_name": "#lv4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#lv0 + #lv1 + #lv2 + #lv3 + #lv4)",
+                            "target_property_name": "#lvl"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((10 * (1 + (#lvl > 1))) + ((#lvl > 1) * (#lvl * 20)))",
+                            "target_property_name": "#level_require"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "exp_progress_bar": {
+        "offset": [
+            0,
+            15
+        ],
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "lv-stack@t.sp": {
+                            "orientation": "horizontal",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "size": [
+                                "100%c",
+                                "100%cm"
+                            ],
+                            "offset": [
+                                0,
+                                6
+                            ],
+                            "layer": 15,
+                            "controls": [
+                                {
+                                    "tier_icon@t.p": {
+                                        "size": [
+                                            10,
+                                            10
+                                        ],
+                                        "controls": [
+                                            {
+                                                "level_1@t.i": {
+                                                    "texture": "textures/ui/level_1_tier",
+                                                    "size": [
+                                                        "100%",
+                                                        "100%"
+                                                    ],
+                                                    "bindings": [
+                                                        {
+                                                            "binding_type": "view",
+                                                            "source_control_name": "current_villager_level",
+                                                            "source_property_name": "(#lvl = 1)",
+                                                            "target_property_name": "#visible"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "level_2@t.i": {
+                                                    "texture": "textures/ui/level_2_tier",
+                                                    "size": [
+                                                        "100%",
+                                                        "100%"
+                                                    ],
+                                                    "bindings": [
+                                                        {
+                                                            "binding_type": "view",
+                                                            "source_control_name": "current_villager_level",
+                                                            "source_property_name": "(#lvl = 2)",
+                                                            "target_property_name": "#visible"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "level_3@t.i": {
+                                                    "texture": "textures/ui/level_3_tier",
+                                                    "size": [
+                                                        "100%",
+                                                        "100%"
+                                                    ],
+                                                    "bindings": [
+                                                        {
+                                                            "binding_type": "view",
+                                                            "source_control_name": "current_villager_level",
+                                                            "source_property_name": "(#lvl = 3)",
+                                                            "target_property_name": "#visible"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "level_4@t.i": {
+                                                    "texture": "textures/ui/level_4_tier",
+                                                    "size": [
+                                                        "100%",
+                                                        "100%"
+                                                    ],
+                                                    "bindings": [
+                                                        {
+                                                            "binding_type": "view",
+                                                            "source_control_name": "current_villager_level",
+                                                            "source_property_name": "(#lvl = 4)",
+                                                            "target_property_name": "#visible"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "level_5@t.i": {
+                                                    "texture": "textures/ui/level_5_tier",
+                                                    "size": [
+                                                        "100%",
+                                                        "100%"
+                                                    ],
+                                                    "bindings": [
+                                                        {
+                                                            "binding_type": "view",
+                                                            "source_control_name": "current_villager_level",
+                                                            "source_property_name": "(#lvl = 5)",
+                                                            "target_property_name": "#visible"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "padding@t.p": {
+                                        "size": [
+                                            2,
+                                            1
+                                        ]
+                                    }
+                                },
+                                {
+                                    "level_exp@t.l": {
+                                        "text": "#text",
+                                        "color": "$a_color_format",
+                                        "shadow": true,
+                                        "bindings": [
+                                            {
+                                                "binding_name": "#exp_progress",
+                                                "binding_type": "global",
+                                                "binding_condition": "always_when_visible"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_control_name": "current_villager_level",
+                                                "source_property_name": "#level_require",
+                                                "target_property_name": "#level_require"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_control_name": "current_villager_level",
+                                                "source_property_name": "#lvl",
+                                                "target_property_name": "#lvl"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(10000 - #exp_progress * 10000)",
+                                                "target_property_name": "#ep"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(1000 * ((#ep > 1000) + (#ep > 2000) + (#ep > 3000) + (#ep > 4000) + (#ep > 5000) + (#ep > 6000) + (#ep > 7000) + (#ep > 8000) + (#ep > 9000)))",
+                                                "target_property_name": "#ep_1"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(#ep - #ep_1)",
+                                                "target_property_name": "#ep1"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(100 * ((#ep1 > 100) + (#ep1 > 200) + (#ep1 > 300) + (#ep1 > 400) + (#ep1 > 500) + (#ep1 > 600) + (#ep1 > 700) + (#ep1 > 800) + (#ep1 > 900)))",
+                                                "target_property_name": "#ep_2"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(#ep1 - #ep_2)",
+                                                "target_property_name": "#ep2"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(10 * ((#ep2 > 10) + (#ep2 > 20) + (#ep2 > 30) + (#ep2 > 40) + (#ep2 > 50) + (#ep2 > 60) + (#ep2 > 70) + (#ep2 > 80) + (#ep2 > 90)))",
+                                                "target_property_name": "#ep_3"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "((#ep_1 + #ep_2 + #ep_3) / 10 + 1)",
+                                                "target_property_name": "#current_exp"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "((#current_exp * #level_require) / 1000)",
+                                                "target_property_name": "#current_exp_calc"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "('§z' + #current_exp_calc + '/' + #level_require)",
+                                                "target_property_name": "#text"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(not (#level_require = 120))",
+                                                "target_property_name": "#visible"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "max_text@t.l": {
+                                        "text": "MAX!",
+                                        "layer": 15,
+                                        "anchor_from": "top_left",
+                                        "anchor_to": "top_left",
+                                        "color": "$a_color_format",
+                                        "offset": [
+                                            0,
+                                            6
+                                        ],
+                                        "shadow": true,
+                                        "bindings": [
+                                            {
+                                                "binding_type": "view",
+                                                "source_control_name": "current_villager_level",
+                                                "source_property_name": "(#level_require = 120)",
+                                                "target_property_name": "#visible"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "possible_exp@t.l": {
+                            "text": "#text",
+                            "layer": 15,
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_right",
+                            "color": "$b_color_format",
+                            "offset": [
+                                0,
+                                8
+                            ],
+                            "shadow": true,
+                            "bindings": [
+                                {
+                                    "binding_name": "#exp_possible_progress",
+                                    "binding_type": "global",
+                                    "binding_condition": "always_when_visible"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "current_villager_level",
+                                    "source_property_name": "#level_require",
+                                    "target_property_name": "#level_require"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "level_exp",
+                                    "source_property_name": "#current_exp_calc",
+                                    "target_property_name": "#current_exp_calc"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "current_villager_level",
+                                    "source_property_name": "#lvl",
+                                    "target_property_name": "#lvl"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(10000 - #exp_possible_progress * 10000)",
+                                    "target_property_name": "#ep"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(1000 * ((#ep > 1000) + (#ep > 2000) + (#ep > 3000) + (#ep > 4000) + (#ep > 5000) + (#ep > 6000) + (#ep > 7000) + (#ep > 8000) + (#ep > 9000)))",
+                                    "target_property_name": "#ep_1"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#ep - #ep_1)",
+                                    "target_property_name": "#ep1"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(100 * ((#ep1 > 100) + (#ep1 > 200) + (#ep1 > 300) + (#ep1 > 400) + (#ep1 > 500) + (#ep1 > 600) + (#ep1 > 700) + (#ep1 > 800) + (#ep1 > 900)))",
+                                    "target_property_name": "#ep_2"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#ep1 - #ep_2)",
+                                    "target_property_name": "#ep2"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(10 * ((#ep2 > 10) + (#ep2 > 20) + (#ep2 > 30) + (#ep2 > 40) + (#ep2 > 50) + (#ep2 > 60) + (#ep2 > 70) + (#ep2 > 80) + (#ep2 > 90)))",
+                                    "target_property_name": "#ep_3"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "((#ep_1 + #ep_2 + #ep_3) / 10 + 1)",
+                                    "target_property_name": "#possible_exp"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(((#possible_exp * #level_require) / 1000))",
+                                    "target_property_name": "#possible_exp_calc"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "('§z+' + (#possible_exp_calc - #current_exp_calc) + ' LVL UP' + (#possible_exp_calc = #level_require) - 'true' - ' LVL UPfalse')",
+                                    "target_property_name": "#text"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(not (#level_require = 120))",
+                                    "target_property_name": "#visible"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "screen_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "current_villager_level_hook@trade2.trade_level_hook": {}
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,279 @@
+{
+    "namespace": "empty_inventory_slot",
+    "content@t.i": {
+        "texture": "textures/ui/hud_tip_text_background",
+        "size": [
+            "100%cm + 8px",
+            "100%cm + 6px"
+        ],
+        "alpha": 0.5,
+        "controls": [
+            {
+                "stack@t.sp": {
+                    "size": [
+                        "100%c",
+                        "100%cm"
+                    ],
+                    "orientation": "horizontal",
+                    "use_child_anchors": true,
+                    "controls": [
+                        {
+                            "chest_icon@controls.item_renderer-id": {
+                                "size": [
+                                    12,
+                                    12
+                                ],
+                                "$item_id": 54
+                            }
+                        },
+                        {
+                            "padding@t.p": {
+                                "size": [
+                                    2,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "renderer@t.l": {
+                                "text": "#text",
+                                "shadow": true,
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "layer": 5,
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot1",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#hs1"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot2",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#hs2"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot3",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#hs3"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot4",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#hs4"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot5",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#hs5"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot6",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#hs6"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot7",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#hs7"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot8",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#hs8"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot9",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#hs9"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_1",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is1"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_2",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is2"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_3",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is3"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_4",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is4"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_5",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is5"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_6",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is6"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_7",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is7"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_8",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is8"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_9",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is9"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_10",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is10"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_11",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is11"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_12",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is12"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_13",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is13"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_14",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is14"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_15",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is15"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_16",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is16"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_17",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is17"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_18",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is18"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_19",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is19"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_20",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is20"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_21",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is21"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_22",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is22"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_23",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is23"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_24",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is24"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_25",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is25"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_26",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is26"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_27",
+                                        "source_property_name": "(#item_id_aux = -1)",
+                                        "target_property_name": "#is27"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#hs1 + #hs2 + #hs3 + #hs4 + #hs5 + #hs6 + #hs7 + #hs8 + #hs9 + #is1 + #is2 + #is3 + #is4 + #is5 + #is6 + #is7 + #is8 + #is9 + #is10 + #is11 + #is12 + #is13 + #is14 + #is15 + #is16 + #is17 + #is18 + #is19 + #is20 + #is21 + #is22 + #is23 + #is24 + #is25 + #is26 + #is27)",
+                                        "target_property_name": "#total_empty_slot"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "('§z' + #total_empty_slot + '/36')",
+                                        "target_property_name": "#text"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

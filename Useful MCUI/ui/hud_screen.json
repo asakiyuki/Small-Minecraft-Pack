@@ -232,6 +232,26 @@
                 },
                 "value": [
                     {
+                        "item_durability@t.p": {
+                            "size": [
+                                0,
+                                22
+                            ],
+                            "controls": [
+                                {
+                                    "content@item_durability.content": {
+                                        "anchor_from": "right_middle",
+                                        "anchor_to": "right_middle",
+                                        "offset": [
+                                            -5,
+                                            0
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
                         "hotbar_start_cap@hud.hotbar_start_cap": {}
                     },
                     {
@@ -261,6 +281,32 @@
                                 },
                                 {
                                     "inventory_hud_mobile_toggle@hud.inventory_hud_button": {}
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "array_name": "controls",
+                "operation": "insert_back",
+                "value": [
+                    {
+                        "empty_slot@t.p": {
+                            "size": [
+                                0,
+                                22
+                            ],
+                            "controls": [
+                                {
+                                    "content@empty_inventory_slot.content": {
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                            5,
+                                            0
+                                        ]
+                                    }
                                 }
                             ]
                         }
@@ -348,10 +394,13 @@
         "ignored": true
     },
     "anim_actionbar_text_background_alpha_out": {
-        "destroy_at_end": "none"
+        "destroy_at_end": "hud_actionbar_text",
+        "from": 0.5,
+        "duration": 8
     },
     "anim_actionbar_text_alpha_out": {
-        "destroy_at_end": "none"
+        "destroy_at_end": "hud_actionbar_text",
+        "duration": 8
     },
     "anim_actionbar_text_background_size_in": {
         "anim_type": "size",
@@ -363,7 +412,8 @@
             "100%c + 12px",
             "100%c + 5px"
         ],
-        "duration": 3,
+        "easing": "out_quad",
+        "duration": 4,
         "next": "@hud.anim_actionbar_text_background_size_out"
     },
     "anim_actionbar_text_background_size_out": {
@@ -376,11 +426,13 @@
             "100%c + 12px",
             0
         ],
-        "duration": 0.7,
-        "easing": "in_out_cubic",
-        "destroy_at_end": "hud_actionbar_text"
+        "duration": 1,
+        "easing": "in_out_cubic"
     },
     "hud_actionbar_text": {
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "texture": "textures/ui/hud_tip_text_background",
         "size": "@hud.anim_actionbar_text_background_size_in",
         "offset": [
             0,
@@ -405,15 +457,17 @@
         "use_child_anchors": true,
         "anchor_from": "top_right",
         "anchor_to": "top_right",
+        "layer": 15,
         "controls": [
             {
                 "hud_actionbar_text_area@t.p": {
                     "size": [
-                        "100%cm",
+                        "100%cm + 1px",
                         "100%cm"
                     ],
                     "anchor_from": "top_right",
                     "anchor_to": "top_right",
+                    "clips_children": true,
                     "factory": {
                         "name": "hud_actionbar_text_factory",
                         "control_ids": {
@@ -432,6 +486,99 @@
             },
             {
                 "items_hud@items_hud.content": {}
+            }
+        ]
+    },
+    "hud_content": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_back",
+                "value": [
+                    {
+                        "hide_gui@hud.hide_ui_button": {}
+                    }
+                ]
+            }
+        ]
+    },
+    "hide_ui_button@t.ip": {
+        "size": [
+            "100%cm",
+            "100%cm"
+        ],
+        "button_mappings": [
+            {
+                "mapping_type": "pressed",
+                "from_button_id": "button.menu_select",
+                "to_button_id": "button.hide_gui_all"
+            }
+        ],
+        "prevent_touch_input": true,
+        "anchor_from": "bottom_left",
+        "anchor_to": "bottom_left",
+        "offset": [
+            5,
+            -5
+        ],
+        "bindings": [
+            {
+                "binding_name": "#inventory_touch_button",
+                "binding_name_override": "#visible",
+                "binding_type": "global"
+            }
+        ],
+        "controls": [
+            {
+                "bg@t.i": {
+                    "texture": "textures/ui/hud_tip_text_background",
+                    "alpha": 0.5,
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_visible",
+                            "binding_name_override": "#visible",
+                            "binding_type": "global"
+                        }
+                    ],
+                    "size": [
+                        "100%sm + 8px",
+                        "100%sm + 8px"
+                    ]
+                }
+            },
+            {
+                "emp@t.p": {
+                    "size": [
+                        "100%sm + 8px",
+                        "100%sm + 8px"
+                    ]
+                }
+            },
+            {
+                "text@t.l": {
+                    "layer": 5,
+                    "text": "HUD",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_visible",
+                            "binding_name_override": "#alpha",
+                            "binding_type": "global"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "boss_health_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "bossbar_percent@bossbar_percent.content": {}
+                    }
+                ]
             }
         ]
     }

@@ -1,0 +1,108 @@
+{
+    "namespace": "bossbar_percent",
+    "content@t.sp": {
+        "size": [
+            "100%c",
+            "100%cm"
+        ],
+        "anchor_from": "bottom_middle",
+        "anchor_to": "bottom_middle",
+        "orientation": "horizontal",
+        "controls": [
+            {
+                "[@t.l": {
+                    "text": "[",
+                    "shadow": true,
+                    "layer": 5,
+                    "bindings": [
+                        {
+                            "binding_name": "#bar_color",
+                            "binding_name_override": "#color",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        }
+                    ]
+                }
+            },
+            {
+                "text@t.l": {
+                    "text": "#text",
+                    "layer": 5,
+                    "shadow": true,
+                    "bindings": [
+                        {
+                            "binding_name": "#progress_percentage",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(100000 - #progress_percentage * 100000)",
+                            "target_property_name": "#bp"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(10000 * ((#bp > 10000) + (#bp > 20000) + (#bp > 30000) + (#bp > 40000) + (#bp > 50000) + (#bp > 60000) + (#bp > 70000) + (#bp > 80000) + (#bp > 90000)))",
+                            "target_property_name": "#bp_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bp - #bp_1)",
+                            "target_property_name": "#bp1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(1000 * ((#bp1 > 1000) + (#bp1 > 2000) + (#bp1 > 3000) + (#bp1 > 4000) + (#bp1 > 5000) + (#bp1 > 6000) + (#bp1 > 7000) + (#bp1 > 8000) + (#bp1 > 9000)))",
+                            "target_property_name": "#bp_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bp1 - #bp_2)",
+                            "target_property_name": "#bp2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(100 * ((#bp2 > 100) + (#bp2 > 200) + (#bp2 > 300) + (#bp2 > 400) + (#bp2 > 500) + (#bp2 > 600) + (#bp2 > 700) + (#bp2 > 800) + (#bp2 > 900)))",
+                            "target_property_name": "#bp_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bp2 - #bp_3)",
+                            "target_property_name": "#bp3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(10 * ((#bp3 > 10) + (#bp3 > 20) + (#bp3 > 30) + (#bp3 > 40) + (#bp3 > 50) + (#bp3 > 60) + (#bp3 > 70) + (#bp3 > 80) + (#bp3 > 90)))",
+                            "target_property_name": "#bp_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#bp_1 + #bp_2 + #bp_3 + #bp_4) / 10 + 1)",
+                            "target_property_name": "#current_health"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "('§z' + (#current_health / 100) + '.' + (#current_health - #current_health / 100 * 100) + '%%')",
+                            "target_property_name": "#text"
+                        }
+                    ]
+                }
+            },
+            {
+                "]@t.l": {
+                    "text": "]",
+                    "shadow": true,
+                    "layer": 5,
+                    "bindings": [
+                        {
+                            "binding_name": "#bar_color",
+                            "binding_name_override": "#color",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

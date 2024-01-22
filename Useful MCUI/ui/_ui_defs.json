@@ -1,20 +1,21 @@
 {
     "ui_defs": [
-        // Feat
+        // Features
         "ui/features/chunk_coor.json",
         "ui/features/container_mode.json",
-        "ui/features/inventory_empty_slot_counter.json",
         "ui/features/inventory_hud.json",
         "ui/features/item_info_viewer.json",
         "ui/features/item_tools.json",
         "ui/features/total_mainhand_item_in_inventory.json",
-        "ui/features/trade_unlocked.json",
+        "ui/features/empty_inventory_slot.json",
         "ui/features/experience_point.json",
-        // Temp
+        "ui/features/mainhand_durability.json",
+        "ui/features/bossbar_percent.json",
+        // Templates
         "ui/template/quick_element.json",
         "ui/template/render_item_by_id.json",
         "ui/template/selected_item.json",
-        // Src
+        // Srceen
         "ui/screen/sound_id_list.json",
         "ui/screen/sound_id.json"
     ]
