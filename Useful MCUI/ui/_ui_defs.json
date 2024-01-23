@@ -15,6 +15,7 @@
         "ui/template/quick_element.json",
         "ui/template/render_item_by_id.json",
         "ui/template/selected_item.json",
+        "ui/template/cache_toggle.json",
         // Srceen
         "ui/screen/sound_id_list.json",
         "ui/screen/sound_id.json"

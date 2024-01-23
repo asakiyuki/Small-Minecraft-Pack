@@ -1,0 +1,228 @@
+{
+    "namespace": "cache_toggle",
+    "content@t.p": {
+        "$default_state|default": false,
+        "$toggle_control_name|default": "asaki_zuki:the_first_toggle_can_saveable",
+        "$disable|default": "cache_toggle.tab_left_most_top_back_texture",
+        "$enable|default": "cache_toggle.tab_left_most_top_front_texture",
+        "$disable_hover|default": "cache_toggle.tab_left_most_top_back_hover_texture",
+        "$enable_hover|default": "cache_toggle.tab_left_most_top_front_hover_texture",
+        "controls": [
+            {
+                "$toggle_control_name@t.p": {
+                    "size": [
+                        0,
+                        0
+                    ],
+                    "property_bag": {
+                        "#toggle_state_int": "($default_state * 6)"
+                    },
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "switch_button",
+                            "resolve_sibling_scope": true,
+                            "source_property_name": "(#return - (#return > 6) * 12)",
+                            "target_property_name": "#toggle_state_int"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#toggle_state_int / 6) = 1)",
+                            "target_property_name": "#toggle_state"
+                        }
+                    ]
+                }
+            },
+            {
+                "switch_button@t.t": {
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "$toggle_control_name",
+                            "resolve_sibling_scope": true,
+                            "source_property_name": "#toggle_state_int",
+                            "target_property_name": "#current_data"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#current_data + #toggle_state)",
+                            "target_property_name": "#return"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not (#toggle_state = #toggle_state))",
+                            "target_property_name": "#toggle_state"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "$toggle_control_name",
+                            "resolve_sibling_scope": true,
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#is_active"
+                        }
+                    ],
+                    "unchecked_control": "control_nohover",
+                    "unchecked_hover_control": "control_hover",
+                    "button_mappings": [
+                        {
+                            "from_button_id": "button.menu_select",
+                            "to_button_id": "none",
+                            "mapping_type": "pressed"
+                        }
+                    ],
+                    "sound_name": "random.click",
+                    "sound_volume": 1.0,
+                    "sound_pitch": 1.0,
+                    "controls": [
+                        {
+                            "control_nohover@t.p": {
+                                "$border_color": [
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                "$on_hover": false,
+                                "controls": [
+                                    {
+                                        "on_disable@t.p": {
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "$toggle_control_name",
+                                                    "source_property_name": "(not #toggle_state)",
+                                                    "target_property_name": "#visible"
+                                                }
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "disable_control@$disable": {}
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "on_enable@t.p": {
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "$toggle_control_name",
+                                                    "source_property_name": "#toggle_state",
+                                                    "target_property_name": "#visible"
+                                                }
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "enable_control@$enable": {}
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "control_hover@t.p": {
+                                "$border_color": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "$on_hover": true,
+                                "controls": [
+                                    {
+                                        "on_disable@t.p": {
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "$toggle_control_name",
+                                                    "source_property_name": "(not #toggle_state)",
+                                                    "target_property_name": "#visible"
+                                                }
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "disable_control@$disable_hover": {}
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "on_enable@t.p": {
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "$toggle_control_name",
+                                                    "source_property_name": "#toggle_state",
+                                                    "target_property_name": "#visible"
+                                                }
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "enable_control@$enable_hover": {}
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "tab_left_texture_template@t.p": {
+        "$texture|default": "textures/ui/TabLeftBack",
+        "$icon|default": "textures/ui/icon_deals",
+        "$icon_size|default": [
+            "100% - 10px",
+            "100% - 10px"
+        ],
+        "layer": 5,
+        "controls": [
+            {
+                "tab_texture@t.i": {
+                    "texture": "$texture",
+                    "size": [
+                        "100% + 5px",
+                        "100%"
+                    ],
+                    "layer": 4,
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left"
+                }
+            },
+            {
+                "tab_icon@t.i": {
+                    "size": "$icon_size",
+                    "layer": 5,
+                    "texture": "$icon"
+                }
+            }
+        ]
+    },
+    "tab_left_most_top_back_texture@cache_toggle.tab_left_texture_template": {
+        "$texture": "textures/ui/TabLeftBackTopMost"
+    },
+    "tab_left_most_top_back_hover_texture@cache_toggle.tab_left_texture_template": {
+        "$texture": "textures/ui/TabLeftBackTopMostHover"
+    },
+    "tab_left_most_top_front_texture@cache_toggle.tab_left_texture_template": {
+        "$texture": "textures/ui/TabLeftFrontTopMost"
+    },
+    "tab_left_most_top_front_hover_texture@cache_toggle.tab_left_texture_template": {
+        "$texture": "textures/ui/TabLeftFrontTopMostHover"
+    },
+    "tab_left_back_texture@cache_toggle.tab_left_texture_template": {
+        "$texture": "textures/ui/TabLeftBack"
+    },
+    "tab_left_back_hover_texture@cache_toggle.tab_left_texture_template": {
+        "$texture": "textures/ui/TabLeftBackHover"
+    },
+    "tab_left_front_texture@cache_toggle.tab_left_texture_template": {
+        "$texture": "textures/ui/TabLeftFront"
+    },
+    "tab_left_front_hover_texture@cache_toggle.tab_left_texture_template": {
+        "$texture": "textures/ui/TabLeftFrontHover"
+    }
+}

@@ -429,6 +429,192 @@
             }
         ]
     },
+    "left_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "trade_viewer@cache_toggle.content": {
+                            "size": [
+                                30,
+                                30
+                            ],
+                            "offset": [
+                                0,
+                                0
+                            ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_right",
+                            "$toggle_control_name": "spoil_village_trade"
+                        }
+                    },
+                    {
+                        "unlock_all_trade@cache_toggle.content": {
+                            "size": [
+                                30,
+                                30
+                            ],
+                            "offset": [
+                                0,
+                                30
+                            ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_right",
+                            "$toggle_control_name": "unlock_village_trade",
+                            "$disable": "cache_toggle.tab_left_back_texture",
+                            "$enable": "cache_toggle.tab_left_front_texture",
+                            "$disable_hover": "cache_toggle.tab_left_back_hover_texture",
+                            "$enable_hover": "cache_toggle.tab_left_front_hover_texture",
+                            "$icon": "textures/ui/icon_unlocked",
+                            "$icon_size": [
+                                15,
+                                15
+                            ],
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "spoil_village_trade",
+                                    "source_property_name": "#toggle_state",
+                                    "target_property_name": "#visible"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "trade_toggle": {
+        "$toggle_bindings": [
+            {
+                "binding_type": "$toggle_binding_type",
+                "binding_condition": "$toggle_binding_condition",
+                "binding_collection_name": "$toggle_grid_collection_name",
+                "binding_name": "$toggle_state_binding_name",
+                "binding_name_override": "#toggle_state"
+            },
+            {
+                "binding_type": "$toggle_enabled_binding_type",
+                "binding_condition": "$toggle_enabled_binding_condition",
+                "binding_collection_name": "$toggle_grid_collection_name",
+                "binding_name": "$toggle_enabled_binding_name"
+            },
+            {
+                "binding_type": "collection_details",
+                "binding_collection_name": "$toggle_grid_collection_name"
+            },
+            {
+                "binding_type": "$toggle_tab_focus_binding_type",
+                "binding_name": "$toggle_tab_focus_binding_name",
+                "binding_name_override": "#default_focus_precedence"
+            },
+            {
+                "binding_type": "$toggle_on_hover_binding_type",
+                "binding_name": "$toggle_on_hover_binding_name",
+                "binding_name_override": "#toggle_on_hover"
+            },
+            {
+                "binding_type": "$toggle_tts_header_binding_type",
+                "binding_collection_name": "$toggle_tts_header_binding_collection_name",
+                "binding_name": "$toggle_tts_header"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "spoil_village_trade",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#spoil"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "unlock_village_trade",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#unlock"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#spoil and #unlock) or $toggle_enabled_binding_name)",
+                "target_property_name": "#enabled"
+            }
+        ]
+    },
+    "hover_button": {
+        "modifications": [
+            {
+                "array_name": "bindings",
+                "operation": "remove",
+                "where": {
+                    "binding_name": "(not #using_touch)"
+                }
+            }
+        ]
+    },
+    "trade_toggle_holder": {
+        "size": [
+            "100%",
+            "100%cm + 1"
+        ],
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_back",
+                "value": [
+                    {
+                        "trade_view@t.p": {
+                            "size": [
+                                "100%",
+                                "100%cm"
+                            ],
+                            "anchor_from": "top_middle",
+                            "anchor_to": "top_middle",
+                            "offset": [
+                                0,
+                                4
+                            ],
+                            "layer": 5,
+                            "controls": [
+                                {
+                                    "trade_icons@trade2.toggle_content": {
+                                        "$template_toggle": "trade2.toggle_content"
+                                    }
+                                }
+                            ],
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "spoil_village_trade",
+                                    "source_property_name": "#toggle_state",
+                                    "target_property_name": "#visible"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "tier_stack_panel": {
+        "bindings": [
+            {
+                "binding_name": "#tier_visible",
+                "binding_type": "collection",
+                "binding_collection_name": "$collection_name",
+                "binding_condition": "always"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "spoil_village_trade",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#toggle_state"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#toggle_state or #tier_visible)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
     "screen_panel": {
         "modifications": [
             {
@@ -439,6 +625,60 @@
                         "current_villager_level_hook@trade2.trade_level_hook": {}
                     }
                 ]
+            }
+        ]
+    },
+    "arrow_holder/arrow_image": {
+        "bindings": [
+            {
+                "binding_type": "collection_details"
+            },
+            {
+                "binding_name": "#trade_toggle_enabled"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "spoil_village_trade",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#spoil"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "unlock_village_trade",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#unlock"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#spoil and #unlock) or #trade_toggle_enabled)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "arrow_holder/lock_image": {
+        "bindings": [
+            {
+                "binding_type": "collection_details"
+            },
+            {
+                "binding_name": "#trade_toggle_enabled"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "spoil_village_trade",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#spoil"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "unlock_village_trade",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#unlock"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((not #trade_toggle_enabled) and ((not #unlock) or (not #spoil)))",
+                "target_property_name": "#visible"
             }
         ]
     }

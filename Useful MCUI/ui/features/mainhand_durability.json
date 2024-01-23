@@ -86,6 +86,7 @@
                 "content@t.l": {
                     "text": "#text",
                     "shadow": true,
+                    "layer": 5,
                     "bindings": [
                         {
                             "binding_name": "#item_durability_current_amount",

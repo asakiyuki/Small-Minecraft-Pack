@@ -232,14 +232,14 @@
                 },
                 "value": [
                     {
-                        "item_durability@t.p": {
+                        "empty_slot@t.p": {
                             "size": [
                                 0,
                                 22
                             ],
                             "controls": [
                                 {
-                                    "content@item_durability.content": {
+                                    "content@empty_inventory_slot.content": {
                                         "anchor_from": "right_middle",
                                         "anchor_to": "right_middle",
                                         "offset": [
@@ -292,14 +292,14 @@
                 "operation": "insert_back",
                 "value": [
                     {
-                        "empty_slot@t.p": {
+                        "item_durability@t.p": {
                             "size": [
                                 0,
                                 22
                             ],
                             "controls": [
                                 {
-                                    "content@empty_inventory_slot.content": {
+                                    "content@item_durability.content": {
                                         "anchor_from": "left_middle",
                                         "anchor_to": "left_middle",
                                         "offset": [
@@ -515,10 +515,10 @@
             }
         ],
         "prevent_touch_input": true,
-        "anchor_from": "bottom_left",
-        "anchor_to": "bottom_left",
+        "anchor_from": "bottom_right",
+        "anchor_to": "bottom_right",
         "offset": [
-            5,
+            -5,
             -5
         ],
         "bindings": [
