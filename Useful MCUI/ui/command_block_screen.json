@@ -83,7 +83,50 @@
                                             ],
                                             "controls": [
                                                 {
-                                                    "edit_textbox@command_block_textbox": {}
+                                                    "edit_textbox@command_block_textbox": {
+                                                        "ignored": "(not $command_block:smart_textbox)"
+                                                    }
+                                                },
+                                                {
+                                                    "offset": {
+                                                        "type": "panel",
+                                                        "ignored": "$command_block:smart_textbox",
+                                                        "size": [
+                                                            "fill",
+                                                            "100%c"
+                                                        ],
+                                                        "controls": [
+                                                            {
+                                                                "command_block_commands_text@command_block.command_block_text_edit_box": {
+                                                                    "anchor_from": "left_middle",
+                                                                    "anchor_to": "left_middle",
+                                                                    "$focus_id": "command_block_commands_text",
+                                                                    "focus_change_left": "hover_note_text",
+                                                                    "focus_change_up": "hover_note_text",
+                                                                    "size": [
+                                                                        "100%",
+                                                                        30
+                                                                    ],
+                                                                    "max_length": 32500,
+                                                                    "$text_box_name": "command_block.command_text",
+                                                                    "$text_edit_box_content_binding_name": "#command_text_edit",
+                                                                    "$place_holder_text": ""
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "paste_button@command_block.paste_button": {
+                                                        "ignored": "$command_block:smart_textbox",
+                                                        "layer": 2
+                                                    }
+                                                },
+                                                {
+                                                    "plus_button@command_block.plus_button": {
+                                                        "ignored": "$command_block:smart_textbox",
+                                                        "layer": 2
+                                                    }
                                                 }
                                             ]
                                         }
@@ -714,6 +757,12 @@
                                 "100%",
                                 30
                             ],
+                            "bindings": [
+                                {
+                                    "binding_name": "(not #maximized_input_visible)",
+                                    "binding_name_override": "#visible"
+                                }
+                            ],
                             "controls": [
                                 {
                                     "tick_delay_text@common.text_edit_box": {
@@ -733,6 +782,7 @@
                                 },
                                 {
                                     "first_tick_delay@common.nav_toggle_without_pressed": {
+                                        "layer": 0,
                                         "$toggle_binding_name": "execute_on_first_tick",
                                         "size": [
                                             30,
@@ -754,7 +804,7 @@
                                         "$tex_col": [
                                             {
                                                 "hover_text@t.i": {
-                                                    "layer": 10,
+                                                    "layer": 1,
                                                     "anchor_from": "top_middle",
                                                     "anchor_to": "bottom_middle",
                                                     "texture": "textures/ui/Black",
@@ -795,7 +845,7 @@
                                                         18
                                                     ],
                                                     "texture": "textures/blocks/reactor_core_stage_2",
-                                                    "layer": 10,
+                                                    "layer": 1,
                                                     "ignored": "$on_enabled"
                                                 }
                                             },
@@ -806,7 +856,7 @@
                                                         18
                                                     ],
                                                     "texture": "textures/blocks/reactor_core_stage_1",
-                                                    "layer": 10,
+                                                    "layer": 1,
                                                     "ignored": "(not $on_enabled)"
                                                 }
                                             }

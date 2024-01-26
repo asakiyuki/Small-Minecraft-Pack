@@ -1,0 +1,97 @@
+{
+    "brewing_stand_panel/root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "container_mode_stack@t.sp": {
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_left",
+                            "size": [
+                                "100%cm",
+                                "100%c"
+                            ],
+                            "$toggle_size": [
+                                25,
+                                25
+                            ],
+                            "$radio_toggle": true,
+                            "$toggle_name": "container_mode",
+                            "$outside_content": "crafting.auto_place_button_texture",
+                            "$button_content": "t.p",
+                            "controls": [
+                                {
+                                    "move_and_place@toggle.content": {
+                                        "$toggle_control_name": "move_mode",
+                                        "$disable": "cache_toggle.tab_right_most_top_back_texture",
+                                        "$enable": "cache_toggle.tab_right_most_top_front_texture",
+                                        "$disable_hover": "cache_toggle.tab_right_most_top_back_hover_texture",
+                                        "$enable_hover": "cache_toggle.tab_right_most_top_front_hover_texture",
+                                        "$toggle_state": true,
+                                        "$toggle_index": 0,
+                                        "$disable_2d_texture": true
+                                    }
+                                },
+                                {
+                                    "auto_place@toggle.content": {
+                                        "$toggle_control_name": "quick_move_mode",
+                                        "$toggle_index": 1
+                                    }
+                                },
+                                {
+                                    "drop@toggle.content": {
+                                        "$toggle_control_name": "drop_mode",
+                                        "$icon": "textures/ui/white_pixel_chevron_down",
+                                        "$icon_size": [
+                                            7,
+                                            7
+                                        ],
+                                        "$toggle_index": 2
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "brewing_stand_panel": {
+        "$double_press_action": "button.container_take_all_place_all",
+        "$button_ref_controls": [
+            {
+                "default@t.p": {
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "move_mode",
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "item_button_ref@$button_ref": {
+                                "tts_ignore_count": true,
+                                "tts_skip_message": true,
+                                "tts_inherit_siblings": true,
+                                "layer": 5
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "quick_move_btn@crafting.quick_move_slot_button": {}
+            },
+            {
+                "drop_action@crafting.quick_move_slot_button": {
+                    "$press_action": "button.drop_all",
+                    "$toggle_control_name": "drop_mode"
+                }
+            }
+        ]
+    }
+}

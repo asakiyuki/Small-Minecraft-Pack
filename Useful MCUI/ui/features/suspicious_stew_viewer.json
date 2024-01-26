@@ -1,0 +1,105 @@
+{
+    "namespace": "suspicious_stew",
+    "icon@t.i": {
+        "$data|default": 0,
+        "size": [
+            16,
+            16
+        ],
+        "layer": 10,
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "selected_item_id_hud",
+                "source_property_name": "(#item_data_value = $data)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "content@t.i": {
+        "texture": "textures/ui/hud_tip_text_background",
+        "size": [
+            "100%cm + 8px",
+            "100%cm + 8px"
+        ],
+        "alpha": 0.5,
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "selected_item_id_hud",
+                "source_property_name": "(#item_id = $suspicious_stew)",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "0@suspicious_stew.icon": {
+                    "$data": 0,
+                    "texture": "textures/ui/night_vision_effect"
+                }
+            },
+            {
+                "1@suspicious_stew.icon": {
+                    "$data": 1,
+                    "texture": "textures/ui/jump_boost_effect"
+                }
+            },
+            {
+                "2@suspicious_stew.icon": {
+                    "$data": 2,
+                    "texture": "textures/ui/weakness_effect"
+                }
+            },
+            {
+                "3@suspicious_stew.icon": {
+                    "$data": 3,
+                    "texture": "textures/ui/blindness_effect"
+                }
+            },
+            {
+                "4@suspicious_stew.icon": {
+                    "$data": 4,
+                    "texture": "textures/ui/poison_effect"
+                }
+            },
+            {
+                "5@suspicious_stew.icon": {
+                    "$data": 5,
+                    "texture": "textures/ui/saturation_effect"
+                }
+            },
+            {
+                "6@suspicious_stew.icon": {
+                    "$data": 6,
+                    "texture": "textures/ui/saturation_effect"
+                }
+            },
+            {
+                "7@suspicious_stew.icon": {
+                    "$data": 7,
+                    "texture": "textures/ui/fire_resistance_effect"
+                }
+            },
+            {
+                "8@suspicious_stew.icon": {
+                    "$data": 8,
+                    "texture": "textures/ui/regeneration_effect"
+                }
+            },
+            {
+                "9@suspicious_stew.icon": {
+                    "$data": 9,
+                    "texture": "textures/ui/wither_effect"
+                }
+            },
+            {
+                "10@suspicious_stew.icon": {
+                    "$data": 10,
+                    "texture": "textures/ui/night_vision_effect"
+                }
+            }
+        ]
+    }
+}

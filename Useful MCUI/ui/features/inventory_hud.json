@@ -26,6 +26,48 @@
                 "binding_name": "#slot_selected",
                 "binding_type": "collection",
                 "binding_collection_name": "hotbar_items"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#slot_selected and (not (#item_durability_total_amount = 0)))",
+                "ignored": "$disable_total_item_count",
+                "target_property_name": "#is_infinity_durability"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#item_id_aux * #slot_selected)",
+                "target_property_name": "#is_selected_item_id"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "selected_item_id_hud",
+                "source_property_name": "(#select_item_id_aux * 1)",
+                "target_property_name": "#select_item_id_aux"
+            },
+            {
+                "binding_name": "#inventory_stack_count",
+                "binding_name_override": "#c",
+                "binding_type": "collection",
+                "ignored": "$disable_total_item_count",
+                "binding_collection_name": "hotbar_items"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(((#c = '') * 1 + #c) * 1)",
+                "ignored": "$disable_total_item_count",
+                "target_property_name": "#item_count"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(('a' + #select_item_id_aux) = ('a' + #item_id_aux))",
+                "ignored": "$disable_total_item_count",
+                "target_property_name": "#this_item_is_selected"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#this_item_is_selected * #item_count)",
+                "ignored": "$disable_total_item_count",
+                "target_property_name": "#get_amount_if_this_item_has_selected"
             }
         ]
     },
@@ -157,6 +199,38 @@
                                         "binding_condition": "visible",
                                         "binding_type": "collection",
                                         "binding_collection_name": "hotbar_items"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "selected_item_id_hud",
+                                        "source_property_name": "#select_item_id_aux",
+                                        "ignored": "$disable_total_item_count",
+                                        "target_property_name": "#select_item_id_aux"
+                                    },
+                                    {
+                                        "binding_name": "#inventory_stack_count",
+                                        "ignored": "$disable_total_item_count",
+                                        "binding_name_override": "#c",
+                                        "binding_type": "collection",
+                                        "binding_collection_name": "hotbar_items"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(((#c = '') * 1 + #c) * 1)",
+                                        "ignored": "$disable_total_item_count",
+                                        "target_property_name": "#item_count"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(('a' + #select_item_id_aux) = ('a' + #item_id_aux))",
+                                        "ignored": "$disable_total_item_count",
+                                        "target_property_name": "#this_item_is_selected"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#this_item_is_selected * #item_count)",
+                                        "ignored": "$disable_total_item_count",
+                                        "target_property_name": "#get_amount_if_this_item_has_selected"
                                     }
                                 ]
                             }
@@ -311,7 +385,7 @@
             162,
             72
         ],
-        "layer": 3,
+        "layer": 15,
         "collection_name": "hotbar_items",
         "anchor_from": "bottom_middle",
         "anchor_to": "bottom_middle",

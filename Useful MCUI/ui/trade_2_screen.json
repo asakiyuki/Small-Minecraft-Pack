@@ -99,7 +99,7 @@
                         },
                         {
                             "binding_type": "view",
-                            "source_property_name": "((10 * (1 + (#lvl > 1))) + ((#lvl > 1) * (#lvl * 20)))",
+                            "source_property_name": "((10 * (1 + (#lvl > 1))) + ((#lvl > 1) * (#lvl * 29)))",
                             "target_property_name": "#level_require"
                         }
                     ]
@@ -260,12 +260,12 @@
                                             },
                                             {
                                                 "binding_type": "view",
-                                                "source_property_name": "(10000 - #exp_progress * 10000)",
+                                                "source_property_name": "(10000 - #exp_progress * 10999)",
                                                 "target_property_name": "#ep"
                                             },
                                             {
                                                 "binding_type": "view",
-                                                "source_property_name": "(1000 * ((#ep > 1000) + (#ep > 2000) + (#ep > 3000) + (#ep > 4000) + (#ep > 5000) + (#ep > 6000) + (#ep > 7000) + (#ep > 8000) + (#ep > 9000)))",
+                                                "source_property_name": "(1000 * ((#ep > 1999) + (#ep > 2999) + (#ep > 3999) + (#ep > 4999) + (#ep > 5999) + (#ep > 6999) + (#ep > 7999) + (#ep > 8999) + (#ep > 999)))",
                                                 "target_property_name": "#ep_1"
                                             },
                                             {
@@ -275,7 +275,7 @@
                                             },
                                             {
                                                 "binding_type": "view",
-                                                "source_property_name": "(100 * ((#ep1 > 100) + (#ep1 > 200) + (#ep1 > 300) + (#ep1 > 400) + (#ep1 > 500) + (#ep1 > 600) + (#ep1 > 700) + (#ep1 > 800) + (#ep1 > 900)))",
+                                                "source_property_name": "(100 * ((#ep1 > 199) + (#ep1 > 299) + (#ep1 > 399) + (#ep1 > 499) + (#ep1 > 599) + (#ep1 > 699) + (#ep1 > 799) + (#ep1 > 899) + (#ep1 > 99)))",
                                                 "target_property_name": "#ep_2"
                                             },
                                             {
@@ -285,7 +285,7 @@
                                             },
                                             {
                                                 "binding_type": "view",
-                                                "source_property_name": "(10 * ((#ep2 > 10) + (#ep2 > 20) + (#ep2 > 30) + (#ep2 > 40) + (#ep2 > 50) + (#ep2 > 60) + (#ep2 > 70) + (#ep2 > 80) + (#ep2 > 90)))",
+                                                "source_property_name": "(10 * ((#ep2 > 19) + (#ep2 > 29) + (#ep2 > 39) + (#ep2 > 49) + (#ep2 > 59) + (#ep2 > 69) + (#ep2 > 79) + (#ep2 > 89) + (#ep2 > 9)))",
                                                 "target_property_name": "#ep_3"
                                             },
                                             {
@@ -295,7 +295,7 @@
                                             },
                                             {
                                                 "binding_type": "view",
-                                                "source_property_name": "((#current_exp * #level_require) / 1000)",
+                                                "source_property_name": "((#current_exp * #level_require) / 1999)",
                                                 "target_property_name": "#current_exp_calc"
                                             },
                                             {
@@ -305,7 +305,7 @@
                                             },
                                             {
                                                 "binding_type": "view",
-                                                "source_property_name": "(not (#level_require = 120))",
+                                                "source_property_name": "(not (#level_require = 129))",
                                                 "target_property_name": "#visible"
                                             }
                                         ]
@@ -327,7 +327,7 @@
                                             {
                                                 "binding_type": "view",
                                                 "source_control_name": "current_villager_level",
-                                                "source_property_name": "(#level_require = 120)",
+                                                "source_property_name": "(#level_require = 129)",
                                                 "target_property_name": "#visible"
                                             }
                                         ]
@@ -374,12 +374,12 @@
                                 },
                                 {
                                     "binding_type": "view",
-                                    "source_property_name": "(10000 - #exp_possible_progress * 10000)",
+                                    "source_property_name": "(10000 - #exp_possible_progress * 10999)",
                                     "target_property_name": "#ep"
                                 },
                                 {
                                     "binding_type": "view",
-                                    "source_property_name": "(1000 * ((#ep > 1000) + (#ep > 2000) + (#ep > 3000) + (#ep > 4000) + (#ep > 5000) + (#ep > 6000) + (#ep > 7000) + (#ep > 8000) + (#ep > 9000)))",
+                                    "source_property_name": "(1000 * ((#ep > 1999) + (#ep > 2999) + (#ep > 3999) + (#ep > 4999) + (#ep > 5999) + (#ep > 6999) + (#ep > 7999) + (#ep > 8999) + (#ep > 999)))",
                                     "target_property_name": "#ep_1"
                                 },
                                 {
@@ -389,7 +389,7 @@
                                 },
                                 {
                                     "binding_type": "view",
-                                    "source_property_name": "(100 * ((#ep1 > 100) + (#ep1 > 200) + (#ep1 > 300) + (#ep1 > 400) + (#ep1 > 500) + (#ep1 > 600) + (#ep1 > 700) + (#ep1 > 800) + (#ep1 > 900)))",
+                                    "source_property_name": "(100 * ((#ep1 > 199) + (#ep1 > 299) + (#ep1 > 399) + (#ep1 > 499) + (#ep1 > 599) + (#ep1 > 699) + (#ep1 > 799) + (#ep1 > 899) + (#ep1 > 99)))",
                                     "target_property_name": "#ep_2"
                                 },
                                 {
@@ -399,7 +399,7 @@
                                 },
                                 {
                                     "binding_type": "view",
-                                    "source_property_name": "(10 * ((#ep2 > 10) + (#ep2 > 20) + (#ep2 > 30) + (#ep2 > 40) + (#ep2 > 50) + (#ep2 > 60) + (#ep2 > 70) + (#ep2 > 80) + (#ep2 > 90)))",
+                                    "source_property_name": "(10 * ((#ep2 > 19) + (#ep2 > 29) + (#ep2 > 39) + (#ep2 > 49) + (#ep2 > 59) + (#ep2 > 69) + (#ep2 > 79) + (#ep2 > 89) + (#ep2 > 9)))",
                                     "target_property_name": "#ep_3"
                                 },
                                 {
@@ -409,7 +409,7 @@
                                 },
                                 {
                                     "binding_type": "view",
-                                    "source_property_name": "(((#possible_exp * #level_require) / 1000))",
+                                    "source_property_name": "(((#possible_exp * #level_require) / 1999))",
                                     "target_property_name": "#possible_exp_calc"
                                 },
                                 {
@@ -419,7 +419,7 @@
                                 },
                                 {
                                     "binding_type": "view",
-                                    "source_property_name": "(not (#level_require = 120))",
+                                    "source_property_name": "(not (#level_require = 129))",
                                     "target_property_name": "#visible"
                                 }
                             ]
@@ -438,8 +438,8 @@
                     {
                         "trade_viewer@cache_toggle.content": {
                             "size": [
-                                30,
-                                30
+                                25,
+                                25
                             ],
                             "offset": [
                                 0,
@@ -447,14 +447,20 @@
                             ],
                             "anchor_from": "top_left",
                             "anchor_to": "top_right",
-                            "$toggle_control_name": "spoil_village_trade"
+                            "$toggle_control_name": "spoil_village_trade",
+                            "bindings": [
+                                {
+                                    "binding_name": "#exp_bar_visible",
+                                    "binding_name_override": "#visible"
+                                }
+                            ]
                         }
                     },
                     {
                         "unlock_all_trade@cache_toggle.content": {
                             "size": [
-                                30,
-                                30
+                                25,
+                                25
                             ],
                             "offset": [
                                 0,
@@ -468,16 +474,46 @@
                             "$disable_hover": "cache_toggle.tab_left_back_hover_texture",
                             "$enable_hover": "cache_toggle.tab_left_front_hover_texture",
                             "$icon": "textures/ui/icon_unlocked",
+                            "ignored": "$disable_unlock_trade",
                             "$icon_size": [
                                 15,
                                 15
                             ],
                             "bindings": [
                                 {
+                                    "binding_name": "#exp_bar_visible"
+                                },
+                                {
                                     "binding_type": "view",
                                     "source_control_name": "spoil_village_trade",
                                     "source_property_name": "#toggle_state",
+                                    "target_property_name": "#toggle_state"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#toggle_state and #exp_bar_visible)",
                                     "target_property_name": "#visible"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "fixed@t.p": {
+                            "size": [
+                                0,
+                                0
+                            ],
+                            "controls": [
+                                {
+                                    "unlock_all_trade@t.p": {
+                                        "size": [
+                                            0,
+                                            0
+                                        ],
+                                        "property_bag": {
+                                            "#toggle_state": "(not $disable_unlock_trade)"
+                                        }
+                                    }
                                 }
                             ]
                         }
@@ -681,5 +717,145 @@
                 "target_property_name": "#visible"
             }
         ]
+    },
+    "right_panel": {
+        "$double_press_action": "button.container_take_all_place_all",
+        "$button_ref_controls": [
+            {
+                "default@t.p": {
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "move_mode",
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "item_button_ref@$button_ref": {
+                                "tts_ignore_count": true,
+                                "tts_skip_message": true,
+                                "tts_inherit_siblings": true,
+                                "layer": 5
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "quick_move_btn@crafting.quick_move_slot_button": {}
+            },
+            {
+                "drop_action@crafting.quick_move_slot_button": {
+                    "$press_action": "button.drop_all",
+                    "$toggle_control_name": "drop_mode"
+                }
+            }
+        ],
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "container_mode_stack@t.sp": {
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_left",
+                            "size": [
+                                "100%cm",
+                                "100%c"
+                            ],
+                            "$toggle_size": [
+                                25,
+                                25
+                            ],
+                            "$radio_toggle": true,
+                            "$toggle_name": "container_mode",
+                            "$outside_content": "crafting.auto_place_button_texture",
+                            "$button_content": "t.p",
+                            "controls": [
+                                {
+                                    "move_and_place@toggle.content": {
+                                        "$toggle_control_name": "move_mode",
+                                        "$disable": "cache_toggle.tab_right_most_top_back_texture",
+                                        "$enable": "cache_toggle.tab_right_most_top_front_texture",
+                                        "$disable_hover": "cache_toggle.tab_right_most_top_back_hover_texture",
+                                        "$enable_hover": "cache_toggle.tab_right_most_top_front_hover_texture",
+                                        "$toggle_state": true,
+                                        "$toggle_index": 0,
+                                        "$disable_2d_texture": true
+                                    }
+                                },
+                                {
+                                    "auto_place@toggle.content": {
+                                        "$toggle_control_name": "quick_move_mode",
+                                        "$toggle_index": 1
+                                    }
+                                },
+                                {
+                                    "drop@toggle.content": {
+                                        "$toggle_control_name": "drop_mode",
+                                        "$icon": "textures/ui/white_pixel_chevron_down",
+                                        "$icon_size": [
+                                            7,
+                                            7
+                                        ],
+                                        "$toggle_index": 2
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "how_to_play_button@t.p": {
+        "size": [
+            18,
+            18
+        ],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "$button_icon": "textures/items/emerald",
+        "$default_element": "chat.simple_button_icon",
+        "$hover_element": "chat.simple_button_icon",
+        "$pressed_element": "chat.simple_button_icon",
+        "$onDoubleClick": "button.container_auto_place",
+        "$disableDoubleClick": false,
+        "$disable_bindings": false,
+        "$collection_name": "trade2_result_item",
+        "$unique_hover": "trade2.hover_trade_text",
+        "$o": [
+            0,
+            0
+        ],
+        "$color": [
+            1,
+            1,
+            1
+        ],
+        "controls": [
+            {
+                "btnText@chat.button_template": {
+                    "size": [
+                        "100%",
+                        "100%"
+                    ],
+                    "offset": [
+                        0,
+                        0
+                    ]
+                }
+            }
+        ]
+    },
+    "hover_trade_text@t.c": {
+        "layer": 25,
+        "renderer": "hover_text_renderer",
+        "property_bag": {
+            "#hover_text": "(Press x2) Trade All"
+        }
     }
 }

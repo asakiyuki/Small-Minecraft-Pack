@@ -88,7 +88,8 @@
         "texture": "$state_texture",
         "$extra_control|default": "t.ep",
         "$unique_control|default": "t.ep",
-        "size": [
+        "size": "$tex_size",
+        "$tex_size|default": [
             "100% - 2px",
             "100% - 2px"
         ],
@@ -105,6 +106,8 @@
                         0,
                         0
                     ],
+                    "ignored": "$disable_glow",
+                    "$disable_glow|default": false,
                     "color": "$border_color",
                     "variables": [
                         {
@@ -137,15 +140,22 @@
         "$hover_element|default": "t.ep",
         "$pressed_element|default": "t.ep",
         "$unique_hover|default": "t.ep",
+        "$default_texture|default": "textures/ui/button_borderless_light",
+        "$hover_texture|default": "textures/ui/button_borderless_lighthover",
+        "$pressed_texture|default": "textures/ui/button_borderless_lightpressed",
+        "$disable_bindings|default": true,
+        "$collection_name|default": "none",
+        "$disable_glow|default": false,
         "controls": [
             {
                 "d@button_texture": {
-                    "$extra_control": "$default_element"
+                    "$extra_control": "$default_element",
+                    "$state_texture": "$default_texture"
                 }
             },
             {
                 "h@button_texture": {
-                    "$state_texture": "textures/ui/button_borderless_lighthover",
+                    "$state_texture": "$hover_texture",
                     "$wbd": true,
                     "$on_hover": true,
                     "$extra_control": "$hover_element",
@@ -159,7 +169,7 @@
             },
             {
                 "p@button_texture": {
-                    "$state_texture": "textures/ui/button_borderless_lightpressed",
+                    "$state_texture": "$pressed_texture",
                     "$wbd": true,
                     "$on_pressed": true,
                     "$extra_control": "$pressed_element",
@@ -169,6 +179,14 @@
                         1
                     ]
                 }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_type": "collection_details",
+                "binding_collection_name": "$collection_name",
+                "ignored": "$disable_bindings",
+                "binding_condition": "once"
             }
         ]
     },
@@ -193,6 +211,7 @@
         "$enable_unique_hover|default": "t.ep",
         "$disable_element|default": "t.ep",
         "$enable_element|default": "t.ep",
+        "$disable_glow|default": false,
         "controls": [
             {
                 "d@chat.button_texture": {
@@ -305,7 +324,8 @@
         ]
     },
     "simple_button_icon@t.i": {
-        "size": [
+        "size": "$simple_icon_size",
+        "$simple_icon_size|default": [
             14,
             14
         ],

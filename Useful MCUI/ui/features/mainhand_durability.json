@@ -55,162 +55,141 @@
             }
         ]
     },
-    "item_durability_calculator@t.i": {
-        "texture": "textures/ui/hud_tip_text_background",
-        "size": [
-            "100%cm + 8px",
-            "100%cm + 8px"
-        ],
-        "alpha": 0.5,
+    "item_durability_calculator@t.l": {
+        "text": "#text",
+        "shadow": true,
+        "layer": 5,
         "bindings": [
             {
-                "binding_name": "#slot_selected",
-                "binding_name_override": "#v1",
+                "binding_name": "#item_durability_current_amount",
                 "binding_type": "collection",
                 "binding_collection_name": "hotbar_items"
             },
             {
-                "binding_name": "(not (#item_durability_total_amount = 0))",
-                "binding_name_override": "#v2",
+                "binding_name": "#item_durability_total_amount",
+                "binding_name_override": "#dt",
+                "binding_type": "collection",
+                "binding_collection_name": "hotbar_items"
+            },
+            {
+                "binding_name": "#slot_selected",
                 "binding_type": "collection",
                 "binding_collection_name": "hotbar_items"
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(#v1 and #v2)",
+                "source_property_name": "(#slot_selected and (not (#dt = 0)))",
                 "target_property_name": "#visible"
-            }
-        ],
-        "controls": [
+            },
             {
-                "content@t.l": {
-                    "text": "#text",
-                    "shadow": true,
-                    "layer": 5,
-                    "bindings": [
-                        {
-                            "binding_name": "#item_durability_current_amount",
-                            "binding_type": "collection",
-                            "binding_collection_name": "hotbar_items"
-                        },
-                        {
-                            "binding_name": "#item_durability_total_amount",
-                            "binding_name_override": "#dt",
-                            "binding_type": "collection",
-                            "binding_collection_name": "hotbar_items"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(#item_durability_current_amount * (1 - ((#item_durability_current_amount <0) * 2)))",
-                            "target_property_name": "#dc"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(10000 * ((#dc > 10000) + (#dc > 20000) + (#dc > 30000) + (#dc > 40000) + (#dc > 50000) + (#dc > 60000) + (#dc > 70000) + (#dc > 80000) + (#dc > 90000)))",
-                            "target_property_name": "#dc_1"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(#dc - #dc_1)",
-                            "target_property_name": "#dc1"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(1000 * ((#dc1 > 1000) + (#dc1 > 2000) + (#dc1 > 3000) + (#dc1 > 4000) + (#dc1 > 5000) + (#dc1 > 6000) + (#dc1 > 7000) + (#dc1 > 8000) + (#dc1 > 9000)))",
-                            "target_property_name": "#dc_2"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(#dc1 - #dc_2)",
-                            "target_property_name": "#dc2"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(100 * ((#dc2 > 100) + (#dc2 > 200) + (#dc2 > 300) + (#dc2 > 400) + (#dc2 > 500) + (#dc2 > 600) + (#dc2 > 700) + (#dc2 > 800) + (#dc2 > 900)))",
-                            "target_property_name": "#dc_3"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(#dc2 - #dc_3)",
-                            "target_property_name": "#dc3"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(10 * ((#dc3 > 10) + (#dc3 > 20) + (#dc3 > 30) + (#dc3 > 40) + (#dc3 > 50) + (#dc3 > 60) + (#dc3 > 70) + (#dc3 > 80) + (#dc3 > 90)))",
-                            "target_property_name": "#dc_4"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(#dc3 - #dc_4)",
-                            "target_property_name": "#dc4"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "((#dc4 > 1) + (#dc4 > 2) + (#dc4 > 3) + (#dc4 > 4) + (#dc4 > 5) + (#dc4 > 6) + (#dc4 > 7) + (#dc4 > 8) + (#dc4 > 9))",
-                            "target_property_name": "#dc_5"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "((#dc_1 + #dc_2 + #dc_3 + #dc_4 + #dc_5) * (1 - ((#item_durability_current_amount <0) * 2)))",
-                            "target_property_name": "#current_durability"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(10000 * ((#dt > 10000) + (#dt > 20000) + (#dt > 30000) + (#dt > 40000) + (#dt > 50000) + (#dt > 60000) + (#dt > 70000) + (#dt > 80000) + (#dt > 90000)))",
-                            "target_property_name": "#dt_1"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(#dt - #dt_1)",
-                            "target_property_name": "#dt1"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(1000 * ((#dt1 > 1000) + (#dt1 > 2000) + (#dt1 > 3000) + (#dt1 > 4000) + (#dt1 > 5000) + (#dt1 > 6000) + (#dt1 > 7000) + (#dt1 > 8000) + (#dt1 > 9000)))",
-                            "target_property_name": "#dt_2"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(#dt1 - #dt_2)",
-                            "target_property_name": "#dt2"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(100 * ((#dt2 > 100) + (#dt2 > 200) + (#dt2 > 300) + (#dt2 > 400) + (#dt2 > 500) + (#dt2 > 600) + (#dt2 > 700) + (#dt2 > 800) + (#dt2 > 900)))",
-                            "target_property_name": "#dt_3"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(#dt2 - #dt_3)",
-                            "target_property_name": "#dt3"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(10 * ((#dt3 > 10) + (#dt3 > 20) + (#dt3 > 30) + (#dt3 > 40) + (#dt3 > 50) + (#dt3 > 60) + (#dt3 > 70) + (#dt3 > 80) + (#dt3 > 90)))",
-                            "target_property_name": "#dt_4"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(#dt3 - #dt_4)",
-                            "target_property_name": "#dt4"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "((#dt4 > 1) + (#dt4 > 2) + (#dt4 > 3) + (#dt4 > 4) + (#dt4 > 5) + (#dt4 > 6) + (#dt4 > 7) + (#dt4 > 8) + (#dt4 > 9))",
-                            "target_property_name": "#dt_5"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "(#dt_1 + #dt_2 + #dt_3 + #dt_4 + #dt_5)",
-                            "target_property_name": "#total_durability"
-                        },
-                        {
-                            "binding_type": "view",
-                            "source_property_name": "( '§z' + #current_durability + '/' + #total_durability)",
-                            "target_property_name": "#text"
-                        }
-                    ]
-                }
+                "binding_type": "view",
+                "source_property_name": "(#item_durability_current_amount * ( 1 - ((#item_durability_current_amount < 0) * 2)))",
+                "target_property_name": "#dc"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(10000 * ((#dc > 19999) + (#dc > 29999) + (#dc > 39999) + (#dc > 49999) + (#dc > 59999) + (#dc > 69999) + (#dc > 79999) + (#dc > 89999) + (#dc > 9999)))",
+                "target_property_name": "#dc_1"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#dc - #dc_1)",
+                "target_property_name": "#dc1"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(1000 * ((#dc1 > 1999) + (#dc1 > 2999) + (#dc1 > 3999) + (#dc1 > 4999) + (#dc1 > 5999) + (#dc1 > 6999) + (#dc1 > 7999) + (#dc1 > 8999) + (#dc1 > 999)))",
+                "target_property_name": "#dc_2"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#dc1 - #dc_2)",
+                "target_property_name": "#dc2"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(100 * ((#dc2 > 199) + (#dc2 > 299) + (#dc2 > 399) + (#dc2 > 499) + (#dc2 > 599) + (#dc2 > 699) + (#dc2 > 799) + (#dc2 > 899) + (#dc2 > 99)))",
+                "target_property_name": "#dc_3"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#dc2 - #dc_3)",
+                "target_property_name": "#dc3"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(10 * ((#dc3 > 19) + (#dc3 > 29) + (#dc3 > 39) + (#dc3 > 49) + (#dc3 > 59) + (#dc3 > 69) + (#dc3 > 79) + (#dc3 > 89) + (#dc3 > 9)))",
+                "target_property_name": "#dc_4"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#dc3 - #dc_4)",
+                "target_property_name": "#dc4"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#dc4 > 1) + (#dc4 > 2) + (#dc4 > 3) + (#dc4 > 4) + (#dc4 > 5) + (#dc4 > 6) + (#dc4 > 7) + (#dc4 > 8) + (#dc4 > 0))",
+                "target_property_name": "#dc_5"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#dc_1 + #dc_2 + #dc_3 + #dc_4 + #dc_5) * ( 1 - ((#item_durability_current_amount < 0) * 2)))",
+                "target_property_name": "#current_durability"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(10000 * ((#dt > 19999) + (#dt > 29999) + (#dt > 39999) + (#dt > 49999) + (#dt > 59999) + (#dt > 69999) + (#dt > 79999) + (#dt > 89999) + (#dt > 9999)))",
+                "target_property_name": "#dt_1"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#dt - #dt_1)",
+                "target_property_name": "#dt1"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(1000 * ((#dt1 > 1999) + (#dt1 > 2999) + (#dt1 > 3999) + (#dt1 > 4999) + (#dt1 > 5999) + (#dt1 > 6999) + (#dt1 > 7999) + (#dt1 > 8999) + (#dt1 > 999)))",
+                "target_property_name": "#dt_2"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#dt1 - #dt_2)",
+                "target_property_name": "#dt2"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(100 * ((#dt2 > 199) + (#dt2 > 299) + (#dt2 > 399) + (#dt2 > 499) + (#dt2 > 599) + (#dt2 > 699) + (#dt2 > 799) + (#dt2 > 899) + (#dt2 > 99)))",
+                "target_property_name": "#dt_3"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#dt2 - #dt_3)",
+                "target_property_name": "#dt3"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(10 * ((#dt3 > 19) + (#dt3 > 29) + (#dt3 > 39) + (#dt3 > 49) + (#dt3 > 59) + (#dt3 > 69) + (#dt3 > 79) + (#dt3 > 89) + (#dt3 > 9)))",
+                "target_property_name": "#dt_4"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#dt3 - #dt_4)",
+                "target_property_name": "#dt4"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#dt4 > 1) + (#dt4 > 2) + (#dt4 > 3) + (#dt4 > 4) + (#dt4 > 5) + (#dt4 > 6) + (#dt4 > 7) + (#dt4 > 8) + (#dt4 > 0))",
+                "target_property_name": "#dt_5"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#dt_1 + #dt_2 + #dt_3 + #dt_4 + #dt_5)",
+                "target_property_name": "#total_durability"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "('§z' + #current_durability + '/' + #total_durability)",
+                "target_property_name": "#text"
             }
         ]
     }

@@ -1,0 +1,105 @@
+{
+    "namespace": "item_id",
+    "hud@t.i": {
+        "texture": "textures/ui/hud_tip_text_background",
+        "size": [
+            "100%cm + 8px",
+            "100%cm + 8px"
+        ],
+        "alpha": 0.5,
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "selected_item_id_hud",
+                "source_property_name": "(not (#select_item_id_aux = -1))",
+                "resolve_sibling_scope": true,
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "selected_item_id_hud@t.l": {
+                    "text": "#text",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "hotbar_slot1",
+                            "source_property_name": "#is_selected_item_id",
+                            "target_property_name": "#s1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "hotbar_slot2",
+                            "source_property_name": "#is_selected_item_id",
+                            "target_property_name": "#s2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "hotbar_slot3",
+                            "source_property_name": "#is_selected_item_id",
+                            "target_property_name": "#s3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "hotbar_slot4",
+                            "source_property_name": "#is_selected_item_id",
+                            "target_property_name": "#s4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "hotbar_slot5",
+                            "source_property_name": "#is_selected_item_id",
+                            "target_property_name": "#s5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "hotbar_slot6",
+                            "source_property_name": "#is_selected_item_id",
+                            "target_property_name": "#s6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "hotbar_slot7",
+                            "source_property_name": "#is_selected_item_id",
+                            "target_property_name": "#s7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "hotbar_slot8",
+                            "source_property_name": "#is_selected_item_id",
+                            "target_property_name": "#s8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "hotbar_slot9",
+                            "source_property_name": "#is_selected_item_id",
+                            "target_property_name": "#s9"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#s1 + #s2 + #s3 + #s4 + #s5 + #s6 + #s7 + #s8 + #s9)",
+                            "target_property_name": "#select_item_id_aux"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#select_item_id_aux - (#select_item_id_aux < 0) * 65535) / 65536)",
+                            "target_property_name": "#item_id"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#select_item_id_aux - #item_id * 65536)",
+                            "target_property_name": "#item_data_value"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "('§z' + #item_id + ':' + (#item_data_value - (#item_data_value > 32767) * 32768))",
+                            "target_property_name": "#text"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

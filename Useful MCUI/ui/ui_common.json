@@ -1,4 +1,39 @@
 {
+    // Vanilla Modify
+    "container_item": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "replace",
+                "where": {
+                    "item_button_ref@$button_ref": {
+                        "tts_ignore_count": true,
+                        "tts_skip_message": true,
+                        "tts_inherit_siblings": true,
+                        "layer": 5
+                    }
+                },
+                "value": [
+                    {
+                        "button_panel@t.p": {
+                            "$button_ref_controls|default": [
+                                {
+                                    "item_button_ref@$button_ref": {
+                                        "tts_ignore_count": true,
+                                        "tts_skip_message": true,
+                                        "tts_inherit_siblings": true,
+                                        "layer": 5
+                                    }
+                                }
+                            ],
+                            "controls": "$button_ref_controls"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    // Custom
     "nav_toggle_texture@t.i": {
         "texture": "textures/ui/focus_border_selected",
         "size": [

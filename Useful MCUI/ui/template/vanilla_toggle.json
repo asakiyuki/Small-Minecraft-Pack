@@ -1,0 +1,94 @@
+{
+    "namespace": "toggle",
+    "content@t.p": {
+        "$toggle_size|default": [
+            "default",
+            "default"
+        ],
+        "$toggle_control_name|default": "vanilla_toggle",
+        "$disable|default": "cache_toggle.tab_right_back_texture",
+        "$enable|default": "cache_toggle.tab_right_front_texture",
+        "$disable_hover|default": "cache_toggle.tab_right_back_hover_texture",
+        "$enable_hover|default": "cache_toggle.tab_right_front_hover_texture",
+        "$radio_toggle|default": false,
+        "$toggle_name|default": "vanilla_toggle",
+        "$toggle_state|default": false,
+        "$toggle_index|default": 0,
+        "$index_selected|default": 0,
+        "$reset_on_focus_lost|default": false,
+        "$outside_content|default": "t.p",
+        "size": "$toggle_size",
+        "controls": [
+            {
+                "$toggle_control_name@t.t": {
+                    "unchecked_control": "d",
+                    "unchecked_hover_control": "dh",
+                    "checked_control": "e",
+                    "checked_hover_control": "eh",
+                    "size": "$toggle_size",
+                    "radio_toggle_group": "$radio_toggle",
+                    "toggle_name": "$toggle_name",
+                    "toggle_default_state": "$toggle_state",
+                    "toggle_group_default_selected": "$index_selected",
+                    "toggle_group_forced_index": "$toggle_index",
+                    "reset_on_focus_lost": "$reset_on_focus_lost",
+                    "button_mappings": [
+                        {
+                            "from_button_id": "button.menu_select",
+                            "to_button_id": "none",
+                            "mapping_type": "pressed"
+                        }
+                    ],
+                    "sound_name": "random.click",
+                    "sound_volume": 1.0,
+                    "sound_pitch": 1.0,
+                    "controls": [
+                        {
+                            "no@$outside_content": {}
+                        },
+                        {
+                            "d@$disable": {
+                                "$border_color": [
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                "$on_hover": false
+                            }
+                        },
+                        {
+                            "dh@$disable_hover": {
+                                "$border_color": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "$on_hover": true
+                            }
+                        },
+                        {
+                            "e@$enable": {
+                                "$border_color": [
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                "$on_hover": false
+                            }
+                        },
+                        {
+                            "eh@$enable_hover": {
+                                "$border_color": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "$on_hover": true
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

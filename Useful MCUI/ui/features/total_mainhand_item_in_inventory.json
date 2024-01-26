@@ -1,1 +1,559 @@
-{}
+{
+    "namespace": "total_mainhand_item",
+    "content@t.i": {
+        "texture": "textures/ui/hud_tip_text_background",
+        "size": [
+            "100%cm + 8px",
+            "100%cm + 6px"
+        ],
+        "alpha": 0.5,
+        "ignored": "$disable_total_item_count",
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "selected_item_id_hud",
+                "source_property_name": "(not (#select_item_id_aux = -1))",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "stack@t.sp": {
+                    "size": [
+                        "100%c",
+                        "100%cm"
+                    ],
+                    "orientation": "horizontal",
+                    "use_child_anchors": true,
+                    "controls": [
+                        {
+                            "padding@t.p": {
+                                "size": [
+                                    2,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "renderer@t.l": {
+                                "text": "#text",
+                                "shadow": true,
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "layer": 5,
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot1",
+                                        "source_property_name": "#is_infinity_durability",
+                                        "target_property_name": "#shd1"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot2",
+                                        "source_property_name": "#is_infinity_durability",
+                                        "target_property_name": "#shd2"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot3",
+                                        "source_property_name": "#is_infinity_durability",
+                                        "target_property_name": "#shd3"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot4",
+                                        "source_property_name": "#is_infinity_durability",
+                                        "target_property_name": "#shd4"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot5",
+                                        "source_property_name": "#is_infinity_durability",
+                                        "target_property_name": "#shd5"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot6",
+                                        "source_property_name": "#is_infinity_durability",
+                                        "target_property_name": "#shd6"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot7",
+                                        "source_property_name": "#is_infinity_durability",
+                                        "target_property_name": "#shd7"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot8",
+                                        "source_property_name": "#is_infinity_durability",
+                                        "target_property_name": "#shd8"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot9",
+                                        "source_property_name": "#is_infinity_durability",
+                                        "target_property_name": "#shd9"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot1",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#h1"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot2",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#h2"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot3",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#h3"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot4",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#h4"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot5",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#h5"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot6",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#h6"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot7",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#h7"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot8",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#h8"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot9",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#h9"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_1",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i1"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_2",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i2"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_3",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i3"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_4",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i4"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_5",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i5"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_6",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i6"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_7",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i7"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_8",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i8"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_9",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i9"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_10",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i10"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_11",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i11"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_12",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i12"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_13",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i13"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_14",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i14"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_15",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i15"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_16",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i16"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_17",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i17"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_18",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i18"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_19",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i19"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_20",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i20"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_21",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i21"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_22",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i22"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_23",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i23"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_24",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i24"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_25",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i25"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_26",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i26"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_27",
+                                        "source_property_name": "#get_amount_if_this_item_has_selected",
+                                        "target_property_name": "#i27"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot1",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#sh1"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot2",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#sh2"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot3",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#sh3"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot4",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#sh4"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot5",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#sh5"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot6",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#sh6"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot7",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#sh7"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot8",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#sh8"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "hotbar_slot9",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#sh9"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_1",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si1"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_2",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si2"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_3",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si3"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_4",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si4"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_5",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si5"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_6",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si6"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_7",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si7"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_8",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si8"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_9",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si9"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_10",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si10"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_11",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si11"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_12",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si12"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_13",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si13"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_14",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si14"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_15",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si15"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_16",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si16"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_17",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si17"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_18",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si18"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_19",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si19"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_20",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si20"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_21",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si21"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_22",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si22"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_23",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si23"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_24",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si24"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_25",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si25"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_26",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si26"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "inventory_slot_27",
+                                        "source_property_name": "#this_item_is_selected",
+                                        "target_property_name": "#si27"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#h1 + #h2 + #h3 + #h4 + #h5 + #h6 + #h7 + #h8 + #h9 + #i1 + #i2 + #i3 + #i4 + #i5 + #i6 + #i7 + #i8 + #i9 + #i10 + #i11 + #i12 + #i13 + #i14 + #i15 + #i16 + #i17 + #i18 + #i19 + #i20 + #i21 + #i22 + #i23 + #i24 + #i25 + #i26 + #i27)",
+                                        "target_property_name": "#total_inv"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#sh1 + #sh2 + #sh3 + #sh4 + #sh5 + #sh6 + #sh7 + #sh8 + #sh9 + #si1 + #si2 + #si3 + #si4 + #si5 + #si6 + #si7 + #si8 + #si9 + #si10 + #si11 + #si12 + #si13 + #si14 + #si15 + #si16 + #si17 + #si18 + #si19 + #si20 + #si21 + #si22 + #si23 + #si24 + #si25 + #si26 + #si27)",
+                                        "target_property_name": "#total_inv_slot"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#shd1 or #shd2 or #shd3 or #shd4 or #shd5 or #shd6 or #shd7 or #shd8 or #shd9)",
+                                        "target_property_name": "#is_have_durability"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "('x' + #total_inv + '§z/' + #is_have_durability + #total_inv_slot - 'false' - ('§z/true' + #total_inv_slot))",
+                                        "target_property_name": "#text"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

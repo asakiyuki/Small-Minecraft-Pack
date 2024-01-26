@@ -1,0 +1,364 @@
+{
+    // Chest Stealer
+    "chest_stealer_slot@t.ip": {
+        "always_listen_to_input": true,
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "size": [
+            18,
+            18
+        ],
+        "$on_click|default": "button.container_auto_place",
+        "$on_double_click|default": "none",
+        "button_mappings": [
+            {
+                "mapping_type": "pressed",
+                "from_button_id": "button.menu_select",
+                "to_button_id": "$on_click"
+            },
+            {
+                "mapping_type": "double_pressed",
+                "from_button_id": "button.menu_select",
+                "to_button_id": "$on_double_click"
+            }
+        ],
+        "bindings": [
+            {
+                "binding_type": "collection_details",
+                "binding_collection_name": "$item_collection_name",
+                "binding_condition": "once"
+            },
+            {
+                "binding_type": "collection",
+                "binding_collection_name": "$item_collection_name",
+                "binding_name": "(not (#item_id_aux = -1))",
+                "binding_name_override": "#visible"
+            }
+        ]
+    },
+    "slot_outline@t.i": {
+        "texture": "textures/ui/focus_border_selected",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "layer": 8,
+        "$hover_text|default": "Hover Text",
+        "controls": [
+            {
+                "hover_text@t.c": {
+                    "layer": 25,
+                    "renderer": "hover_text_renderer",
+                    "property_bag": {
+                        "#hover_text": "$hover_text"
+                    }
+                }
+            }
+        ]
+    },
+    "chest_stealer_button@t.p": {
+        "$item_collection_name|default": "container_items",
+        "$dimension|default": [
+            27,
+            1
+        ],
+        "size": [
+            18,
+            18
+        ],
+        "$tex_size": [
+            "100%",
+            "100%"
+        ],
+        "$disable_glow": true,
+        "$default_element": "chat.simple_button_icon",
+        "$hover_element": "chat.simple_button_icon",
+        "$pressed_element": "chat.simple_button_icon",
+        "$o": [
+            0,
+            0
+        ],
+        "$simple_icon_size": [
+            10,
+            10
+        ],
+        "controls": [
+            {
+                "btnStk@t.g": {
+                    "size": [
+                        0,
+                        0
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "grid_dimensions": "$dimension",
+                    "grid_item_template": "chest.chest_stealer_slot",
+                    "collection_name": "$item_collection_name"
+                }
+            },
+            {
+                "btnText@chat.button_template": {
+                    "$default_texture": "textures/ui/cell_image",
+                    "$hover_texture": "textures/ui/highlight_slot",
+                    "$pressed_texture": "textures/ui/cell_image",
+                    "$unique_hover": "chest.slot_outline"
+                }
+            }
+        ]
+    },
+    "chest_stealer_panel@t.i": {
+        "texture": "textures/ui/dialog_background_opaque",
+        "size": [
+            "100%cm + 6px",
+            "100%cm + 6px"
+        ],
+        "offset": [
+            2.5,
+            0
+        ],
+        "anchor_from": "bottom_right",
+        "anchor_to": "bottom_left",
+        "controls": [
+            {
+                "chest@t.sp": {
+                    "size": [
+                        "100%cm",
+                        "100%c"
+                    ],
+                    "controls": [
+                        {
+                            "steal@chest.chest_stealer_button": {
+                                "$hover_text": "Take all Items from Chest",
+                                "$button_icon": "textures/ui/chevron_white_down"
+                            }
+                        },
+                        {
+                            "pull_from_inv@chest.chest_stealer_button": {
+                                "$item_collection_name": "inventory_items",
+                                "$hover_text": "Store all Items from Inventory",
+                                "$button_icon": "textures/ui/chevron_white_up",
+                                "$dimension": [
+                                    27,
+                                    1
+                                ]
+                            }
+                        },
+                        {
+                            "pull_from_hotbar@chest.chest_stealer_button": {
+                                "$item_collection_name": "hotbar_items",
+                                "$dimension": [
+                                    9,
+                                    1
+                                ],
+                                "$button_icon": "textures/ui/chevron_white_up",
+                                "$hover_text": "Store all Items from Hotbar"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    // Chest Quick Loot
+    "small_chest_panel/root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "container_mode_stack@t.sp": {
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_left",
+                            "size": [
+                                "100%cm",
+                                "100%c"
+                            ],
+                            "$toggle_size": [
+                                25,
+                                25
+                            ],
+                            "$radio_toggle": true,
+                            "$toggle_name": "container_mode",
+                            "$outside_content": "crafting.auto_place_button_texture",
+                            "$button_content": "t.p",
+                            "controls": [
+                                {
+                                    "move_and_place@toggle.content": {
+                                        "$toggle_control_name": "move_mode",
+                                        "$disable": "cache_toggle.tab_right_most_top_back_texture",
+                                        "$enable": "cache_toggle.tab_right_most_top_front_texture",
+                                        "$disable_hover": "cache_toggle.tab_right_most_top_back_hover_texture",
+                                        "$enable_hover": "cache_toggle.tab_right_most_top_front_hover_texture",
+                                        "$toggle_state": true,
+                                        "$toggle_index": 0,
+                                        "$disable_2d_texture": true
+                                    }
+                                },
+                                {
+                                    "auto_place@toggle.content": {
+                                        "$toggle_control_name": "quick_move_mode",
+                                        "$toggle_index": 1
+                                    }
+                                },
+                                {
+                                    "drop@toggle.content": {
+                                        "$toggle_control_name": "drop_mode",
+                                        "$icon": "textures/ui/white_pixel_chevron_down",
+                                        "$icon_size": [
+                                            7,
+                                            7
+                                        ],
+                                        "$toggle_index": 2
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "chest_action@chest.chest_stealer_panel": {}
+                    }
+                ]
+            }
+        ]
+    },
+    "large_chest_panel/root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "container_mode_stack@t.sp": {
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_left",
+                            "size": [
+                                "100%cm",
+                                "100%c"
+                            ],
+                            "$toggle_size": [
+                                25,
+                                25
+                            ],
+                            "$radio_toggle": true,
+                            "$toggle_name": "container_mode",
+                            "$outside_content": "crafting.auto_place_button_texture",
+                            "$button_content": "t.p",
+                            "controls": [
+                                {
+                                    "move_and_place@toggle.content": {
+                                        "$toggle_control_name": "move_mode",
+                                        "$disable": "cache_toggle.tab_right_most_top_back_texture",
+                                        "$enable": "cache_toggle.tab_right_most_top_front_texture",
+                                        "$disable_hover": "cache_toggle.tab_right_most_top_back_hover_texture",
+                                        "$enable_hover": "cache_toggle.tab_right_most_top_front_hover_texture",
+                                        "$toggle_state": true,
+                                        "$toggle_index": 0,
+                                        "$disable_2d_texture": true
+                                    }
+                                },
+                                {
+                                    "auto_place@toggle.content": {
+                                        "$toggle_control_name": "quick_move_mode",
+                                        "$toggle_index": 1
+                                    }
+                                },
+                                {
+                                    "drop@toggle.content": {
+                                        "$toggle_control_name": "drop_mode",
+                                        "$icon": "textures/ui/white_pixel_chevron_down",
+                                        "$icon_size": [
+                                            7,
+                                            7
+                                        ],
+                                        "$toggle_index": 2
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "chest_action@chest.chest_stealer_panel": {
+                            "$dimension": [
+                                54,
+                                1
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "large_chest_panel": {
+        "$double_press_action": "button.container_take_all_place_all",
+        "$button_ref_controls": [
+            {
+                "default@t.p": {
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "move_mode",
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "item_button_ref@$button_ref": {
+                                "tts_ignore_count": true,
+                                "tts_skip_message": true,
+                                "tts_inherit_siblings": true,
+                                "layer": 5
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "quick_move_btn@crafting.quick_move_slot_button": {}
+            },
+            {
+                "drop_action@crafting.quick_move_slot_button": {
+                    "$press_action": "button.drop_all",
+                    "$toggle_control_name": "drop_mode"
+                }
+            }
+        ]
+    },
+    "small_chest_panel": {
+        "$double_press_action": "button.container_take_all_place_all",
+        "$button_ref_controls": [
+            {
+                "default@t.p": {
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "move_mode",
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "item_button_ref@$button_ref": {
+                                "tts_ignore_count": true,
+                                "tts_skip_message": true,
+                                "tts_inherit_siblings": true,
+                                "layer": 5
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "quick_move_btn@crafting.quick_move_slot_button": {}
+            },
+            {
+                "drop_action@crafting.quick_move_slot_button": {
+                    "$press_action": "button.drop_all",
+                    "$toggle_control_name": "drop_mode"
+                }
+            }
+        ]
+    }
+}

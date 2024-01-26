@@ -46,7 +46,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(10000000 * ((#epc > 10000000) + (#epc > 20000000)))",
+                "source_property_name": "(10000000 * ((#epc > 19999999) + (#epc > 9999999)))",
                 "target_property_name": "#cep1"
             },
             {
@@ -56,7 +56,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(1000000 * ((#cep_1 > 1000000) + (#cep_1 > 2000000) + (#cep_1 > 3000000) + (#cep_1 > 4000000) + (#cep_1 > 5000000) + (#cep_1 > 6000000) + (#cep_1 > 7000000) + (#cep_1 > 8000000) + (#cep_1 > 9000000)))",
+                "source_property_name": "(1000000 * ((#cep_1 > 1999999) + (#cep_1 > 2999999) + (#cep_1 > 3999999) + (#cep_1 > 4999999) + (#cep_1 > 5999999) + (#cep_1 > 6999999) + (#cep_1 > 7999999) + (#cep_1 > 8999999) + (#cep_1 > 999999)))",
                 "target_property_name": "#cep2"
             },
             {
@@ -66,7 +66,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(100000 * ((#cep_2 > 100000) + (#cep_2 > 200000) + (#cep_2 > 300000) + (#cep_2 > 400000) + (#cep_2 > 500000) + (#cep_2 > 600000) + (#cep_2 > 700000) + (#cep_2 > 800000) + (#cep_2 > 900000)))",
+                "source_property_name": "(100000 * ((#cep_2 > 199999) + (#cep_2 > 299999) + (#cep_2 > 399999) + (#cep_2 > 499999) + (#cep_2 > 599999) + (#cep_2 > 699999) + (#cep_2 > 799999) + (#cep_2 > 899999) + (#cep_2 > 99999)))",
                 "target_property_name": "#cep3"
             },
             {
@@ -76,7 +76,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(10000 * ((#cep_3 > 10000) + (#cep_3 > 20000) + (#cep_3 > 30000) + (#cep_3 > 40000) + (#cep_3 > 50000) + (#cep_3 > 60000) + (#cep_3 > 70000) + (#cep_3 > 80000) + (#cep_3 > 90000)))",
+                "source_property_name": "(10000 * ((#cep_3 > 19999) + (#cep_3 > 29999) + (#cep_3 > 39999) + (#cep_3 > 49999) + (#cep_3 > 59999) + (#cep_3 > 69999) + (#cep_3 > 79999) + (#cep_3 > 89999) + (#cep_3 > 9999)))",
                 "target_property_name": "#cep4"
             },
             {
@@ -86,7 +86,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(1000 * ((#cep_4 > 1000) + (#cep_4 > 2000) + (#cep_4 > 3000) + (#cep_4 > 4000) + (#cep_4 > 5000) + (#cep_4 > 6000) + (#cep_4 > 7000) + (#cep_4 > 8000) + (#cep_4 > 9000)))",
+                "source_property_name": "(1000 * ((#cep_4 > 1999) + (#cep_4 > 2999) + (#cep_4 > 3999) + (#cep_4 > 4999) + (#cep_4 > 5999) + (#cep_4 > 6999) + (#cep_4 > 7999) + (#cep_4 > 8999) + (#cep_4 > 999)))",
                 "target_property_name": "#cep5"
             },
             {
@@ -96,7 +96,7 @@
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(100 * ((#cep_5 > 100) + (#cep_5 > 200) + (#cep_5 > 300) + (#cep_5 > 400) + (#cep_5 > 500) + (#cep_5 > 600) + (#cep_5 > 700) + (#cep_5 > 800) + (#cep_5 > 900)))",
+                "source_property_name": "(100 * ((#cep_5 > 199) + (#cep_5 > 299) + (#cep_5 > 399) + (#cep_5 > 499) + (#cep_5 > 599) + (#cep_5 > 699) + (#cep_5 > 799) + (#cep_5 > 899) + (#cep_5 > 99)))",
                 "target_property_name": "#cep6"
             },
             {

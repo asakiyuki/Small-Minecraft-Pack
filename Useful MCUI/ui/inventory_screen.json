@@ -1,0 +1,499 @@
+{
+    "auto_place_button_texture@t.p": {
+        "$icon|default": "textures/ui/verticle_switch",
+        "$disable_2d_texture|default": false,
+        "controls": [
+            {
+                "chest_renderer@controls.item_renderer-id": {
+                    "layer": 10,
+                    "$item_id": 54,
+                    "size": [
+                        16,
+                        16
+                    ],
+                    "offset": [
+                        -3,
+                        0
+                    ],
+                    "controls": [
+                        {
+                            "texture@cache_toggle.trade_toggle_template": {
+                                "$icon_size|default": [
+                                    10,
+                                    10
+                                ],
+                                "offset": [
+                                    2,
+                                    2
+                                ],
+                                "anchor_from": "bottom_right",
+                                "anchor_to": "bottom_right",
+                                "ignored": "$disable_2d_texture"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "quick_move_slot_button@t.p": {
+        "$btn_ref|default": "crafting.quick_move_slot",
+        "$toggle_control_name|default": "quick_move_mode",
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "$toggle_control_name",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#visible"
+            }
+        ],
+        "$press_action|default": "button.container_auto_place",
+        "$double_press_action|default": "button.container_take_all_place_all",
+        "controls": [
+            {
+                "quick_move_slot@crafting.inventory_container_slot_button": {
+                    "$button_take_all_place_all": "$press_action",
+                    "$button_auto_place": "$double_press_action"
+                }
+            }
+        ]
+    },
+    "player_inventory": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "container_mode_stack@t.sp": {
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_left",
+                            "size": [
+                                "100%cm",
+                                "100%c"
+                            ],
+                            "$toggle_size": [
+                                25,
+                                25
+                            ],
+                            "$radio_toggle": true,
+                            "$toggle_name": "container_mode",
+                            "$outside_content": "crafting.auto_place_button_texture",
+                            "$button_content": "t.p",
+                            "controls": [
+                                {
+                                    "move_and_place@toggle.content": {
+                                        "$toggle_control_name": "move_mode",
+                                        "$disable": "cache_toggle.tab_right_most_top_back_texture",
+                                        "$enable": "cache_toggle.tab_right_most_top_front_texture",
+                                        "$disable_hover": "cache_toggle.tab_right_most_top_back_hover_texture",
+                                        "$enable_hover": "cache_toggle.tab_right_most_top_front_hover_texture",
+                                        "$toggle_state": true,
+                                        "$toggle_index": 0,
+                                        "$disable_2d_texture": true
+                                    }
+                                },
+                                {
+                                    "auto_place@toggle.content": {
+                                        "$toggle_control_name": "quick_move_mode",
+                                        "$toggle_index": 1
+                                    }
+                                },
+                                {
+                                    "drop@toggle.content": {
+                                        "$toggle_control_name": "drop_mode",
+                                        "$icon": "textures/ui/white_pixel_chevron_down",
+                                        "$icon_size": [
+                                            7,
+                                            7
+                                        ],
+                                        "$toggle_index": 2
+                                    }
+                                },
+                                {
+                                    "remove_mode@toggle.content": {
+                                        "$toggle_control_name": "remove_mode",
+                                        "$icon": "textures/ui/icon_trash",
+                                        "$icon_size": [
+                                            9,
+                                            9
+                                        ],
+                                        "$toggle_index": 3,
+                                        "bindings": [
+                                            {
+                                                "binding_type": "global",
+                                                "binding_name": "#is_creative_mode",
+                                                "binding_name_override": "#visible"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "clear_item@crafting.inventory_clear_item": {}
+                    },
+                    {
+                        "crafting_input@crafting.crafting_input": {}
+                    },
+                    {
+                        "crafting_output_slot_0@inventory_item_amount": {
+                            "$collection_name": "crafting_output_items"
+                        }
+                    }
+                ]
+            }
+        ],
+        "$double_press_action": "button.container_take_all_place_all",
+        "$button_ref_controls": [
+            {
+                "default@t.p": {
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "move_mode",
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "item_button_ref@$button_ref": {
+                                "tts_ignore_count": true,
+                                "tts_skip_message": true,
+                                "tts_inherit_siblings": true,
+                                "layer": 5
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "quick_move_btn@crafting.quick_move_slot_button": {}
+            },
+            {
+                "drop_action@crafting.quick_move_slot_button": {
+                    "$press_action": "button.drop_all",
+                    "$toggle_control_name": "drop_mode"
+                }
+            },
+            {
+                "remove_action@crafting.quick_move_slot_button": {
+                    "$press_action": "button.container_auto_destroy",
+                    "$double_press_action": "button.container_auto_destroy",
+                    "$toggle_control_name": "remove_mode"
+                }
+            }
+        ]
+    },
+    "inventory_clear_item@t.i": {
+        "texture": "textures/ui/dialog_background_opaque",
+        "size": [
+            "100%cm + 6px",
+            "100%cm + 6px"
+        ],
+        "offset": [
+            2.5,
+            0
+        ],
+        "anchor_from": "bottom_right",
+        "anchor_to": "bottom_left",
+        "bindings": [
+            {
+                "binding_type": "global",
+                "binding_name": "#is_creative_mode",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "chest@t.sp": {
+                    "size": [
+                        "100%cm",
+                        "100%c"
+                    ],
+                    "$on_click": "button.none",
+                    "$on_double_click": "button.container_auto_destroy",
+                    "controls": [
+                        {
+                            "clear_inv@chest.chest_stealer_button": {
+                                "$item_collection_name": "inventory_items",
+                                "$hover_text": "(Press x2) Clear Inventory",
+                                "$button_icon": "textures/ui/trash",
+                                "$dimension": [
+                                    27,
+                                    1
+                                ]
+                            }
+                        },
+                        {
+                            "clear_hotbar@chest.chest_stealer_button": {
+                                "$item_collection_name": "hotbar_items",
+                                "$dimension": [
+                                    9,
+                                    1
+                                ],
+                                "$button_icon": "textures/ui/trash",
+                                "$hover_text": "(Press x2) Clear Hotbar"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "crafting_arrow@t.p": {
+        "size": [
+            18,
+            18
+        ],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "$button_icon": "textures/ui/arrow_active",
+        "$default_element": "chat.simple_button_icon",
+        "$hover_element": "chat.simple_button_icon",
+        "$pressed_element": "chat.simple_button_icon",
+        "$onDoubleClick": "button.crafting_output_tertiary",
+        "$disableDoubleClick": false,
+        "$disable_bindings": false,
+        "$collection_name": "crafting_output_items",
+        "$unique_hover": "crafting.hover_crafting_text",
+        "$o": [
+            0,
+            0
+        ],
+        "controls": [
+            {
+                "btnText@chat.button_template": {
+                    "size": [
+                        "100%",
+                        "100%"
+                    ],
+                    "offset": [
+                        -1,
+                        -3
+                    ]
+                }
+            }
+        ]
+    },
+    "inventory_item_amount": {
+        "size": [
+            0,
+            0
+        ],
+        "type": "panel",
+        "$collection_name|default": "crafting_input_items",
+        "bindings": [
+            {
+                "binding_name": "#inventory_stack_count",
+                "binding_type": "collection",
+                "binding_collection_name": "$collection_name"
+            },
+            {
+                "binding_name": "#item_id_aux",
+                "binding_type": "collection",
+                "binding_collection_name": "$collection_name"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not (#inventory_stack_count * 1 > 1) * (not (#item_id_aux = -1))) + #inventory_stack_count * 1)",
+                "target_property_name": "#item_stack_count"
+            }
+        ]
+    },
+    "crafting_input": {
+        "type": "stack_panel",
+        "size": [
+            0,
+            0
+        ],
+        "collection_name": "crafting_input_items",
+        "controls": [
+            {
+                "crafting_input_slot_0@inventory_item_amount": {
+                    "collection_index": 0
+                }
+            },
+            {
+                "crafting_input_slot_1@inventory_item_amount": {
+                    "collection_index": 1
+                }
+            },
+            {
+                "crafting_input_slot_2@inventory_item_amount": {
+                    "collection_index": 2
+                }
+            },
+            {
+                "crafting_input_slot_3@inventory_item_amount": {
+                    "collection_index": 3
+                }
+            },
+            {
+                "crafting_input_slot_4@inventory_item_amount": {
+                    "collection_index": 4
+                }
+            },
+            {
+                "crafting_input_slot_5@inventory_item_amount": {
+                    "collection_index": 5
+                }
+            },
+            {
+                "crafting_input_slot_6@inventory_item_amount": {
+                    "collection_index": 6
+                }
+            },
+            {
+                "crafting_input_slot_7@inventory_item_amount": {
+                    "collection_index": 7
+                }
+            },
+            {
+                "crafting_input_slot_8@inventory_item_amount": {
+                    "collection_index": 8
+                }
+            },
+            {
+                "slot_min_item_count@inventory_item_amount": {
+                    "$collection_name": "none",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "crafting_input_slot_0",
+                            "source_property_name": "#item_stack_count",
+                            "target_property_name": "#input_0"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "crafting_input_slot_1",
+                            "source_property_name": "#item_stack_count",
+                            "target_property_name": "#input_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "crafting_input_slot_2",
+                            "source_property_name": "#item_stack_count",
+                            "target_property_name": "#input_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "crafting_input_slot_3",
+                            "source_property_name": "#item_stack_count",
+                            "target_property_name": "#input_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "crafting_input_slot_4",
+                            "source_property_name": "#item_stack_count",
+                            "target_property_name": "#input_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "crafting_input_slot_5",
+                            "source_property_name": "#item_stack_count",
+                            "target_property_name": "#input_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "crafting_input_slot_6",
+                            "source_property_name": "#item_stack_count",
+                            "target_property_name": "#input_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "crafting_input_slot_7",
+                            "source_property_name": "#item_stack_count",
+                            "target_property_name": "#input_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "resolve_sibling_scope": true,
+                            "source_control_name": "crafting_input_slot_8",
+                            "source_property_name": "#item_stack_count",
+                            "target_property_name": "#input_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#input_0 < #input_1 + 1 or #input_1 = 0) * #input_0 + (#input_0 > #input_1 or #input_0 = 0) * #input_1)",
+                            "target_property_name": "#min_0_1"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#min_0_1 < #input_1 + 1 or #input_1 = 0) * #min_0_1 + (#min_0_1 > #input_1 or #min_0_1 = 0) * #input_1)",
+                            "target_property_name": "#min_1_2"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#min_1_2 < #input_2 + 1 or #input_2 = 0) * #min_1_2 + (#min_1_2 > #input_2 or #min_1_2 = 0) * #input_2)",
+                            "target_property_name": "#min_2_3"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#min_2_3 < #input_3 + 1 or #input_3 = 0) * #min_2_3 + (#min_2_3 > #input_3 or #min_2_3 = 0) * #input_3)",
+                            "target_property_name": "#min_3_4"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#min_3_4 < #input_4 + 1 or #input_4 = 0) * #min_3_4 + (#min_3_4 > #input_4 or #min_3_4 = 0) * #input_4)",
+                            "target_property_name": "#min_4_5"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#min_4_5 < #input_5 + 1 or #input_5 = 0) * #min_4_5 + (#min_4_5 > #input_5 or #min_4_5 = 0) * #input_5)",
+                            "target_property_name": "#min_5_6"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#min_5_6 < #input_6 + 1 or #input_6 = 0) * #min_5_6 + (#min_5_6 > #input_6 or #min_5_6 = 0) * #input_6)",
+                            "target_property_name": "#min_6_7"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#min_6_7 < #input_7 + 1 or #input_7 = 0) * #min_6_7 + (#min_6_7 > #input_7 or #min_6_7 = 0) * #input_7)",
+                            "target_property_name": "#min_7_8"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#min_7_8 < #input_8 + 1 or #input_8 = 0) * #min_7_8 + (#min_7_8 > #input_8 or #min_7_8 = 0) * #input_8)",
+                            "target_property_name": "#min_crafting_output"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "hover_crafting_text@t.c": {
+        "layer": 25,
+        "renderer": "hover_text_renderer",
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "slot_min_item_count",
+                "source_property_name": "#min_crafting_output",
+                "target_property_name": "#min_crafting_input"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "crafting_output_slot_0",
+                "source_property_name": "#item_stack_count",
+                "target_property_name": "#min_crafting_output"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "('(Press x2) Craft All x' + (#min_crafting_input * #min_crafting_output) + ' Item(s)')",
+                "target_property_name": "#hover_text"
+            }
+        ]
+    }
+}
