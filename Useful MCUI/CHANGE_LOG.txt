@@ -18,3 +18,4 @@ Added Trade All button
 Added Suspicious Stew effect viewer
 Fixed 'Active on First Tick' button texture on Expand mode in Command Block
 Fixed Hotbar 9 Item ID alway render id 0:0
+Fixed Top right Item ID
