@@ -18,6 +18,8 @@
         "$reset_on_focus_lost|default": false,
         "$outside_content|default": "t.p",
         "size": "$toggle_size",
+        "$disable_hover_text|default": true,
+        "$hover_text_string|default": "",
         "controls": [
             {
                 "$toggle_control_name@t.t": {

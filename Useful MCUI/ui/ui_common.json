@@ -33,6 +33,18 @@
             }
         ]
     },
+    "highlight_slot_panel/highlight": {
+        "bindings": []
+    },
+    "highlight_slot_panel/white_border": {
+        "bindings": []
+    },
+    "slot_selected": {
+        "ignored": true
+    },
+    "selected_item_details_factory": {
+        "ignored": true
+    },
     // Custom
     "nav_toggle_texture@t.i": {
         "texture": "textures/ui/focus_border_selected",
@@ -269,5 +281,10 @@
                 }
             }
         ]
+    },
+    "text_edit_box_label": {
+        "property_bag": {
+            "#item_name": ""
+        }
     }
 }

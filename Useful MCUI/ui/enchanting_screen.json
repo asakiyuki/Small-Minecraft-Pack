@@ -1,5 +1,5 @@
 {
-    "grindstone_panel/root_panel": {
+    "enchanting_panel/root_panel": {
         "modifications": [
             {
                 "array_name": "controls",
@@ -12,7 +12,7 @@
             }
         ]
     },
-    "grindstone_panel": {
+    "enchanting_panel": {
         "$double_press_action": "button.container_take_all_place_all",
         "$button_ref_controls": [
             {

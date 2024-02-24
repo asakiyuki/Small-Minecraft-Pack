@@ -2,6 +2,8 @@
     "namespace": "cache_toggle",
     // Radio Toggle
     "radio@t.p": {
+        "$disable_hover_text|default": true,
+        "$hover_text_string|default": "",
         "$toggle_orientation|default": "verticle",
         "$toggle_control_name|default": "asaki_zuki:the_first_radio_toggle_can_saveable",
         "$default_index|default": 0,
@@ -226,6 +228,8 @@
     },
     // Default Toggle
     "content@t.p": {
+        "$disable_hover_text|default": true,
+        "$hover_text_string|default": "",
         "$default_state|default": false,
         "$toggle_control_name|default": "asaki_zuki:the_first_toggle_can_saveable",
         "$disable|default": "cache_toggle.tab_left_most_top_back_texture",
@@ -422,6 +426,19 @@
             },
             {
                 "tab_icon@$button_content": {}
+            },
+            {
+                "hover_text@t.c": {
+                    "renderer": "hover_text_renderer",
+                    "$disable_hover_text|default": true,
+                    "$hover_text_string|default": "",
+                    "$on_hover|default": false,
+                    "layer": 50,
+                    "ignored": "($disable_hover_text or (not $on_hover))",
+                    "property_bag": {
+                        "#hover_text": "$hover_text_string"
+                    }
+                }
             }
         ]
     },

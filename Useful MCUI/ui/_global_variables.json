@@ -2,17 +2,17 @@
     // Item ID
     "$clock": 396,
     "$compass": 394,
-    "$recovery_compass": 654,
-    "$suspicious_stew": 598,
+    "$recovery_compass": 655,
+    "$suspicious_stew": 599,
     // Features
     "$disable_list": true,
     "$disable_chunkcoor": false,
     "$disable_item_on_hud": false,
-    "$disable_unlock_trade": true,
+    "$disable_unlock_trade": false,
     "$disable_total_item_count": false,
     "$command_block:smart_textbox": false,
     "$item_id_viewer": true,
-    "$top_right_actionbar": false,
+    "$top_right_actionbar": true,
     "$custom_actionbar_command": true,
     "$suspicious_stew_viewer": true,
     // Pack config

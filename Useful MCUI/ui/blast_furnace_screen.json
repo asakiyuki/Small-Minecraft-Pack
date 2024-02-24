@@ -1,0 +1,5 @@
+{
+    "blast_furnace_screen": {
+        "$time_caculator": 5000
+    }
+}

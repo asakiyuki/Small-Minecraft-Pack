@@ -1,0 +1,438 @@
+{
+    "common_play_screen_panel": {
+        "type": "panel",
+        "size": [
+            "100% - 75px",
+            "100% - 45px"
+        ]
+    },
+    "trial_tab_content_panel_layout": {
+        "ignored": true
+    },
+    "edu_tab_content_panel_layout": {
+        "ignored": true
+    },
+    "world_count_label@t.l": {
+        "text": "#text",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "bindings": [
+            {
+                "binding_type": "collection_details",
+                "binding_collection_name": "local_worlds"
+            },
+            {
+                "binding_name": "#collection_index",
+                "binding_type": "collection",
+                "binding_collection_name": "local_worlds"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "('§z' + (#collection_index + 1) + ' world(s) found!')",
+                "target_property_name": "#text"
+            }
+        ]
+    },
+    "world_count_label_offset@t.l": {
+        "text": "JUST A TEXT",
+        "alpha": 0,
+        "bindings": [
+            {
+                "binding_name": "#local_worldfile_size",
+                "binding_type": "collection",
+                "binding_collection_name": "local_worlds"
+            },
+            {
+                "binding_name": "#local_world_name",
+                "binding_type": "collection",
+                "binding_collection_name": "local_worlds"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "local_world_search",
+                "source_property_name": "#item_name",
+                "target_property_name": "#search_value"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((not ((#local_world_name - #search_value) = #local_world_name)) or (#search_value = ''))",
+                "target_property_name": "#bool_0"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not (#local_worldfile_size = ''))",
+                "target_property_name": "#bool_1"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#bool_0 and #bool_1)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "worlds_stack_panel": {
+        "$view_bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "local_world_search",
+                "source_property_name": "(#item_name = '')",
+                "target_property_name": "#visible"
+            }
+        ],
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "padding_include_file_path_hooking@t.p": {
+                            "size": [
+                                0,
+                                3
+                            ],
+                            "bindings": [
+                                {
+                                    "binding_name": "#local_world_image",
+                                    "binding_type": "collection",
+                                    "binding_collection_name": "local_worlds"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#local_world_image - '/world_icon.jpeg')",
+                                    "target_property_name": "#world_path"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#world_path - ('%.1s' * #world_path + '/') - ('%.2s' * #world_path + '/') - ('%.3s' * #world_path + '/') - ('%.4s' * #world_path + '/') - ('%.5s' * #world_path + '/') - ('%.6s' * #world_path + '/') - ('%.7s' * #world_path + '/') - ('%.8s' * #world_path + '/') - ('%.9s' * #world_path + '/') - ('%.10s' * #world_path + '/') - ('%.11s' * #world_path + '/') - ('%.12s' * #world_path + '/') - ('%.13s' * #world_path + '/') - ('%.14s' * #world_path + '/') - ('%.15s' * #world_path + '/') - ('%.16s' * #world_path + '/') - ('%.17s' * #world_path + '/'))",
+                                    "target_property_name": "#world_path"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#world_path - ('%.1s' * #world_path + '/') - ('%.2s' * #world_path + '/') - ('%.3s' * #world_path + '/') - ('%.4s' * #world_path + '/') - ('%.5s' * #world_path + '/') - ('%.6s' * #world_path + '/') - ('%.7s' * #world_path + '/') - ('%.8s' * #world_path + '/') - ('%.9s' * #world_path + '/') - ('%.10s' * #world_path + '/') - ('%.11s' * #world_path + '/') - ('%.12s' * #world_path + '/') - ('%.13s' * #world_path + '/') - ('%.14s' * #world_path + '/') - ('%.15s' * #world_path + '/') - ('%.16s' * #world_path + '/') - ('%.17s' * #world_path + '/') - ('%.18s' * #world_path + '/') - ('%.19s' * #world_path + '/') - ('%.20s' * #world_path + '/') - ('%.21s' * #world_path + '/') - ('%.22s' * #world_path + '/') - ('%.23s' * #world_path + '/') - ('%.24s' * #world_path + '/') - ('%.25s' * #world_path + '/') - ('%.26s' * #world_path + '/') - ('%.27s' * #world_path + '/') - ('%.28s' * #world_path + '/') - ('%.29s' * #world_path + '/') - ('%.30s' * #world_path + '/') - ('%.31s' * #world_path + '/') - ('%.32s' * #world_path + '/') - ('%.33s' * #world_path + '/') - ('%.34s' * #world_path + '/') - ('%.35s' * #world_path + '/') - ('%.36s' * #world_path + '/') - ('%.37s' * #world_path + '/') - ('%.38s' * #world_path + '/') - ('%.39s' * #world_path + '/') - ('%.40s' * #world_path + '/') - ('%.41s' * #world_path + '/') - ('%.42s' * #world_path + '/') - ('%.43s' * #world_path + '/') - ('%.44s' * #world_path + '/') - ('%.45s' * #world_path + '/') - ('%.46s' * #world_path + '/') - ('%.47s' * #world_path + '/') - ('%.48s' * #world_path + '/') - ('%.49s' * #world_path + '/') - ('%.50s' * #world_path + '/'))",
+                                    "target_property_name": "#world_path"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#local_world_image - '/world_icon.jpeg' - #world_path)",
+                                    "target_property_name": "#gamepath"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "world_search_bar@common.text_edit_box": {
+                            "size": [
+                                "100%",
+                                18
+                            ],
+                            "max_length": 50,
+                            "$place_holder_text": "[Case Sensitive] Search your worlds...",
+                            "$text_edit_text_control": "local_world_search"
+                        }
+                    },
+                    {
+                        "world_found_padding": {
+                            "type": "panel",
+                            "size": [
+                                "100%",
+                                2
+                            ],
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "local_world_search",
+                                    "source_property_name": "(not (#item_name = ''))",
+                                    "target_property_name": "#visible"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "worlds_found_counter@t.p": {
+                            "size": [
+                                "100%",
+                                10
+                            ],
+                            "clips_children": true,
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "local_world_search",
+                                    "source_property_name": "(not (#item_name = ''))",
+                                    "target_property_name": "#visible"
+                                }
+                            ],
+                            "controls": [
+                                {
+                                    "worlds_found_counter_panel@t.p": {
+                                        "size": [
+                                            "100%",
+                                            "100%cm"
+                                        ],
+                                        "anchor_from": "bottom_left",
+                                        "anchor_to": "bottom_left",
+                                        "controls": [
+                                            {
+                                                "count_label@t.p": {
+                                                    "anchor_from": "top_middle",
+                                                    "anchor_to": "top_middle",
+                                                    "size": [
+                                                        "100%",
+                                                        0
+                                                    ],
+                                                    "controls": [
+                                                        {
+                                                            "notfound@t.l": {
+                                                                "text": "No worlds found! Please pay attention to 'case sensitivity' for results!",
+                                                                "anchor_from": "bottom_middle",
+                                                                "anchor_to": "bottom_middle"
+                                                            }
+                                                        },
+                                                        {
+                                                            "label_list@t.sp": {
+                                                                "anchor_from": "top_middle",
+                                                                "anchor_to": "top_middle",
+                                                                "collection_name": "local_worlds",
+                                                                "use_child_anchors": true,
+                                                                "size": [
+                                                                    "100%",
+                                                                    "100%c"
+                                                                ],
+                                                                "factory": {
+                                                                    "control_name": "play.world_count_label"
+                                                                },
+                                                                "bindings": [
+                                                                    {
+                                                                        "binding_type": "global",
+                                                                        "binding_name": "#world_item_count",
+                                                                        "binding_condition": "visibility_changed"
+                                                                    },
+                                                                    {
+                                                                        "binding_type": "view",
+                                                                        "source_property_name": "(#world_item_count + 'a' - 'a')",
+                                                                        "target_property_name": "#collection_length"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "count_offset@t.sp": {
+                                                    "collection_name": "local_worlds",
+                                                    "anchor_from": "top_left",
+                                                    "anchor_to": "top_left",
+                                                    "size": [
+                                                        "100%",
+                                                        "100%c"
+                                                    ],
+                                                    "factory": {
+                                                        "control_name": "play.world_count_label_offset"
+                                                    },
+                                                    "bindings": [
+                                                        {
+                                                            "binding_type": "global",
+                                                            "binding_name": "#world_item_count",
+                                                            "binding_condition": "visibility_changed"
+                                                        },
+                                                        {
+                                                            "binding_type": "view",
+                                                            "source_property_name": "(#world_item_count + 'a' - 'a')",
+                                                            "target_property_name": "#collection_length"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "worlds_stack_panel/header_button": {
+        "bindings": "$view_bindings"
+    },
+    "worlds_stack_panel/worlds_crossplatform_disabled_panel": {
+        "bindings": [
+            {
+                "binding_name": "#cross_platform_enabled",
+                "binding_name_override": "#visible_no"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "local_world_search",
+                "source_property_name": "(#item_name = '')",
+                "target_property_name": "#visible_yes"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((not #visible_no) and #visible_yes)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "worlds_stack_panel/worlds_crossplatform_disable_spacer": {
+        "bindings": [
+            {
+                "binding_name": "#cross_platform_enabled",
+                "binding_name_override": "#visible_no"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "local_world_search",
+                "source_property_name": "(#item_name = '')",
+                "target_property_name": "#visible_yes"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((not #visible_no) and #visible_yes)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "worlds_stack_panel/realms_panel": {
+        "bindings": [
+            {
+                "binding_name": "#personal_realms_grid_visible",
+                "binding_name_override": "#visible_no"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "local_world_search",
+                "source_property_name": "(#item_name = '')",
+                "target_property_name": "#visible_yes"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#visible_no and #visible_yes)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "worlds_stack_panel/realms_multiplayer_blocked_panel": {
+        "bindings": [
+            {
+                "binding_name": "#multiplayer_blocked_panel_visible",
+                "binding_name_override": "#visible_no"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "local_world_search",
+                "source_property_name": "(#item_name = '')",
+                "target_property_name": "#visible_yes"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#visible_no and #visible_yes)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "worlds_stack_panel/worlds_label": {
+        "bindings": [
+            {
+                "binding_name": "#local_worlds_visible",
+                "binding_name_override": "#visible_no"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "local_world_search",
+                "source_property_name": "(#item_name = '')",
+                "target_property_name": "#visible_yes"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#visible_no and #visible_yes)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "local_world_filesize": {
+        "text": "#text",
+        "bindings": [
+            {
+                "binding_name": "#local_worldfile_size",
+                "binding_type": "collection",
+                "binding_collection_name": "local_worlds"
+            },
+            {
+                "binding_name": "#local_world_image",
+                "binding_type": "collection",
+                "binding_collection_name": "local_worlds"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "padding_include_file_path_hooking",
+                "source_property_name": "#gamepath",
+                "target_property_name": "#gamepath"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#local_world_image - '/world_icon.jpeg' - #gamepath + '|' + #local_worldfile_size)",
+                "target_property_name": "#text"
+            }
+        ]
+    },
+    "local_world_item": {
+        "bindings": [
+            {
+                "binding_name": "#local_worldfile_size",
+                "binding_type": "collection",
+                "binding_collection_name": "local_worlds"
+            },
+            {
+                "binding_name": "#local_world_name",
+                "binding_type": "collection",
+                "binding_collection_name": "local_worlds"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "local_world_search",
+                "source_property_name": "#item_name",
+                "target_property_name": "#search_value"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((not ((#local_world_name - #search_value) = #local_world_name)) or (#search_value = ''))",
+                "target_property_name": "#bool_0"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not (#local_worldfile_size = ''))",
+                "target_property_name": "#bool_1"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#bool_0 and #bool_1)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "local_world_item_grid@t.sp": {
+        "collection_name": "local_worlds",
+        "size": [
+            "100% - 1px",
+            "100%c"
+        ],
+        "factory": {
+            "name": "local_worlds",
+            "control_name": "play.local_world_item"
+        },
+        "bindings": [
+            {
+                "binding_type": "global",
+                "binding_name": "#world_item_count"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#world_item_count + 'a' - 'a')",
+                "target_property_name": "#collection_length"
+            }
+        ]
+    }
+}
