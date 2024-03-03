@@ -1,3 +1,1 @@
-deo biet mo ta gi
-
-Trọng VIP++
+a repo of shit resource pack
