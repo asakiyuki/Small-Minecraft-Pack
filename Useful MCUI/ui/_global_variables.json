@@ -1,8 +1,8 @@
 {
     // Item ID
-    "$clock": 396,
-    "$compass": 394,
-    "$recovery_compass": 655,
+    "$clock": 401,
+    "$compass": 399,
+    "$recovery_compass": 665,
     "$suspicious_stew": 599,
     // Features
     "$disable_list": true,
